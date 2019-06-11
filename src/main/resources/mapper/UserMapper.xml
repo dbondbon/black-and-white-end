@@ -1,65 +1,55 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="top.dbon.blackandwhite.dao.userMapper" >
-  <resultMap id="BaseResultMap" type="top.dbon.blackandwhite.domain.User" >
-    <id column="user_id" property="userId" jdbcType="VARCHAR" />
-    <result column="nickname" property="nickname" jdbcType="VARCHAR" />
-    <result column="username" property="username" jdbcType="VARCHAR" />
-    <result column="password" property="password" jdbcType="VARCHAR" />
-    <result column="school" property="school" jdbcType="VARCHAR" />
-    <result column="gender" property="gender" jdbcType="VARCHAR" />
-    <result column="create_time" property="createTime" jdbcType="DATE" />
-    <result column="update_time" property="updateTime" jdbcType="DATE" />
-    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
-    <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
-    <result column="submit_audit" property="submitAudit" jdbcType="VARCHAR" />
-    <result column="audit_status" property="auditStatus" jdbcType="VARCHAR" />
-    <result column="avatar" property="avatar" jdbcType="VARCHAR" />
-    <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="stu_id" property="stuId" jdbcType="VARCHAR" />
-    <result column="idcard_img" property="idcardImg" jdbcType="VARCHAR" />
-    <result column="idcard_cover_img" property="idcardCoverImg" jdbcType="VARCHAR" />
-    <result column="phone" property="phone" jdbcType="VARCHAR" />
-    <result column="email" property="email" jdbcType="VARCHAR" />
-    <result column="auth_code" property="authCode" jdbcType="VARCHAR" />
-    <result column="role_set" property="roleSet" jdbcType="VARCHAR" />
-    <result column="is_delete" property="isDelete" jdbcType="VARCHAR" />
-    <result column="login_time" property="loginTime" jdbcType="DATE" />
+<mapper namespace="top.dbon.blackandwhite.mapper.UserMapper" >
+  <resultMap id="userResult" type="top.dbon.blackandwhite.domain.User" >
+    <result column="user_id" property="userId"  />
+    <result column="nickname" property="nickname"  />
+    <result column="username" property="username" />
+    <result column="password" property="password"  />
+    <result column="school" property="school"  />
+    <result column="gender" property="gender"  />
+    <result column="create_time" property="createTime"  />
+    <result column="update_time" property="updateTime"  />
+    <result column="create_by" property="createBy"  />
+    <result column="update_by" property="updateBy"/>
+    <result column="submit_audit" property="submitAudit"  />
+    <result column="audit_status" property="auditStatus" />
+    <result column="avatar" property="avatar" />
+    <result column="name" property="name"  />
+    <result column="stu_id" property="stuId" />
+    <result column="idcard_img" property="idcardImg" />
+    <result column="idcard_cover_img" property="idcardCoverImg"  />
+    <result column="phone" property="phone" />
+    <result column="email" property="email"  />
+    <result column="auth_code" property="authCode" />
+    <result column="role_set" property="roleSet"  />
+    <result column="is_delete" property="isDelete"  />
+    <result column="login_time" property="loginTime"  />
   </resultMap>
-  <sql id="Base_Column_List" >
+
+  <sql id="selectUserVo" >
+    SELECT
     user_id, nickname, username, password, school, gender, create_time, update_time, 
-    create_by, update_by, submit_audit, audit_status, avatar, name, stu_id, idcard_img, 
+    create_by, update_by, submit_audit, audit_status, avatar, `name`, stu_id, idcard_img,
     idcard_cover_img, phone, email, auth_code, role_set, is_delete, login_time
+    FROM user
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+
+  <select id="selectByUserId" resultMap="userResult" parameterType="String" >
     select 
-    <include refid="Base_Column_List" />
+    <include refid="selectUserVo" />
     from user
-    where user_id = #{userId,jdbcType=VARCHAR}
+    where user_id = #{userId}
+    AND is_delete = "0"
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
-    delete from user
-    where user_id = #{userId,jdbcType=VARCHAR}
+
+  <delete id="deleteByUserId" parameterType="String" >
+    UPDATE USER
+    SET is_delete = "1"
+    where user_id = #{userId}
   </delete>
-  <insert id="insert" parameterType="top.dbon.blackandwhite.domain.User" >
-    insert into user (user_id, nickname, username, 
-      password, school, gender, 
-      create_time, update_time, create_by, 
-      update_by, submit_audit, audit_status, 
-      avatar, name, stu_id, 
-      idcard_img, idcard_cover_img, phone, 
-      email, auth_code, role_set, 
-      is_delete, login_time)
-    values (#{userId,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, 
-      #{password,jdbcType=VARCHAR}, #{school,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=DATE}, #{updateTime,jdbcType=DATE}, #{createBy,jdbcType=VARCHAR}, 
-      #{updateBy,jdbcType=VARCHAR}, #{submitAudit,jdbcType=VARCHAR}, #{auditStatus,jdbcType=VARCHAR}, 
-      #{avatar,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{stuId,jdbcType=VARCHAR}, 
-      #{idcardImg,jdbcType=VARCHAR}, #{idcardCoverImg,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
-      #{email,jdbcType=VARCHAR}, #{authCode,jdbcType=VARCHAR}, #{roleSet,jdbcType=VARCHAR}, 
-      #{isDelete,jdbcType=VARCHAR}, #{loginTime,jdbcType=DATE})
-  </insert>
-  <insert id="insertSelective" parameterType="top.dbon.blackandwhite.domain.User" >
+
+  <insert id="insertUser" parameterType="User" >
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="userId != null" >
@@ -134,172 +124,148 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="userId != null" >
-        #{userId,jdbcType=VARCHAR},
+        #{userId},
       </if>
       <if test="nickname != null" >
-        #{nickname,jdbcType=VARCHAR},
+        #{nickname},
       </if>
       <if test="username != null" >
-        #{username,jdbcType=VARCHAR},
+        #{username},
       </if>
       <if test="password != null" >
-        #{password,jdbcType=VARCHAR},
+        #{password},
       </if>
       <if test="school != null" >
-        #{school,jdbcType=VARCHAR},
+        #{school},
       </if>
       <if test="gender != null" >
-        #{gender,jdbcType=VARCHAR},
+        #{gender},
       </if>
       <if test="createTime != null" >
-        #{createTime,jdbcType=DATE},
+        #{createTime},
       </if>
       <if test="updateTime != null" >
-        #{updateTime,jdbcType=DATE},
+        #{updateTime},
       </if>
       <if test="createBy != null" >
-        #{createBy,jdbcType=VARCHAR},
+        #{createBy},
       </if>
       <if test="updateBy != null" >
-        #{updateBy,jdbcType=VARCHAR},
+        #{updateBy},
       </if>
       <if test="submitAudit != null" >
-        #{submitAudit,jdbcType=VARCHAR},
+        #{submitAudit},
       </if>
       <if test="auditStatus != null" >
-        #{auditStatus,jdbcType=VARCHAR},
+        #{auditStatus},
       </if>
       <if test="avatar != null" >
-        #{avatar,jdbcType=VARCHAR},
+        #{avatar},
       </if>
       <if test="name != null" >
-        #{name,jdbcType=VARCHAR},
+        #{name},
       </if>
       <if test="stuId != null" >
-        #{stuId,jdbcType=VARCHAR},
+        #{stuId},
       </if>
       <if test="idcardImg != null" >
-        #{idcardImg,jdbcType=VARCHAR},
+        #{idcardImg},
       </if>
       <if test="idcardCoverImg != null" >
-        #{idcardCoverImg,jdbcType=VARCHAR},
+        #{idcardCoverImg},
       </if>
       <if test="phone != null" >
-        #{phone,jdbcType=VARCHAR},
+        #{phone},
       </if>
       <if test="email != null" >
-        #{email,jdbcType=VARCHAR},
+        #{email},
       </if>
       <if test="authCode != null" >
-        #{authCode,jdbcType=VARCHAR},
+        #{authCode},
       </if>
       <if test="roleSet != null" >
-        #{roleSet,jdbcType=VARCHAR},
+        #{roleSet},
       </if>
       <if test="isDelete != null" >
-        #{isDelete,jdbcType=VARCHAR},
+        #{isDelete},
       </if>
       <if test="loginTime != null" >
-        #{loginTime,jdbcType=DATE},
+        #{loginTime},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="top.dbon.blackandwhite.domain.User" >
+
+  <update id="updateUser" parameterType="User" >
     update user
     <set >
       <if test="nickname != null" >
-        nickname = #{nickname,jdbcType=VARCHAR},
+        nickname = #{nickname},
       </if>
       <if test="username != null" >
-        username = #{username,jdbcType=VARCHAR},
+        username = #{username},
       </if>
       <if test="password != null" >
-        password = #{password,jdbcType=VARCHAR},
+        password = #{password},
       </if>
       <if test="school != null" >
-        school = #{school,jdbcType=VARCHAR},
+        school = #{school},
       </if>
       <if test="gender != null" >
-        gender = #{gender,jdbcType=VARCHAR},
+        gender = #{gender},
       </if>
       <if test="createTime != null" >
-        create_time = #{createTime,jdbcType=DATE},
+        create_time = #{createTime},
       </if>
       <if test="updateTime != null" >
-        update_time = #{updateTime,jdbcType=DATE},
+        update_time = #{updateTime},
       </if>
       <if test="createBy != null" >
-        create_by = #{createBy,jdbcType=VARCHAR},
+        create_by = #{createBy},
       </if>
       <if test="updateBy != null" >
-        update_by = #{updateBy,jdbcType=VARCHAR},
+        update_by = #{updateBy},
       </if>
       <if test="submitAudit != null" >
-        submit_audit = #{submitAudit,jdbcType=VARCHAR},
+        submit_audit = #{submitAudit},
       </if>
       <if test="auditStatus != null" >
-        audit_status = #{auditStatus,jdbcType=VARCHAR},
+        audit_status = #{auditStatus},
       </if>
       <if test="avatar != null" >
-        avatar = #{avatar,jdbcType=VARCHAR},
+        avatar = #{avatar},
       </if>
       <if test="name != null" >
-        name = #{name,jdbcType=VARCHAR},
+        name = #{name},
       </if>
       <if test="stuId != null" >
-        stu_id = #{stuId,jdbcType=VARCHAR},
+        stu_id = #{stuId},
       </if>
       <if test="idcardImg != null" >
-        idcard_img = #{idcardImg,jdbcType=VARCHAR},
+        idcard_img = #{idcardImg},
       </if>
       <if test="idcardCoverImg != null" >
-        idcard_cover_img = #{idcardCoverImg,jdbcType=VARCHAR},
+        idcard_cover_img = #{idcardCoverImg},
       </if>
       <if test="phone != null" >
-        phone = #{phone,jdbcType=VARCHAR},
+        phone = #{phone},
       </if>
       <if test="email != null" >
-        email = #{email,jdbcType=VARCHAR},
+        email = #{email},
       </if>
       <if test="authCode != null" >
-        auth_code = #{authCode,jdbcType=VARCHAR},
+        auth_code = #{authCode},
       </if>
       <if test="roleSet != null" >
-        role_set = #{roleSet,jdbcType=VARCHAR},
+        role_set = #{roleSet},
       </if>
       <if test="isDelete != null" >
-        is_delete = #{isDelete,jdbcType=VARCHAR},
+        is_delete = #{isDelete},
       </if>
       <if test="loginTime != null" >
-        login_time = #{loginTime,jdbcType=DATE},
+        login_time = #{loginTime},
       </if>
     </set>
-    where user_id = #{userId,jdbcType=VARCHAR}
+    where user_id = #{userId}
   </update>
-  <update id="updateByPrimaryKey" parameterType="top.dbon.blackandwhite.domain.User" >
-    update user
-    set nickname = #{nickname,jdbcType=VARCHAR},
-      username = #{username,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
-      school = #{school,jdbcType=VARCHAR},
-      gender = #{gender,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=DATE},
-      update_time = #{updateTime,jdbcType=DATE},
-      create_by = #{createBy,jdbcType=VARCHAR},
-      update_by = #{updateBy,jdbcType=VARCHAR},
-      submit_audit = #{submitAudit,jdbcType=VARCHAR},
-      audit_status = #{auditStatus,jdbcType=VARCHAR},
-      avatar = #{avatar,jdbcType=VARCHAR},
-      name = #{name,jdbcType=VARCHAR},
-      stu_id = #{stuId,jdbcType=VARCHAR},
-      idcard_img = #{idcardImg,jdbcType=VARCHAR},
-      idcard_cover_img = #{idcardCoverImg,jdbcType=VARCHAR},
-      phone = #{phone,jdbcType=VARCHAR},
-      email = #{email,jdbcType=VARCHAR},
-      auth_code = #{authCode,jdbcType=VARCHAR},
-      role_set = #{roleSet,jdbcType=VARCHAR},
-      is_delete = #{isDelete,jdbcType=VARCHAR},
-      login_time = #{loginTime,jdbcType=DATE}
-    where user_id = #{userId,jdbcType=VARCHAR}
-  </update>
+
 </mapper>

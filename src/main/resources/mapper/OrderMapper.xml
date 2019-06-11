@@ -1,52 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="top.dbon.blackandwhite.dao.orderMapper" >
-  <resultMap id="BaseResultMap" type="top.dbon.blackandwhite.domain.Order" >
-    <id column="order_id" property="orderId" jdbcType="VARCHAR" />
-    <result column="code" property="code" jdbcType="VARCHAR" />
-    <result column="goods_id" property="goodsId" jdbcType="VARCHAR" />
-    <result column="seller_id" property="sellerId" jdbcType="VARCHAR" />
-    <result column="buyer_id" property="buyerId" jdbcType="VARCHAR" />
-    <result column="create_time" property="createTime" jdbcType="DATE" />
-    <result column="update_time" property="updateTime" jdbcType="DATE" />
-    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
-    <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
-    <result column="trading_status" property="tradingStatus" jdbcType="VARCHAR" />
-    <result column="seller_is_show" property="sellerIsShow" jdbcType="VARCHAR" />
-    <result column="buyer_is_show" property="buyerIsShow" jdbcType="VARCHAR" />
-    <result column="seller_failure_reasons" property="sellerFailureReasons" jdbcType="VARCHAR" />
-    <result column="buyer_failure_reasons" property="buyerFailureReasons" jdbcType="VARCHAR" />
+<mapper namespace="top.dbon.blackandwhite.mapper.OrderMapper" >
+  <resultMap id="orderResult" type="Order" >
+    <result column="order_id" property="orderId" />
+    <result column="code" property="code"  />
+    <result column="goods_id" property="goodsId"  />
+    <result column="seller_id" property="sellerId"  />
+    <result column="buyer_id" property="buyerId" />
+    <result column="create_time" property="createTime"  />
+    <result column="update_time" property="updateTime"  />
+    <result column="create_by" property="createBy"  />
+    <result column="update_by" property="updateBy" />
+    <result column="trading_status" property="tradingStatus" />
+    <result column="seller_is_show" property="sellerIsShow"  />
+    <result column="buyer_is_show" property="buyerIsShow"  />
+    <result column="seller_failure_reasons" property="sellerFailureReasons"  />
+    <result column="buyer_failure_reasons" property="buyerFailureReasons"  />
   </resultMap>
-  <sql id="Base_Column_List" >
+
+  <sql id="selectOrderVo" >
+    SELECT
     order_id, code, goods_id, seller_id, buyer_id, create_time, update_time, create_by, 
     update_by, trading_status, seller_is_show, buyer_is_show, seller_failure_reasons, 
     buyer_failure_reasons
+    FROM order
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+
+  <select id="selectByOrderId" resultMap="orderResult" parameterType="String" >
     select 
-    <include refid="Base_Column_List" />
+    <include refid="selectOrderVo" />
     from order
-    where order_id = #{orderId,jdbcType=VARCHAR}
+    where order_id = #{orderId}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+
+  <delete id="deleteByOrderId" parameterType="String" >
     delete from order
-    where order_id = #{orderId,jdbcType=VARCHAR}
+    where order_id = #{orderId}
   </delete>
-  <insert id="insert" parameterType="top.dbon.blackandwhite.domain.Order" >
-    insert into order (order_id, code, goods_id, 
-      seller_id, buyer_id, create_time, 
-      update_time, create_by, update_by, 
-      trading_status, seller_is_show, buyer_is_show, 
-      seller_failure_reasons, buyer_failure_reasons
-      )
-    values (#{orderId,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, #{goodsId,jdbcType=VARCHAR}, 
-      #{sellerId,jdbcType=VARCHAR}, #{buyerId,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, 
-      #{updateTime,jdbcType=DATE}, #{createBy,jdbcType=VARCHAR}, #{updateBy,jdbcType=VARCHAR}, 
-      #{tradingStatus,jdbcType=VARCHAR}, #{sellerIsShow,jdbcType=VARCHAR}, #{buyerIsShow,jdbcType=VARCHAR}, 
-      #{sellerFailureReasons,jdbcType=VARCHAR}, #{buyerFailureReasons,jdbcType=VARCHAR}
-      )
-  </insert>
-  <insert id="insertSelective" parameterType="top.dbon.blackandwhite.domain.Order" >
+
+  <insert id="insertOrder" parameterType="Order" >
     insert into order
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="orderId != null" >
@@ -137,66 +129,51 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="top.dbon.blackandwhite.domain.Order" >
+
+  <update id="updateOrder" parameterType="Order" >
     update order
     <set >
       <if test="code != null" >
-        code = #{code,jdbcType=VARCHAR},
+        code = #{code},
       </if>
       <if test="goodsId != null" >
-        goods_id = #{goodsId,jdbcType=VARCHAR},
+        goods_id = #{goodsId},
       </if>
       <if test="sellerId != null" >
-        seller_id = #{sellerId,jdbcType=VARCHAR},
+        seller_id = #{sellerId},
       </if>
       <if test="buyerId != null" >
-        buyer_id = #{buyerId,jdbcType=VARCHAR},
+        buyer_id = #{buyerId},
       </if>
       <if test="createTime != null" >
-        create_time = #{createTime,jdbcType=DATE},
+        create_time = #{createTime},
       </if>
       <if test="updateTime != null" >
-        update_time = #{updateTime,jdbcType=DATE},
+        update_time = #{updateTime},
       </if>
       <if test="createBy != null" >
-        create_by = #{createBy,jdbcType=VARCHAR},
+        create_by = #{createBy},
       </if>
       <if test="updateBy != null" >
-        update_by = #{updateBy,jdbcType=VARCHAR},
+        update_by = #{updateBy},
       </if>
       <if test="tradingStatus != null" >
-        trading_status = #{tradingStatus,jdbcType=VARCHAR},
+        trading_status = #{tradingStatus},
       </if>
       <if test="sellerIsShow != null" >
-        seller_is_show = #{sellerIsShow,jdbcType=VARCHAR},
+        seller_is_show = #{sellerIsShow},
       </if>
       <if test="buyerIsShow != null" >
-        buyer_is_show = #{buyerIsShow,jdbcType=VARCHAR},
+        buyer_is_show = #{buyerIsShow},
       </if>
       <if test="sellerFailureReasons != null" >
-        seller_failure_reasons = #{sellerFailureReasons,jdbcType=VARCHAR},
+        seller_failure_reasons = #{sellerFailureReasons},
       </if>
       <if test="buyerFailureReasons != null" >
-        buyer_failure_reasons = #{buyerFailureReasons,jdbcType=VARCHAR},
+        buyer_failure_reasons = #{buyerFailureReasons},
       </if>
     </set>
-    where order_id = #{orderId,jdbcType=VARCHAR}
+    where order_id = #{orderId}
   </update>
-  <update id="updateByPrimaryKey" parameterType="top.dbon.blackandwhite.domain.Order" >
-    update order
-    set code = #{code,jdbcType=VARCHAR},
-      goods_id = #{goodsId,jdbcType=VARCHAR},
-      seller_id = #{sellerId,jdbcType=VARCHAR},
-      buyer_id = #{buyerId,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=DATE},
-      update_time = #{updateTime,jdbcType=DATE},
-      create_by = #{createBy,jdbcType=VARCHAR},
-      update_by = #{updateBy,jdbcType=VARCHAR},
-      trading_status = #{tradingStatus,jdbcType=VARCHAR},
-      seller_is_show = #{sellerIsShow,jdbcType=VARCHAR},
-      buyer_is_show = #{buyerIsShow,jdbcType=VARCHAR},
-      seller_failure_reasons = #{sellerFailureReasons,jdbcType=VARCHAR},
-      buyer_failure_reasons = #{buyerFailureReasons,jdbcType=VARCHAR}
-    where order_id = #{orderId,jdbcType=VARCHAR}
-  </update>
+
 </mapper>

@@ -3,15 +3,31 @@ package top.dbon.blackandwhite.mapper;
 import top.dbon.blackandwhite.domain.Message;
 
 public interface MessageMapper {
-    int deleteByPrimaryKey(String msgId);
+    /**
+     * 删除消息
+     * @param msgId
+     * @return
+     */
+    Integer deleteByMsgId(String msgId);
 
-    int insert(Message record);
+    /**
+     * 新增消息
+     * @param record
+     * @return
+     */
+    Integer insertMessage(Message record);
 
-    int insertSelective(Message record);
+    /**
+     * 查找消息
+     * @param msgId
+     * @return
+     */
+    Message selectByMsgId(String msgId);
 
-    Message selectByPrimaryKey(String msgId);
-
-    int updateByPrimaryKeySelective(Message record);
-
-    int updateByPrimaryKey(Message record);
+    /**
+     * 更新信息
+     * @param message
+     * @return
+     */
+    Integer updateMessage(Message message);
 }

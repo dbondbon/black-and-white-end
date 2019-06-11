@@ -3,15 +3,31 @@ package top.dbon.blackandwhite.mapper;
 import top.dbon.blackandwhite.domain.User;
 
 public interface UserMapper {
-    int deleteByPrimaryKey(String userId);
+    /**
+     * 删除用户
+     * @param userId
+     * @return
+     */
+    Integer deleteByUserId(String userId);
 
-    int insert(User record);
+    /**
+     * 新增用户
+     * @param user
+     * @return
+     */
+    Integer insertUser(User user);
 
-    int insertSelective(User record);
+    /**
+     * 查找用户
+     * @param userId
+     * @return
+     */
+    User selectByUserId(String userId);
 
-    User selectByPrimaryKey(String userId);
-
-    int updateByPrimaryKeySelective(User record);
-
-    int updateByPrimaryKey(User record);
+    /**
+     * 更新用户
+     * @param user
+     * @return
+     */
+    Integer updateUser(User user);
 }

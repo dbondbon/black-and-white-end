@@ -1,76 +1,72 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="top.dbon.blackandwhite.domain.GoodsMapper" >
+<mapper namespace="top.dbon.blackandwhite.mapper.GoodsMapper" >
   <resultMap id="goodsResult" type="Goods" >
     <result column="goods_id" property="goodsId" />
     <result column="code" property="code"  />
     <result column="name" property="name" />
-    <result column="count" property="count" jdbcType="INTEGER" />
-    <result column="price" property="price" jdbcType="DECIMAL" />
-    <result column="description" property="description" jdbcType="VARCHAR" />
-    <result column="img_id" property="imgId" jdbcType="VARCHAR" />
-    <result column="goods_status" property="goodsStatus" jdbcType="VARCHAR" />
-    <result column="user_id" property="userId" jdbcType="VARCHAR" />
-    <result column="create_time" property="createTime" jdbcType="DATE" />
-    <result column="update_time" property="updateTime" jdbcType="DATE" />
-    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
-    <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
-    <result column="is_delete" property="isDelete" jdbcType="VARCHAR" />
+    <result column="count" property="count"  />
+    <result column="price" property="price"  />
+    <result column="description" property="description"  />
+    <result column="img_id" property="imgId"  />
+    <result column="goods_status" property="goodsStatus" />
+    <result column="user_id" property="userId"  />
+    <result column="create_time" property="createTime"  />
+    <result column="update_time" property="updateTime" />
+    <result column="create_by" property="createBy"  />
+    <result column="update_by" property="updateBy"  />
+    <result column="is_delete" property="isDelete" />
   </resultMap>
-  <sql id="Base_Column_List" >
-    goods_id, code, name, count, price, description, img_id, goods_status, user_id, create_time, 
+
+  <sql id="selectGoodsVo" >
+    SELECT
+    goods_id, code, `name`, `count`, price, description, img_id, goods_status, user_id, create_time,
     update_time, create_by, update_by, is_delete
+    FROM goods
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+
+  <select id="selectByGoodsId" resultMap="goodsResult" parameterType="String" >
     select 
-    <include refid="Base_Column_List" />
+    <include refid="selectGoodsVo" />
     from goods
-    where goods_id = #{goodsId,jdbcType=VARCHAR}
+    where goods_id = #{goodsId}
+    AND is_delete = "0"
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
-    delete from goods
-    where goods_id = #{goodsId,jdbcType=VARCHAR}
+
+  <delete id="deleteByGoodsId" parameterType="String" >
+    UPDATE goods
+    SET is_delete = "1"
+    where goods_id = #{goodsId}
   </delete>
-  <insert id="insert" parameterType="top.dbon.blackandwhite.domain.Goods" >
-    insert into goods (goods_id, code, name, 
-      count, price, description, 
-      img_id, goods_status, user_id, 
-      create_time, update_time, create_by, 
-      update_by, is_delete)
-    values (#{goodsId,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
-      #{count,jdbcType=INTEGER}, #{price,jdbcType=DECIMAL}, #{description,jdbcType=VARCHAR}, 
-      #{imgId,jdbcType=VARCHAR}, #{goodsStatus,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=DATE}, #{updateTime,jdbcType=DATE}, #{createBy,jdbcType=VARCHAR}, 
-      #{updateBy,jdbcType=VARCHAR}, #{isDelete,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="top.dbon.blackandwhite.domain.Goods" >
+
+  <insert id="insertGoods" parameterType="Goods" >
     insert into goods
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="goodsId != null" >
+      <if test="goodsId != null and goodsId != '' " >
         goods_id,
       </if>
-      <if test="code != null" >
+      <if test="code != null and code != '' " >
         code,
       </if>
-      <if test="name != null" >
-        name,
+      <if test="name != null and name != '' " >
+        `name`,
       </if>
       <if test="count != null" >
-        count,
+        `count`,
       </if>
       <if test="price != null" >
         price,
       </if>
-      <if test="description != null" >
+      <if test="description != null and description != '' " >
         description,
       </if>
-      <if test="imgId != null" >
+      <if test="imgId != null and imgId != '' " >
         img_id,
       </if>
-      <if test="goodsStatus != null" >
+      <if test="goodsStatus != null and goodsStatus != '' " >
         goods_status,
       </if>
-      <if test="userId != null" >
+      <if test="userId != null and userId != '' " >
         user_id,
       </if>
       <if test="createTime != null" >
@@ -79,121 +75,106 @@
       <if test="updateTime != null" >
         update_time,
       </if>
-      <if test="createBy != null" >
+      <if test="createBy != null and createBy != '' " >
         create_by,
       </if>
-      <if test="updateBy != null" >
+      <if test="updateBy != null and updateBy != '' " >
         update_by,
       </if>
-      <if test="isDelete != null" >
+      <if test="isDelete != null and isDelete != '' " >
         is_delete,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="goodsId != null" >
-        #{goodsId,jdbcType=VARCHAR},
+      <if test="goodsId != null and goodsId != '' " >
+        #{goodsId},
       </if>
-      <if test="code != null" >
-        #{code,jdbcType=VARCHAR},
+      <if test="code != null and code != ''" >
+        #{code},
       </if>
-      <if test="name != null" >
-        #{name,jdbcType=VARCHAR},
+      <if test="name != null and name != '' " >
+        #{name},
       </if>
       <if test="count != null" >
-        #{count,jdbcType=INTEGER},
+        #{count},
       </if>
       <if test="price != null" >
-        #{price,jdbcType=DECIMAL},
+        #{price},
       </if>
-      <if test="description != null" >
-        #{description,jdbcType=VARCHAR},
+      <if test="description != null and description != ''" >
+        #{description},
       </if>
-      <if test="imgId != null" >
-        #{imgId,jdbcType=VARCHAR},
+      <if test="imgId != null and imgId != ''" >
+        #{imgId},
       </if>
-      <if test="goodsStatus != null" >
-        #{goodsStatus,jdbcType=VARCHAR},
+      <if test="goodsStatus != null and goodsStatus != ''" >
+        #{goodsStatus},
       </if>
-      <if test="userId != null" >
-        #{userId,jdbcType=VARCHAR},
+      <if test="userId != null and userId != ''" >
+        #{userId},
       </if>
       <if test="createTime != null" >
-        #{createTime,jdbcType=DATE},
+        #{createTime},
       </if>
       <if test="updateTime != null" >
-        #{updateTime,jdbcType=DATE},
+        #{updateTime},
       </if>
-      <if test="createBy != null" >
-        #{createBy,jdbcType=VARCHAR},
+      <if test="createBy != null and createBy != ''" >
+        #{createBy},
       </if>
-      <if test="updateBy != null" >
-        #{updateBy,jdbcType=VARCHAR},
+      <if test="updateBy != null updateBy != ''" >
+        #{updateBy},
       </if>
-      <if test="isDelete != null" >
-        #{isDelete,jdbcType=VARCHAR},
+      <if test="isDelete != null isDelete != ''" >
+        #{isDelete},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="top.dbon.blackandwhite.domain.Goods" >
+
+  <update id="updateGoods" parameterType="Goods" >
     update goods
     <set >
-      <if test="code != null" >
-        code = #{code,jdbcType=VARCHAR},
+      <if test="code != null and code != '' " >
+        code = #{code},
       </if>
-      <if test="name != null" >
-        name = #{name,jdbcType=VARCHAR},
+      <if test="name != null and name != '' " >
+        name = #{name},
       </if>
       <if test="count != null" >
-        count = #{count,jdbcType=INTEGER},
+        count = #{count},
       </if>
       <if test="price != null" >
-        price = #{price,jdbcType=DECIMAL},
+        price = #{price},
       </if>
-      <if test="description != null" >
-        description = #{description,jdbcType=VARCHAR},
+      <if test="description != null and description != '' " >
+        description = #{description},
       </if>
-      <if test="imgId != null" >
-        img_id = #{imgId,jdbcType=VARCHAR},
+      <if test="imgId != null and imgId != '' " >
+        img_id = #{imgId},
       </if>
-      <if test="goodsStatus != null" >
-        goods_status = #{goodsStatus,jdbcType=VARCHAR},
+      <if test="goodsStatus != null and goodsStatus != '' " >
+        goods_status = #{goodsStatus},
       </if>
-      <if test="userId != null" >
-        user_id = #{userId,jdbcType=VARCHAR},
+      <if test="userId != null and userId != '' " >
+        user_id = #{userId},
       </if>
       <if test="createTime != null" >
-        create_time = #{createTime,jdbcType=DATE},
+        create_time = #{createTime},
       </if>
       <if test="updateTime != null" >
-        update_time = #{updateTime,jdbcType=DATE},
+        update_time = #{updateTime},
       </if>
-      <if test="createBy != null" >
-        create_by = #{createBy,jdbcType=VARCHAR},
+      <if test="createBy != null and createBy != '' " >
+        create_by = #{createBy},
       </if>
-      <if test="updateBy != null" >
-        update_by = #{updateBy,jdbcType=VARCHAR},
+      <if test="updateBy != null and updateBy != '' " >
+        update_by = #{updateBy},
       </if>
-      <if test="isDelete != null" >
-        is_delete = #{isDelete,jdbcType=VARCHAR},
+      <if test="isDelete != null and isDelete != '' " >
+        is_delete = #{isDelete},
       </if>
     </set>
-    where goods_id = #{goodsId,jdbcType=VARCHAR}
+    where goods_id = #{goodsId}
   </update>
-  <update id="updateByPrimaryKey" parameterType="top.dbon.blackandwhite.domain.Goods" >
-    update goods
-    set code = #{code,jdbcType=VARCHAR},
-      name = #{name,jdbcType=VARCHAR},
-      count = #{count,jdbcType=INTEGER},
-      price = #{price,jdbcType=DECIMAL},
-      description = #{description,jdbcType=VARCHAR},
-      img_id = #{imgId,jdbcType=VARCHAR},
-      goods_status = #{goodsStatus,jdbcType=VARCHAR},
-      user_id = #{userId,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=DATE},
-      update_time = #{updateTime,jdbcType=DATE},
-      create_by = #{createBy,jdbcType=VARCHAR},
-      update_by = #{updateBy,jdbcType=VARCHAR},
-      is_delete = #{isDelete,jdbcType=VARCHAR}
-    where goods_id = #{goodsId,jdbcType=VARCHAR}
-  </update>
+
 </mapper>

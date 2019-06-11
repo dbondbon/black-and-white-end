@@ -3,15 +3,32 @@ package top.dbon.blackandwhite.mapper;
 import top.dbon.blackandwhite.domain.Order;
 
 public interface OrderMapper {
-    int deleteByPrimaryKey(String orderId);
+    /**
+     * 删除订单
+     * @param orderId
+     * @return
+     */
+    Integer deleteByOrderId(String orderId);
 
-    int insert(Order record);
+    /**
+     * 新增订单
+     * @param order
+     * @return
+     */
+    Integer insertOrder(Order order);
 
-    int insertSelective(Order record);
+    /**
+     * 查找订单
+     * @param orderId
+     * @return
+     */
+    Order selectByOrderId(String orderId);
 
-    Order selectByPrimaryKey(String orderId);
+    /**
+     * 更新订单
+     * @param order
+     * @return
+     */
+    Integer updateOrder(Order order);
 
-    int updateByPrimaryKeySelective(Order record);
-
-    int updateByPrimaryKey(Order record);
 }

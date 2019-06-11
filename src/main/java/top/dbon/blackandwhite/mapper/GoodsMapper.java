@@ -3,15 +3,31 @@ package top.dbon.blackandwhite.mapper;
 import top.dbon.blackandwhite.domain.Goods;
 
 public interface GoodsMapper {
-    int deleteByPrimaryKey(String goodsId);
+    /**
+     * 根据商品ID删除商品
+     * @param goodsId
+     * @return 结果
+     */
+    Integer deleteByGoodsId(String goodsId);
 
-    int insert(Goods record);
+    /**
+     * 新增商品
+     * @param goods
+     * @return
+     */
+    Integer insertGoods(Goods goods);
 
-    int insertSelective(Goods record);
+    /**
+     * 根据商品ID查找商品
+     * @param goodsId
+     * @return 结果
+     */
+    Goods selectByGoodsId(String goodsId);
 
-    Goods selectByPrimaryKey(String goodsId);
-
-    int updateByPrimaryKeySelective(Goods record);
-
-    int updateByPrimaryKey(Goods record);
+    /**
+     * 更新商品信息
+     * @param goods
+     * @return
+     */
+    Integer updateGoods(Goods goods);
 }
