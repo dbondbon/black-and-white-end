@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="top.dbon.blackandwhite.mapper.BookMapper" >
+
+  <resultMap id="bookResult" type="Book" >
+    <result column="book_id" property="bookId" />
+    <result column="publisher" property="publisher" />
+    <result column="author" property="author" />
+  </resultMap>
+
+  <sql id="selectBookVo" >
+    SELECT book_id, publisher, author FROM book
+  </sql>
+
+  <select id="selectByBookId" resultMap="bookResult" parameterType="String" >
+    <include refid="selectBookVo" />
+    where book_id = #{bookId}
+  </select>
+
+  <delete id="deleteByBookId" parameterType="String" >
+    delete from book
+    where book_id = #{bookId}
+  </delete>
+
+  <insert id="insertBook" parameterType="Book" >
+    insert into book
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="bookId != null and bookId != '' " >
+        book_id,
+      </if>
+      <if test="publisher != null and publisher != '' " >
+        publisher,
+      </if>
+      <if test="author != null and author != '' " >
+        author,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="bookId != null and bookId != '' " >
+        #{bookId},
+      </if>
+      <if test="publisher != null and publisher != '' " >
+        #{publisher},
+      </if>
+      <if test="author != null and author != '' " >
+        #{author},
+      </if>
+    </trim>
+  </insert>
+
+  <update id="updateByBookId" parameterType="Book" >
+    update book
+    <set >
+      <if test="publisher != null and publisher != '' " >
+        publisher = #{publisher},
+      </if>
+      <if test="author != null and author != '' " >
+        author = #{author},
+      </if>
+    </set>
+    where book_id = #{bookId}
+  </update>
+
+
+</mapper>

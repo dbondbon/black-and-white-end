@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="top.dbon.blackandwhite.dao.messageMapper" >
+  <resultMap id="BaseResultMap" type="top.dbon.blackandwhite.domain.Message" >
+    <id column="msg_id" property="msgId" jdbcType="VARCHAR" />
+    <result column="sender_id" property="senderId" jdbcType="VARCHAR" />
+    <result column="receiver_id" property="receiverId" jdbcType="VARCHAR" />
+    <result column="sender_nickname" property="senderNickname" jdbcType="VARCHAR" />
+    <result column="receiver_nickname" property="receiverNickname" jdbcType="VARCHAR" />
+    <result column="msg_content" property="msgContent" jdbcType="VARCHAR" />
+    <result column="send_time" property="sendTime" jdbcType="DATE" />
+    <result column="receive_time" property="receiveTime" jdbcType="DATE" />
+    <result column="send_status" property="sendStatus" jdbcType="VARCHAR" />
+    <result column="receive_status" property="receiveStatus" jdbcType="VARCHAR" />
+    <result column="sender_is_show" property="senderIsShow" jdbcType="VARCHAR" />
+    <result column="receiver_is_ihow" property="receiverIsIhow" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    msg_id, sender_id, receiver_id, sender_nickname, receiver_nickname, msg_content, 
+    send_time, receive_time, send_status, receive_status, sender_is_show, receiver_is_ihow
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from message
+    where msg_id = #{msgId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from message
+    where msg_id = #{msgId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="top.dbon.blackandwhite.domain.Message" >
+    insert into message (msg_id, sender_id, receiver_id, 
+      sender_nickname, receiver_nickname, msg_content, 
+      send_time, receive_time, send_status, 
+      receive_status, sender_is_show, receiver_is_ihow
+      )
+    values (#{msgId,jdbcType=VARCHAR}, #{senderId,jdbcType=VARCHAR}, #{receiverId,jdbcType=VARCHAR}, 
+      #{senderNickname,jdbcType=VARCHAR}, #{receiverNickname,jdbcType=VARCHAR}, #{msgContent,jdbcType=VARCHAR}, 
+      #{sendTime,jdbcType=DATE}, #{receiveTime,jdbcType=DATE}, #{sendStatus,jdbcType=VARCHAR}, 
+      #{receiveStatus,jdbcType=VARCHAR}, #{senderIsShow,jdbcType=VARCHAR}, #{receiverIsIhow,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="top.dbon.blackandwhite.domain.Message" >
+    insert into message
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="msgId != null" >
+        msg_id,
+      </if>
+      <if test="senderId != null" >
+        sender_id,
+      </if>
+      <if test="receiverId != null" >
+        receiver_id,
+      </if>
+      <if test="senderNickname != null" >
+        sender_nickname,
+      </if>
+      <if test="receiverNickname != null" >
+        receiver_nickname,
+      </if>
+      <if test="msgContent != null" >
+        msg_content,
+      </if>
+      <if test="sendTime != null" >
+        send_time,
+      </if>
+      <if test="receiveTime != null" >
+        receive_time,
+      </if>
+      <if test="sendStatus != null" >
+        send_status,
+      </if>
+      <if test="receiveStatus != null" >
+        receive_status,
+      </if>
+      <if test="senderIsShow != null" >
+        sender_is_show,
+      </if>
+      <if test="receiverIsIhow != null" >
+        receiver_is_ihow,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="msgId != null" >
+        #{msgId,jdbcType=VARCHAR},
+      </if>
+      <if test="senderId != null" >
+        #{senderId,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverId != null" >
+        #{receiverId,jdbcType=VARCHAR},
+      </if>
+      <if test="senderNickname != null" >
+        #{senderNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverNickname != null" >
+        #{receiverNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="msgContent != null" >
+        #{msgContent,jdbcType=VARCHAR},
+      </if>
+      <if test="sendTime != null" >
+        #{sendTime,jdbcType=DATE},
+      </if>
+      <if test="receiveTime != null" >
+        #{receiveTime,jdbcType=DATE},
+      </if>
+      <if test="sendStatus != null" >
+        #{sendStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="receiveStatus != null" >
+        #{receiveStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="senderIsShow != null" >
+        #{senderIsShow,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverIsIhow != null" >
+        #{receiverIsIhow,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="top.dbon.blackandwhite.domain.Message" >
+    update message
+    <set >
+      <if test="senderId != null" >
+        sender_id = #{senderId,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverId != null" >
+        receiver_id = #{receiverId,jdbcType=VARCHAR},
+      </if>
+      <if test="senderNickname != null" >
+        sender_nickname = #{senderNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverNickname != null" >
+        receiver_nickname = #{receiverNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="msgContent != null" >
+        msg_content = #{msgContent,jdbcType=VARCHAR},
+      </if>
+      <if test="sendTime != null" >
+        send_time = #{sendTime,jdbcType=DATE},
+      </if>
+      <if test="receiveTime != null" >
+        receive_time = #{receiveTime,jdbcType=DATE},
+      </if>
+      <if test="sendStatus != null" >
+        send_status = #{sendStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="receiveStatus != null" >
+        receive_status = #{receiveStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="senderIsShow != null" >
+        sender_is_show = #{senderIsShow,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverIsIhow != null" >
+        receiver_is_ihow = #{receiverIsIhow,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where msg_id = #{msgId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="top.dbon.blackandwhite.domain.Message" >
+    update message
+    set sender_id = #{senderId,jdbcType=VARCHAR},
+      receiver_id = #{receiverId,jdbcType=VARCHAR},
+      sender_nickname = #{senderNickname,jdbcType=VARCHAR},
+      receiver_nickname = #{receiverNickname,jdbcType=VARCHAR},
+      msg_content = #{msgContent,jdbcType=VARCHAR},
+      send_time = #{sendTime,jdbcType=DATE},
+      receive_time = #{receiveTime,jdbcType=DATE},
+      send_status = #{sendStatus,jdbcType=VARCHAR},
+      receive_status = #{receiveStatus,jdbcType=VARCHAR},
+      sender_is_show = #{senderIsShow,jdbcType=VARCHAR},
+      receiver_is_ihow = #{receiverIsIhow,jdbcType=VARCHAR}
+    where msg_id = #{msgId,jdbcType=VARCHAR}
+  </update>
+</mapper>
