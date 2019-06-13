@@ -5,6 +5,11 @@ import org.springframework.stereotype.Service;
 import top.dbon.blackandwhite.domain.User;
 import top.dbon.blackandwhite.mapper.UserMapper;
 import top.dbon.blackandwhite.service.UserService;
+import top.dbon.blackandwhite.util.UUIDUtils;
+import top.dbon.blackandwhite.util.UsernameUtils;
+
+import java.util.Date;
+
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -18,7 +23,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Integer insertUser(User user) {
-        return userMapper.insertUser(user);
+      user.setUserId(UUIDUtils.getInstance().nextId());
+      user.setCreateTime(new Date());
+      return userMapper.insertUser(user);
     }
 
     @Override
@@ -29,5 +36,29 @@ public class UserServiceImpl implements UserService {
     @Override
     public Integer updateUser(User user) {
         return userMapper.updateUser(user);
+    }
+
+    @Override
+    public User checkLogin(User userLogin) {
+      User user = userMapper.selectByUser(userLogin);
+      return user;
+    }
+
+    @Override
+    public String getUniqueUsername() {
+      String username = UsernameUtils.getNextUsername();
+      while (userMapper.selectByUsername(username)!=null) {
+        username = UsernameUtils.getNextUsername();
+      }
+      return username;
+    }
+
+    @Override
+    public Integer checkNickname(User user) {
+      String nickname = user.getNickname();
+      if (userMapper.selectByNickname(nickname)!=null) {
+        return 1;
+      }
+      return 0;
     }
 }

@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import top.dbon.blackandwhite.domain.Order;
 import top.dbon.blackandwhite.mapper.OrderMapper;
 import top.dbon.blackandwhite.service.OrderService;
+import top.dbon.blackandwhite.util.CodeUtils;
+import top.dbon.blackandwhite.util.UUIDUtils;
 
 public class OrderServiceImpl implements OrderService {
 
@@ -17,7 +19,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Integer insertOrder(Order order) {
-        return orderMapper.insertOrder(order);
+      order.setOrderId(UUIDUtils.getInstance().nextId());
+      order.setCode(CodeUtils.getInstance().nextId());
+      return orderMapper.insertOrder(order);
     }
 
     @Override

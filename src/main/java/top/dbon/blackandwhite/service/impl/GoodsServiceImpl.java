@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import top.dbon.blackandwhite.domain.Goods;
 import top.dbon.blackandwhite.mapper.GoodsMapper;
 import top.dbon.blackandwhite.service.GoodsService;
+import top.dbon.blackandwhite.util.CodeUtils;
+import top.dbon.blackandwhite.util.UUIDUtils;
 
 @Service
 public class GoodsServiceImpl implements GoodsService {
@@ -19,7 +21,9 @@ public class GoodsServiceImpl implements GoodsService {
 
     @Override
     public Integer insertGoods(Goods goods) {
-        return goodsMapper.insertGoods(goods);
+      goods.setGoodsId(UUIDUtils.getInstance().nextId());
+      goods.setCode(CodeUtils.getInstance().nextId());
+      return goodsMapper.insertGoods(goods);
     }
 
     @Override

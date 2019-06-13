@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import top.dbon.blackandwhite.domain.Message;
 import top.dbon.blackandwhite.mapper.MessageMapper;
 import top.dbon.blackandwhite.service.MsgService;
+import top.dbon.blackandwhite.util.UUIDUtils;
 
 @Service
 public class MsgServiceImpl implements MsgService {
@@ -19,7 +20,8 @@ public class MsgServiceImpl implements MsgService {
 
     @Override
     public Integer insertMessage(Message msg) {
-        return messageMapper.insertMessage(msg);
+      msg.setMsgId(UUIDUtils.getInstance().nextId());
+      return messageMapper.insertMessage(msg);
     }
 
     @Override

@@ -29,17 +29,34 @@
 
   <sql id="selectUserVo" >
     SELECT
-    user_id, nickname, username, password, school, gender, create_time, update_time, 
+    user_id, nickname, username, password, school, gender, create_time, update_time,
     create_by, update_by, submit_audit, audit_status, avatar, `name`, stu_id, idcard_img,
     idcard_cover_img, phone, email, auth_code, role_set, is_delete, login_time
     FROM user
   </sql>
 
   <select id="selectByUserId" resultMap="userResult" parameterType="String" >
-    select 
     <include refid="selectUserVo" />
-    from user
     where user_id = #{userId}
+    AND is_delete = "0"
+  </select>
+
+  <select id="selectByUsername" resultMap="userResult" parameterType="String" >
+    <include refid="selectUserVo" />
+    where username = #{username}
+    AND is_delete = "0"
+  </select>
+
+  <select id="selectByNickname" resultMap="userResult" parameterType="String" >
+    <include refid="selectUserVo" />
+    where nickname = #{nickname}
+    AND is_delete = "0"
+  </select>
+
+  <select id="selectByUser" resultMap="userResult" parameterType="User" >
+    <include refid="selectUserVo" />
+    where username = #{username}
+    AND password = #{password}
     AND is_delete = "0"
   </select>
 

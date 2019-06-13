@@ -26,9 +26,7 @@
   </sql>
 
   <select id="selectByGoodsId" resultMap="goodsResult" parameterType="String" >
-    select 
     <include refid="selectGoodsVo" />
-    from goods
     where goods_id = #{goodsId}
     AND is_delete = "0"
   </select>

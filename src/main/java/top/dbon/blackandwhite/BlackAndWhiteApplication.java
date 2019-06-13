@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @MapperScan("top.dbon.blackandwhite.mapper")
-@ComponentScan("top.dbon.blackandwhite.controller")
+@ComponentScan("top.dbon.blackandwhite.controller, top.dbon.blackandwhite.service")
 public class BlackAndWhiteApplication {
 
 	public static void main(String[] args) {

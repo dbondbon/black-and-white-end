@@ -18,15 +18,13 @@
 
   <sql id="selectMsgVo" >
     SELECT
-    msg_id, sender_id, receiver_id, sender_nickname, receiver_nickname, msg_content, 
+    msg_id, sender_id, receiver_id, sender_nickname, receiver_nickname, msg_content,
     send_time, receive_time, send_status, receive_status, sender_is_show, receiver_is_show
     FROM message
   </sql>
 
   <select id="selectByMsgId" resultMap="msgResult" parameterType="String" >
-    select 
     <include refid="selectMsgVo" />
-    from message
     where msg_id = #{msgId}
   </select>
 

@@ -25,9 +25,30 @@ public interface UserMapper {
     User selectByUserId(String userId);
 
     /**
+     * 根据登录信息查找用户
+     * @param user
+     * @return
+     */
+    User selectByUser(User user);
+
+    /**
      * 更新用户
      * @param user
      * @return
      */
     Integer updateUser(User user);
+
+    /**
+     * 根据用户名查找用户
+     * @param username
+     * @return
+     */
+    User selectByUsername(String username);
+
+    /**
+     * 根据昵称查找用户
+     * @param nickname
+     * @return
+     */
+    User selectByNickname(String nickname);
 }

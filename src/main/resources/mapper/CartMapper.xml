@@ -13,9 +13,7 @@
   </sql>
 
   <select id="selectByUserId" resultMap="cartResult" parameterType="String" >
-    select 
     <include refid="selectCartVo" />
-    from cart
     where user_id = #{userId}
   </select>
 

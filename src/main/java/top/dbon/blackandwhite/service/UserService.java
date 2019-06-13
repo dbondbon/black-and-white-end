@@ -30,4 +30,25 @@ public interface UserService {
      * @return
      */
     Integer updateUser(User user);
+
+    /**
+     * 检查用户登录
+     * @param user
+     * @return
+     */
+    User checkLogin(User user);
+
+    /**
+     * 生成唯一用户名
+     * @return
+     */
+    String getUniqueUsername();
+
+    /**
+     * 检查昵称是否重复
+     * @return
+     */
+    Integer checkNickname(User user);
+
+
 }

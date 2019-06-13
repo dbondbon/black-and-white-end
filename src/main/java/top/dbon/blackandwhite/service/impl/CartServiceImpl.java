@@ -16,7 +16,7 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public Integer insertCart(Cart cart) {
-        return cartMapper.insertCart(cart);
+      return cartMapper.insertCart(cart);
     }
 
     @Override
