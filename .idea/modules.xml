@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/black-and-white.iml" filepath="$PROJECT_DIR$/.idea/black-and-white.iml" />
+      <module fileurl="file://$PROJECT_DIR$/black-and-white-end/black-and-white.iml" filepath="$PROJECT_DIR$/black-and-white-end/black-and-white.iml" />
     </modules>
   </component>
 </project>
