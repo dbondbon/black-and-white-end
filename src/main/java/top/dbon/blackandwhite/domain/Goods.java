@@ -39,5 +39,9 @@ public class Goods {
     private String updateBy;
     /** 是否删除（0未删除 1 已删除） */
     private String isDelete;
+    /** 出版社 */
+    private String publisher;
+    /** 作者 */
+    private String author;
 
 }

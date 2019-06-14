@@ -34,6 +34,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public String selectNickname(User user) {
+      return userMapper.selectByUserId(user.getUserId()).getNickname();
+    }
+
+    @Override
     public Integer updateUser(User user) {
         return userMapper.updateUser(user);
     }

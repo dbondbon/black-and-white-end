@@ -2,6 +2,9 @@ package top.dbon.blackandwhite.mapper;
 
 import top.dbon.blackandwhite.domain.Goods;
 
+import java.util.HashMap;
+import java.util.List;
+
 public interface GoodsMapper {
     /**
      * 根据商品ID删除商品
@@ -30,4 +33,11 @@ public interface GoodsMapper {
      * @return
      */
     Integer updateGoods(Goods goods);
+
+    /**
+     * 根据用户id和商品名查找商品列表
+     * @param goods
+     * @return 结果集
+     */
+    List<Goods> selectListByUserIDAndGoodsName(Goods goods);
 }

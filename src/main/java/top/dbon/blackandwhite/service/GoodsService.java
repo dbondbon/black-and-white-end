@@ -2,6 +2,8 @@ package top.dbon.blackandwhite.service;
 
 import top.dbon.blackandwhite.domain.Goods;
 
+import java.util.List;
+
 public interface GoodsService {
     /**
      * 根据商品ID删除商品
@@ -30,4 +32,11 @@ public interface GoodsService {
      * @return
      */
     Integer updateGoods(Goods goods);
+
+    /**
+     * 根据用户id和商品名查找商品列表
+     * @param goods
+     * @return 结果集
+     */
+    List<Goods> selectListByUserIDAndGoodsName(Goods goods);
 }

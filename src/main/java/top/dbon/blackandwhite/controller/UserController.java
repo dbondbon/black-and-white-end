@@ -33,7 +33,7 @@ public class UserController {
 
   @PostMapping("/register")
   @ResponseBody
-  public Map<String, Object> Register(@RequestBody User userRegister) {
+  public Map<String, Object> register(@RequestBody User userRegister) {
     HashMap<String, Object> map = new HashMap<>();
     if (userService.checkNickname(userRegister) > 0) {
       map.put("code", "1");
@@ -52,6 +52,15 @@ public class UserController {
     HashMap<String, Object> map = new HashMap<>();
     map.put("code","0");
     map.put("username",userrname);
+    return map;
+  }
+
+  @PostMapping("/getNickname")
+  @ResponseBody
+  public Map<String, Object> getNickname(@RequestBody User user) {
+    HashMap<String, Object> map = new HashMap<>();
+    map.put("code","0");
+    map.put("nickname",userService.selectNickname(user));
     return map;
   }
 

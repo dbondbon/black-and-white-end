@@ -8,6 +8,9 @@ import top.dbon.blackandwhite.service.GoodsService;
 import top.dbon.blackandwhite.util.CodeUtils;
 import top.dbon.blackandwhite.util.UUIDUtils;
 
+import java.util.Date;
+import java.util.List;
+
 @Service
 public class GoodsServiceImpl implements GoodsService {
 
@@ -23,6 +26,7 @@ public class GoodsServiceImpl implements GoodsService {
     public Integer insertGoods(Goods goods) {
       goods.setGoodsId(UUIDUtils.getInstance().nextId());
       goods.setCode(CodeUtils.getInstance().nextId());
+      goods.setCreateTime(new Date());
       return goodsMapper.insertGoods(goods);
     }
 
@@ -34,5 +38,10 @@ public class GoodsServiceImpl implements GoodsService {
     @Override
     public Integer updateGoods(Goods goods) {
         return goodsMapper.updateGoods(goods);
+    }
+
+    @Override
+    public List<Goods> selectListByUserIDAndGoodsName(Goods goods) {
+      return goodsMapper.selectListByUserIDAndGoodsName(goods);
     }
 }

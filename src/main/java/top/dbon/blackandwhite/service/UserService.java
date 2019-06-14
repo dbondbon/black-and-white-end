@@ -25,6 +25,13 @@ public interface UserService {
     User selectByUserId(String userId);
 
     /**
+     * 查找用户昵称
+     * @param user
+     * @return 昵称
+     */
+    String selectNickname(User user);
+
+    /**
      * 更新用户
      * @param user
      * @return

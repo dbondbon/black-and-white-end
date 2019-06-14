@@ -16,18 +16,27 @@
     <result column="create_by" property="createBy"  />
     <result column="update_by" property="updateBy"  />
     <result column="is_delete" property="isDelete" />
+    <result column="author" property="author" />
+    <result column="publisher" property="publisher" />
   </resultMap>
 
   <sql id="selectGoodsVo" >
     SELECT
     goods_id, code, `name`, `count`, price, description, img_id, goods_status, user_id, create_time,
-    update_time, create_by, update_by, is_delete
+    update_time, create_by, update_by, is_delete, author, publisher
     FROM goods
   </sql>
 
   <select id="selectByGoodsId" resultMap="goodsResult" parameterType="String" >
     <include refid="selectGoodsVo" />
     where goods_id = #{goodsId}
+    AND is_delete = "0"
+  </select>
+
+  <select id="selectListByUserIDAndGoodsName" resultMap="goodsResult" parameterType="Goods" >
+    <include refid="selectGoodsVo" />
+    where name like CONCAT('%',#{name},'%')
+    AND user_id != #{userId}
     AND is_delete = "0"
   </select>
 
@@ -82,6 +91,12 @@
       <if test="isDelete != null and isDelete != '' " >
         is_delete,
       </if>
+      <if test="author != null and author != '' " >
+        author,
+      </if>
+      <if test="publisher != null and publisher != '' " >
+        publisher,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="goodsId != null and goodsId != '' " >
@@ -120,11 +135,17 @@
       <if test="createBy != null and createBy != ''" >
         #{createBy},
       </if>
-      <if test="updateBy != null updateBy != ''" >
+      <if test="updateBy != null and updateBy != ''" >
         #{updateBy},
       </if>
-      <if test="isDelete != null isDelete != ''" >
+      <if test="isDelete != null and isDelete != ''" >
         #{isDelete},
+      </if>
+      <if test="author != null and author != '' " >
+        #{author},
+      </if>
+      <if test="publisher != null and publisher != '' " >
+        #{publisher},
       </if>
     </trim>
   </insert>
@@ -170,6 +191,12 @@
       </if>
       <if test="isDelete != null and isDelete != '' " >
         is_delete = #{isDelete},
+      </if>
+      <if test="author != null and author != '' " >
+        author = #{author},
+      </if>
+      <if test="publisher != null and publisher != '' " >
+        publisher = #{publisher},
       </if>
     </set>
     where goods_id = #{goodsId}
