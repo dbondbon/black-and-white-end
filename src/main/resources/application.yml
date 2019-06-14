@@ -13,8 +13,8 @@ spring:
           driver-class-name: com.mysql.cj.jdbc.Driver
           #基本属性
           url: jdbc:mysql://localhost:3306/black_and_white?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT
-          username: root
-          password: 888888
+          username: ******
+          password: ******
           #配置初始化大小/最小/最大
           initial-size: 1
           min-idle: 1
