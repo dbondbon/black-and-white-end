@@ -3,9 +3,11 @@ package top.dbon.blackandwhite.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import top.dbon.blackandwhite.domain.Cart;
+import top.dbon.blackandwhite.domain.User;
 import top.dbon.blackandwhite.mapper.CartMapper;
 import top.dbon.blackandwhite.service.CartService;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -16,12 +18,17 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public Integer insertCart(Cart cart) {
-      return cartMapper.insertCart(cart);
+        if(cartMapper.selectCart(cart) == null) {
+            cart.setUpdateTime(new Date());
+            return cartMapper.insertCart(cart);
+        } else {
+            return 0;
+        }
     }
 
     @Override
-    public List<Cart> selectByUserId(String userId) {
-        return cartMapper.selectByUserId(userId);
+    public List<Cart> selectByUser(User user) {
+        return cartMapper.selectByUser(user);
     }
 
     @Override

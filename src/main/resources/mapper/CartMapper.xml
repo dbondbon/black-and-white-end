@@ -12,9 +12,15 @@
     SELECT user_id, goods_id, update_time, `count` FROM cart
   </sql>
 
-  <select id="selectByUserId" resultMap="cartResult" parameterType="String" >
+  <select id="selectByUser" resultMap="cartResult" parameterType="String" >
     <include refid="selectCartVo" />
     where user_id = #{userId}
+  </select>
+
+  <select id="selectCart" resultMap="cartResult" parameterType="Cart" >
+    <include refid="selectCartVo" />
+    where user_id = #{userId}
+    AND goods_id = #{goodsId}
   </select>
 
   <delete id="deleteByCart" parameterType="Cart" >
@@ -41,16 +47,16 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="userId != null and userId != '' " >
-        #{userId,jdbcType=VARCHAR},
+        #{userId},
       </if>
       <if test="goodsId != null and goodsId != '' " >
-        #{goodsId,jdbcType=VARCHAR},
+        #{goodsId},
       </if>
       <if test="updateTime != null" >
-        #{updateTime,jdbcType=DATE},
+        #{updateTime},
       </if>
       <if test="count != null" >
-        #{count,jdbcType=INTEGER},
+        #{count},
       </if>
     </trim>
   </insert>
