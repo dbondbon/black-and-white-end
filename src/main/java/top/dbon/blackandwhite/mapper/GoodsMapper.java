@@ -1,6 +1,7 @@
 package top.dbon.blackandwhite.mapper;
 
 import top.dbon.blackandwhite.domain.Goods;
+import top.dbon.blackandwhite.domain.User;
 
 import java.util.HashMap;
 import java.util.List;
@@ -28,6 +29,13 @@ public interface GoodsMapper {
     Goods selectByGoodsId(String goodsId);
 
     /**
+     * 根据商品ID列表查找商品
+     * @param goodsIdList
+     * @return 结果集
+     */
+    List<Goods> selectByGoodsIdList(List<String> goodsIdList);
+
+    /**
      * 更新商品信息
      * @param goods
      * @return
@@ -40,4 +48,11 @@ public interface GoodsMapper {
      * @return 结果集
      */
     List<Goods> selectListByUserIDAndGoodsName(Goods goods);
+
+    /**
+     * 根据用户查找购物车商品列表
+     * @param user
+     * @return 结果集
+     */
+    List<Goods> selectCartListByUser(User user);
 }

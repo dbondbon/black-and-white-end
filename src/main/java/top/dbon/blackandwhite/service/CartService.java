@@ -3,6 +3,7 @@ package top.dbon.blackandwhite.service;
 import top.dbon.blackandwhite.domain.Cart;
 import top.dbon.blackandwhite.domain.User;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public interface CartService {
@@ -33,4 +34,11 @@ public interface CartService {
      * @return 结果
      */
     Integer deleteByCart(Cart cart);
+
+    /**
+     * 根据选中商品Id列表查询总价格
+     * @param goodsIdlist
+     * @return 结果
+     */
+    BigDecimal getTotalPrice(List<String> goodsIdlist);
 }

@@ -33,11 +33,29 @@
     AND is_delete = "0"
   </select>
 
+  <select id="selectByGoodsIdList" resultMap="goodsResult">
+    <include refid="selectGoodsVo" />
+    where goods_id IN
+      <foreach collection="list" item="goodsId" open="(" close=")" separator=",">
+        #{goodsId}
+      </foreach>
+    AND is_delete = "0"
+  </select>
+
   <select id="selectListByUserIDAndGoodsName" resultMap="goodsResult" parameterType="Goods" >
     <include refid="selectGoodsVo" />
     where name like CONCAT('%',#{name},'%')
     AND user_id != #{userId}
     AND is_delete = "0"
+  </select>
+
+  <select id="selectCartListByUser" resultMap="goodsResult" parameterType="User" >
+    <include refid="selectGoodsVo" />
+    where  goods_id IN (
+              SELECT goods_id FROM cart WHERE user_id = #{userId}
+            )
+    AND is_delete = "0"
+    ORDER BY create_time
   </select>
 
   <delete id="deleteByGoodsId" parameterType="String" >

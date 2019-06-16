@@ -3,6 +3,7 @@ package top.dbon.blackandwhite.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import top.dbon.blackandwhite.domain.Goods;
+import top.dbon.blackandwhite.domain.User;
 import top.dbon.blackandwhite.mapper.GoodsMapper;
 import top.dbon.blackandwhite.service.GoodsService;
 import top.dbon.blackandwhite.util.CodeUtils;
@@ -43,5 +44,10 @@ public class GoodsServiceImpl implements GoodsService {
     @Override
     public List<Goods> selectListByUserIDAndGoodsName(Goods goods) {
       return goodsMapper.selectListByUserIDAndGoodsName(goods);
+    }
+
+    @Override
+    public List<Goods> selectListByUser(User user) {
+        return goodsMapper.selectCartListByUser(user);
     }
 }

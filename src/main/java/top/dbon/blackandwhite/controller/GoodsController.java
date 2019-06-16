@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import top.dbon.blackandwhite.domain.Goods;
+import top.dbon.blackandwhite.domain.User;
 import top.dbon.blackandwhite.service.GoodsService;
 
 import java.util.HashMap;
@@ -33,6 +34,16 @@ public class GoodsController {
   @ResponseBody
   public Map<String, Object> defaultGoods(@RequestBody Goods goods) {
     List<Goods> list = goodsService.selectListByUserIDAndGoodsName(goods);
+    HashMap<String, Object> map = new HashMap<>();
+    map.put("code", "0");
+    map.put("list",list);
+    return map;
+  }
+
+  @PostMapping("/findCartGoods")
+  @ResponseBody
+  public Map<String, Object> cartGoods(@RequestBody User user) {
+    List<Goods> list = goodsService.selectListByUser(user);
     HashMap<String, Object> map = new HashMap<>();
     map.put("code", "0");
     map.put("list",list);

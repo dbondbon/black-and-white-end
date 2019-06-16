@@ -1,6 +1,7 @@
 package top.dbon.blackandwhite.service;
 
 import top.dbon.blackandwhite.domain.Goods;
+import top.dbon.blackandwhite.domain.User;
 
 import java.util.List;
 
@@ -39,4 +40,11 @@ public interface GoodsService {
      * @return 结果集
      */
     List<Goods> selectListByUserIDAndGoodsName(Goods goods);
+
+    /**
+     * 根据用户查找购物车商品列表
+     * @param user
+     * @return 结果集
+     */
+    List<Goods> selectListByUser(User user);
 }
