@@ -32,12 +32,12 @@
   </select>
 
   <delete id="deleteByOrderId" parameterType="String" >
-    delete from order
+    delete from `order`
     where order_id = #{orderId}
   </delete>
 
   <insert id="insertOrder" parameterType="Order" >
-    insert into order
+    insert into `order`
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="orderId != null" >
         order_id,
@@ -84,52 +84,52 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="orderId != null" >
-        #{orderId,jdbcType=VARCHAR},
+        #{orderId},
       </if>
       <if test="code != null" >
-        #{code,jdbcType=VARCHAR},
+        #{code},
       </if>
       <if test="goodsId != null" >
-        #{goodsId,jdbcType=VARCHAR},
+        #{goodsId},
       </if>
       <if test="sellerId != null" >
-        #{sellerId,jdbcType=VARCHAR},
+        #{sellerId},
       </if>
       <if test="buyerId != null" >
-        #{buyerId,jdbcType=VARCHAR},
+        #{buyerId},
       </if>
       <if test="createTime != null" >
-        #{createTime,jdbcType=DATE},
+        #{createTime},
       </if>
       <if test="updateTime != null" >
-        #{updateTime,jdbcType=DATE},
+        #{updateTime},
       </if>
       <if test="createBy != null" >
-        #{createBy,jdbcType=VARCHAR},
+        #{createBy},
       </if>
       <if test="updateBy != null" >
-        #{updateBy,jdbcType=VARCHAR},
+        #{updateBy},
       </if>
       <if test="tradingStatus != null" >
-        #{tradingStatus,jdbcType=VARCHAR},
+        #{tradingStatus},
       </if>
       <if test="sellerIsShow != null" >
-        #{sellerIsShow,jdbcType=VARCHAR},
+        #{sellerIsShow},
       </if>
       <if test="buyerIsShow != null" >
-        #{buyerIsShow,jdbcType=VARCHAR},
+        #{buyerIsShow},
       </if>
       <if test="sellerFailureReasons != null" >
-        #{sellerFailureReasons,jdbcType=VARCHAR},
+        #{sellerFailureReasons},
       </if>
       <if test="buyerFailureReasons != null" >
-        #{buyerFailureReasons,jdbcType=VARCHAR},
+        #{buyerFailureReasons},
       </if>
     </trim>
   </insert>
 
   <update id="updateOrder" parameterType="Order" >
-    update order
+    update `order`
     <set >
       <if test="code != null" >
         code = #{code},

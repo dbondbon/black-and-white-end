@@ -1,6 +1,7 @@
 package top.dbon.blackandwhite.service;
 
 import top.dbon.blackandwhite.domain.Order;
+import top.dbon.blackandwhite.domain.OrderVo;
 
 public interface OrderService {
     /**
@@ -16,6 +17,13 @@ public interface OrderService {
      * @return
      */
     Integer insertOrder(Order order);
+
+    /**
+     * 新增批量订单
+     * @param orderVo
+     * @return
+     */
+    Integer insertOrderList(OrderVo orderVo);
 
     /**
      * 查找订单
