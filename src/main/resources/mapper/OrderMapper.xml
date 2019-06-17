@@ -23,12 +23,22 @@
     order_id, code, goods_id, seller_id, buyer_id, create_time, update_time, create_by,
     update_by, trading_status, seller_is_show, buyer_is_show, seller_failure_reasons,
     buyer_failure_reasons
-    FROM order
+    FROM `order`
   </sql>
 
   <select id="selectByOrderId" resultMap="orderResult" parameterType="String" >
     <include refid="selectOrderVo" />
     where order_id = #{orderId}
+  </select>
+
+  <select id="selectBuyListByUser" resultMap="orderResult" parameterType="User" >
+    <include refid="selectOrderVo" />
+    where buyer_id = #{userId}
+  </select>
+
+  <select id="selectSellListByUser" resultMap="orderResult" parameterType="User" >
+    <include refid="selectOrderVo" />
+    where seller_id = #{userId}
   </select>
 
   <delete id="deleteByOrderId" parameterType="String" >

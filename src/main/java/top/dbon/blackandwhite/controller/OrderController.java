@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import top.dbon.blackandwhite.domain.Cart;
 import top.dbon.blackandwhite.domain.Order;
 import top.dbon.blackandwhite.domain.OrderVo;
+import top.dbon.blackandwhite.domain.User;
 import top.dbon.blackandwhite.service.CartService;
 import top.dbon.blackandwhite.service.OrderService;
 
@@ -42,6 +43,34 @@ public class OrderController {
         orderService.insertOrderList(orderVo);
         HashMap<String, Object> map = new HashMap<>();
         map.put("code", "0");
+        return map;
+    }
+
+    @PostMapping("/buyList")
+    @ResponseBody
+    public Map<String, Object> buyList(@RequestBody User user) {
+        HashMap<String, Object> map = new HashMap<>();
+        List<Order> list = orderService.selectBuyListByUser(user);
+        if(list == null) {
+            map.put("code", "1");
+        } else {
+            map.put("code", "0");
+            map.put("orderList",list);
+        }
+        return map;
+    }
+
+    @PostMapping("/sellList")
+    @ResponseBody
+    public Map<String, Object> sellList(@RequestBody User user) {
+        HashMap<String, Object> map = new HashMap<>();
+        List<Order> list = orderService.selectSellListByUser(user);
+        if(list == null) {
+            map.put("code", "1");
+        } else {
+            map.put("code", "0");
+            map.put("orderList",list);
+        }
         return map;
     }
 }

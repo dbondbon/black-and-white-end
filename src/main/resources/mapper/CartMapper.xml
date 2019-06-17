@@ -25,8 +25,7 @@
 
   <delete id="deleteByCart" parameterType="Cart" >
     delete from cart
-    where user_id = #{userId}
-      and goods_id = #{goodsId}
+    where goods_id = #{goodsId}
   </delete>
 
   <insert id="insertCart" parameterType="Cart" >

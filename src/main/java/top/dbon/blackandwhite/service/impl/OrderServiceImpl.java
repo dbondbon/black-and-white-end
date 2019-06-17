@@ -2,10 +2,7 @@ package top.dbon.blackandwhite.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import top.dbon.blackandwhite.domain.Cart;
-import top.dbon.blackandwhite.domain.Goods;
-import top.dbon.blackandwhite.domain.Order;
-import top.dbon.blackandwhite.domain.OrderVo;
+import top.dbon.blackandwhite.domain.*;
 import top.dbon.blackandwhite.mapper.CartMapper;
 import top.dbon.blackandwhite.mapper.GoodsMapper;
 import top.dbon.blackandwhite.mapper.OrderMapper;
@@ -14,6 +11,8 @@ import top.dbon.blackandwhite.util.CodeUtils;
 import top.dbon.blackandwhite.util.UUIDUtils;
 
 import java.util.Date;
+import java.util.List;
+
 @Service
 public class OrderServiceImpl implements OrderService {
 
@@ -38,7 +37,7 @@ public class OrderServiceImpl implements OrderService {
       order.setCode(CodeUtils.getInstance().nextId());
       order.setCreateTime(new Date());
       orderMapper.insertOrder(order);
-      //2、删除购物车信息
+      //2、删除自己和他人的购物车信息
       Cart cart = new Cart();
       cart.setUserId(order.getBuyerId());
       cart.setGoodsId(order.getGoodsId());
@@ -48,6 +47,7 @@ public class OrderServiceImpl implements OrderService {
       goods.setGoodsId(order.getGoodsId());
       goods.setIsDelete("1");
       goodsMapper.updateGoods(goods);
+
 
       return 0;
     }
@@ -81,6 +81,16 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public Order selectByOrderId(String orderId) {
         return orderMapper.selectByOrderId(orderId);
+    }
+
+    @Override
+    public List<Order> selectBuyListByUser(User user) {
+        return orderMapper.selectBuyListByUser(user);
+    }
+
+    @Override
+    public List<Order> selectSellListByUser(User user) {
+        return orderMapper.selectSellListByUser(user);
     }
 
     @Override
