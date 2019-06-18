@@ -58,6 +58,13 @@
     ORDER BY create_time
   </select>
 
+  <select id="selectOnSaleListByUser" resultMap="goodsResult" parameterType="User" >
+    <include refid="selectGoodsVo" />
+    where  user_id = #{userId}
+    AND is_delete = "0"
+    ORDER BY create_time
+  </select>
+
   <delete id="deleteByGoodsId" parameterType="String" >
     UPDATE goods
     SET is_delete = "1"

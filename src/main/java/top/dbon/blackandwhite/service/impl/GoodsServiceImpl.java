@@ -50,4 +50,9 @@ public class GoodsServiceImpl implements GoodsService {
     public List<Goods> selectListByUser(User user) {
         return goodsMapper.selectCartListByUser(user);
     }
+
+    @Override
+    public List<Goods> selectOnSaleListByUser(User user) {
+        return goodsMapper.selectOnSaleListByUser(user);
+    }
 }

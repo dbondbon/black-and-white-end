@@ -50,4 +50,13 @@ public class GoodsController {
     return map;
   }
 
+  @PostMapping("/deleteGoods")
+  @ResponseBody
+  public Map<String, Object> deleteGoods(@RequestBody String goodsId) {
+    goodsService.deleteByGoodsId(goodsId);
+    HashMap<String, Object> map = new HashMap<>();
+    map.put("code", "0");
+    return map;
+  }
+
 }

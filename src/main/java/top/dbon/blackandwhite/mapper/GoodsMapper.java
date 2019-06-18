@@ -55,4 +55,12 @@ public interface GoodsMapper {
      * @return 结果集
      */
     List<Goods> selectCartListByUser(User user);
+
+    /**
+     * 查找用户所有待售订单
+     * @param user
+     * @return 结果集
+     */
+    List<Goods> selectOnSaleListByUser(User user);
+
 }

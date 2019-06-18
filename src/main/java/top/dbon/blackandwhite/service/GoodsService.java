@@ -47,4 +47,11 @@ public interface GoodsService {
      * @return 结果集
      */
     List<Goods> selectListByUser(User user);
+
+    /**
+     * 根据用户查找待售商品列表
+     * @param user
+     * @return 结果集
+     */
+    List<Goods> selectOnSaleListByUser(User user);
 }

@@ -12,7 +12,7 @@ public interface MsgService {
 
     /**
      * 新增消息
-     * @param record
+     * @param msg
      * @return
      */
     Integer insertMessage(Message msg);
@@ -26,7 +26,7 @@ public interface MsgService {
 
     /**
      * 更新信息
-     * @param message
+     * @param msg
      * @return
      */
     Integer updateMessage(Message msg);
