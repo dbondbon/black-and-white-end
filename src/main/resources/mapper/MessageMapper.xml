@@ -13,7 +13,7 @@
     <result column="send_status" property="sendStatus" />
     <result column="receive_status" property="receiveStatus" />
     <result column="sender_is_show" property="senderIsShow" />
-    <result column="receiver_is_Show" property="receiverIsShow"  />
+    <result column="receiver_is_show" property="receiverIsShow"  />
   </resultMap>
 
   <sql id="selectMsgVo" >
@@ -26,6 +26,24 @@
   <select id="selectByMsgId" resultMap="msgResult" parameterType="String" >
     <include refid="selectMsgVo" />
     where msg_id = #{msgId}
+  </select>
+
+  <select id="selectListByUser" resultMap="msgResult" parameterType="User" >
+    (<include refid="selectMsgVo" />
+    where receiver_id = #{userId}
+    GROUP BY sender_nickname)
+    UNION
+    (<include refid="selectMsgVo" />
+    where sender_id = #{userId}
+    GROUP BY receiver_nickname)
+    ORDER BY send_time
+  </select>
+
+  <select id="selectMsgVo" resultMap="msgResult" parameterType="MsgVo" >
+    (<include refid="selectMsgVo" />
+    WHERE ((receiver_id = #{userId} OR receiver_id = #{otherId}))
+    AND (sender_id = #{userId} OR sender_id = #{otherId}))
+    ORDER BY send_time;
   </select>
 
   <delete id="deleteByMsgId" parameterType="String" >

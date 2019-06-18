@@ -11,9 +11,7 @@ import java.util.List;
 public class CartVo {
     private static final long serialVersionUID = 1L;
 
-    /**
-     * 选定的商品id列表
-     */
+    /** 选定的商品id列表 */
     private List<String> goodsIdList;
 
 }
