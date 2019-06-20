@@ -1,0 +1,9 @@
+2019-06-20 22:45:33.616  INFO 2504 --- [main] t.d.b.BlackAndWhiteApplication           : Starting BlackAndWhiteApplication on DESKTOP-BKN43FU with PID 2504 (G:\black-and-white\black-and-white-end\target\classes started by lenovo in G:\black-and-white\black-and-white-end)
+2019-06-20 22:45:33.620 DEBUG 2504 --- [main] t.d.b.BlackAndWhiteApplication           : Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+2019-06-20 22:45:33.622  INFO 2504 --- [main] t.d.b.BlackAndWhiteApplication           : No active profile set, falling back to default profiles: default
+2019-06-20 22:45:34.987  INFO 2504 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-06-20 22:45:34.987  INFO 2504 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-06-20 22:45:35.077  INFO 2504 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-06-20 22:45:35.167  INFO 2504 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2019-06-20 22:45:35.477  INFO 2504 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-06-20 22:45:36.077  INFO 2504 --- [main] t.d.b.BlackAndWhiteApplication           : Started BlackAndWhiteApplication in 3.059 seconds (JVM running for 3.869)
