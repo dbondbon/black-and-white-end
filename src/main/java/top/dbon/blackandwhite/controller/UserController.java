@@ -1,5 +1,7 @@
 package top.dbon.blackandwhite.controller;
 
+import ch.qos.logback.classic.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -8,7 +10,6 @@ import top.dbon.blackandwhite.domain.User;
 import top.dbon.blackandwhite.service.GoodsService;
 import top.dbon.blackandwhite.service.UserService;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,6 +17,8 @@ import java.util.Map;
 @Controller
 @RequestMapping("/user")
 public class UserController {
+
+  private Logger logger = (Logger) LoggerFactory.getLogger(this.getClass());
 
   @Autowired
   private UserService userService;
@@ -33,6 +36,7 @@ public class UserController {
     } else {
       map.put("code", "0");
       map.put("user", user);
+      logger.info("昵称为：【"+user.getNickname()+"】的用户登录成功，账号为："+user.getUsername());
     }
     return map;
   }
@@ -46,6 +50,7 @@ public class UserController {
       return map;
     } else {
       userService.insertUser(userRegister);
+      logger.info("昵称为：【"+userRegister.getNickname()+"】的用户注册账号成功，账号为："+userRegister.getUsername());
       map.put("code", "0");
       return map;
     }
@@ -54,7 +59,6 @@ public class UserController {
   @PostMapping("/getUsername")
   @ResponseBody
   public Map<String, Object> getUsername() {
-
     String userrname = userService.getUniqueUsername();
     HashMap<String, Object> map = new HashMap<>();
     map.put("code","0");
