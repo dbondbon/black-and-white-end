@@ -45,13 +45,6 @@ pagehelper:
     params: count=countSql
     returnPageInfo: check
 
-#日志配置
-logging:
-  file: my.log
-  level:
-    top.dbon: debug
-    org.springframework: warn
-    org.spring.springboot.dao: debug
 
 
 

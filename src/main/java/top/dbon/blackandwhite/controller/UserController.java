@@ -54,6 +54,7 @@ public class UserController {
   @PostMapping("/getUsername")
   @ResponseBody
   public Map<String, Object> getUsername() {
+
     String userrname = userService.getUniqueUsername();
     HashMap<String, Object> map = new HashMap<>();
     map.put("code","0");
