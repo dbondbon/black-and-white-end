@@ -47,7 +47,8 @@ public class MsgServiceImpl implements MsgService {
         //去重
         for (int i = 0;i<list.size();i++) {
             for (int j = 0;j<list.size()-1;j++) {
-                if((list.get(i).getSenderId()).equals(list.get(j).getReceiverId()) && (list.get(i).getReceiverId().equals(list.get(j).getSenderId()))) {
+                if((list.get(i).getSenderId()).equals(list.get(j).getReceiverId()) &&
+                        (list.get(i).getReceiverId().equals(list.get(j).getSenderId()))) {
                     list.remove(j);
                 }
             }
