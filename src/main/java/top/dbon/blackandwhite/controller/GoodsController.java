@@ -12,7 +12,6 @@ import top.dbon.blackandwhite.domain.User;
 import top.dbon.blackandwhite.service.GoodsService;
 
 import java.util.List;
-import java.util.Map;
 
 @Controller
 @RequestMapping("/goods")
@@ -23,28 +22,28 @@ public class GoodsController {
 
   @PostMapping("/published")
   @ResponseBody
-  public Map<String, Object> published(@RequestBody Goods goods) {
+  public AjaxResult published(@RequestBody Goods goods) {
     goodsService.insertGoods(goods);
     return AjaxResult.success();
   }
 
   @PostMapping("/findGoods")
   @ResponseBody
-  public Map<String, Object> defaultGoods(@RequestBody Goods goods) {
+  public AjaxResult defaultGoods(@RequestBody Goods goods) {
     List<Goods> list = goodsService.selectListByUserIDAndGoodsName(goods);
     return AjaxResult.success().put("list", list);
   }
 
   @PostMapping("/findCartGoods")
   @ResponseBody
-  public Map<String, Object> cartGoods(@RequestBody User user) {
+  public AjaxResult cartGoods(@RequestBody User user) {
     List<Goods> list = goodsService.selectListByUser(user);
     return AjaxResult.success().put("list", list);
   }
 
   @PostMapping("/deleteGoods")
   @ResponseBody
-  public Map<String, Object> deleteGoods(@RequestBody String goodsId) {
+  public AjaxResult deleteGoods(@RequestBody String goodsId) {
     goodsService.deleteByGoodsId(goodsId);
     return AjaxResult.success();
   }

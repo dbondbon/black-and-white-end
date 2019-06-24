@@ -13,7 +13,6 @@ import top.dbon.blackandwhite.domain.User;
 import top.dbon.blackandwhite.service.MsgService;
 
 import java.util.List;
-import java.util.Map;
 
 @Controller
 @RequestMapping("/msg")
@@ -24,14 +23,14 @@ public class MsgController {
 
     @PostMapping("/add")
     @ResponseBody
-    public Map<String, Object> published(@RequestBody Message message) {
+    public AjaxResult published(@RequestBody Message message) {
         msgService.insertMessage(message);
         return AjaxResult.success();
     }
 
     @PostMapping("/getAll")
     @ResponseBody
-    public Map<String, Object> get(@RequestBody User user) {
+    public AjaxResult get(@RequestBody User user) {
         List<Message> list =  msgService.selectListByUser(user);
         if(list == null) {
             return AjaxResult.error();
@@ -42,7 +41,7 @@ public class MsgController {
 
     @PostMapping("/getOne")
     @ResponseBody
-    public Map<String, Object> get(@RequestBody MsgVo msgVo) {
+    public AjaxResult get(@RequestBody MsgVo msgVo) {
         List<Message> list =  msgService.selectMsgVo(msgVo);
         return AjaxResult.success().put("msgList", list);
     }

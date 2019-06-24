@@ -12,7 +12,6 @@ import top.dbon.blackandwhite.service.GoodsService;
 import top.dbon.blackandwhite.service.UserService;
 
 import java.util.List;
-import java.util.Map;
 
 @Controller
 @RequestMapping("/user")
@@ -28,7 +27,7 @@ public class UserController {
 
   @PostMapping("/login")
   @ResponseBody
-  public Map<String, Object> login(@RequestBody User userLogin) {
+  public AjaxResult login(@RequestBody User userLogin) {
     User user = userService.checkLogin(userLogin);
     if(user == null) {
       return AjaxResult.error();
@@ -40,7 +39,7 @@ public class UserController {
 
   @PostMapping("/register")
   @ResponseBody
-  public Map<String, Object> register(@RequestBody User userRegister) {
+  public AjaxResult register(@RequestBody User userRegister) {
     if (userService.checkNickname(userRegister) > 0) {
       return AjaxResult.error();
     } else {
@@ -52,20 +51,20 @@ public class UserController {
 
   @PostMapping("/getUsername")
   @ResponseBody
-  public Map<String, Object> getUsername() {
+  public AjaxResult getUsername() {
     String username = userService.getUniqueUsername();
     return AjaxResult.success().put("username", username);
   }
 
   @PostMapping("/getNickname")
   @ResponseBody
-  public Map<String, Object> getNickname(@RequestBody User user) {
+  public AjaxResult getNickname(@RequestBody User user) {
     return AjaxResult.success().put("nickname",userService.selectNickname(user));
   }
 
   @PostMapping("/onSaleList")
   @ResponseBody
-  public Map<String, Object> onSaleList(@RequestBody User user) {
+  public AjaxResult onSaleList(@RequestBody User user) {
     List<Goods> list = goodsService.selectOnSaleListByUser(user);
     if (list == null || list.size() == 0) {
       return AjaxResult.error();

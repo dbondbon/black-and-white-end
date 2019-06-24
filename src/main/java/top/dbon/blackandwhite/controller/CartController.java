@@ -15,7 +15,6 @@ import top.dbon.blackandwhite.service.CartService;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 @RequestMapping("/cart")
@@ -33,21 +32,21 @@ public class CartController {
 
     @PostMapping("/list")
     @ResponseBody
-    public Map<String, Object> list(@RequestBody User user) {
+    public AjaxResult list(@RequestBody User user) {
         List<Cart> list = cartService.selectByUser(user);
         return AjaxResult.success().put("cartList", list);
     }
 
     @PostMapping("/delete")
     @ResponseBody
-    public Map<String, Object> delete(@RequestBody Cart cart) {
+    public AjaxResult delete(@RequestBody Cart cart) {
         cartService.deleteByCart(cart);
         return AjaxResult.success();
     }
 
     @PostMapping("/price")
     @ResponseBody
-    public Map<String, Object> price(@RequestBody CartVo cartVo) {
+    public AjaxResult price(@RequestBody CartVo cartVo) {
         HashMap<String, Object> map = new HashMap<>();
         BigDecimal totalPrice = cartService.getTotalPrice(cartVo.getGoodsIdList());
         return AjaxResult.success().put("totalPrice", totalPrice);

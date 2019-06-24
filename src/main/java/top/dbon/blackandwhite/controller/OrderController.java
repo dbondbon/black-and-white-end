@@ -14,7 +14,6 @@ import top.dbon.blackandwhite.domain.User;
 import top.dbon.blackandwhite.service.OrderService;
 
 import java.util.List;
-import java.util.Map;
 
 @Controller
 @RequestMapping("/order")
@@ -25,21 +24,21 @@ public class OrderController {
 
     @PostMapping("/add")
     @ResponseBody
-    public Map<String, Object> add(@RequestBody Order order) {
+    public AjaxResult add(@RequestBody Order order) {
         orderService.insertOrder(order);
         return AjaxResult.success();
     }
 
     @PostMapping("/addList")
     @ResponseBody
-    public Map<String, Object> addList(@RequestBody OrderVo orderVo) {
+    public AjaxResult addList(@RequestBody OrderVo orderVo) {
         orderService.insertOrderList(orderVo);
         return AjaxResult.success();
     }
 
     @PostMapping("/buyList")
     @ResponseBody
-    public Map<String, Object> buyList(@RequestBody User user) {
+    public AjaxResult buyList(@RequestBody User user) {
         List<Order> list = orderService.selectBuyListByUser(user);
         if(list == null) {
             return AjaxResult.error();
@@ -50,7 +49,7 @@ public class OrderController {
 
     @PostMapping("/sellList")
     @ResponseBody
-    public Map<String, Object> sellList(@RequestBody User user) {
+    public AjaxResult sellList(@RequestBody User user) {
         List<Order> list = orderService.selectSellListByUser(user);
         if(list == null) {
             return AjaxResult.error();
