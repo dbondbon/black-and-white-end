@@ -51,6 +51,15 @@ public class AjaxResult extends HashMap<String, Object> {
     /**
      * 返回成功消息
      *
+     * @return 成功消息
+     */
+    public static AjaxResult success() {
+        return AjaxResult.success("操作成功");
+    }
+
+    /**
+     * 返回成功消息
+     *
      * @param msg 内容
      * @return 成功消息
      */
@@ -61,14 +70,6 @@ public class AjaxResult extends HashMap<String, Object> {
         return json;
     }
 
-    /**
-     * 返回成功消息
-     *
-     * @return 成功消息
-     */
-    public static AjaxResult success() {
-        return AjaxResult.success("操作成功");
-    }
 
     /**
      * 返回成功消息
