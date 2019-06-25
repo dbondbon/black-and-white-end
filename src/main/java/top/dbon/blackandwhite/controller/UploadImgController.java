@@ -23,9 +23,10 @@ public class UploadImgController {
     @ResponseBody
     public AjaxResult uploadBookImg(@RequestParam("file") MultipartFile file) {
         BufferedOutputStream out = null;
+        String imgId = UUIDUtils.getInstance().nextId();
         try {
             out = new BufferedOutputStream(new FileOutputStream(new File("G:\\black-and-white\\black-and-white-end\\img",
-                    UUIDUtils.getInstance().nextId() +
+                    imgId +
                             file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf('.')))));
             out.write(file.getBytes());
             out.flush();
@@ -44,6 +45,6 @@ public class UploadImgController {
                 return AjaxResult.error(1, "上传失败");
             }
         }
-        return AjaxResult.success();
+        return AjaxResult.success().put("imgId", imgId);
     }
 }
