@@ -1,215 +1,457 @@
-15:20:07.804 logback [main] INFO  t.d.b.BlackAndWhiteApplication - Starting BlackAndWhiteApplication on DESKTOP-BKN43FU with PID 12688 (G:\black-and-white\black-and-white-end\target\classes started by lenovo in G:\black-and-white\black-and-white-end)
-15:20:07.810 logback [main] DEBUG t.d.b.BlackAndWhiteApplication - Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
-15:20:07.810 logback [main] INFO  t.d.b.BlackAndWhiteApplication - No active profile set, falling back to default profiles: default
-15:20:09.039 logback [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
-15:20:09.044 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\CartMapper.class]
-15:20:09.065 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\GoodsMapper.class]
-15:20:09.069 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\MessageMapper.class]
-15:20:09.070 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\OrderMapper.class]
-15:20:09.070 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\UserMapper.class]
-15:20:09.071 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'cartMapper' and 'top.dbon.blackandwhite.mapper.CartMapper' mapperInterface
-15:20:09.071 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'cartMapper'.
-15:20:09.071 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'goodsMapper' and 'top.dbon.blackandwhite.mapper.GoodsMapper' mapperInterface
-15:20:09.071 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'goodsMapper'.
-15:20:09.071 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'messageMapper' and 'top.dbon.blackandwhite.mapper.MessageMapper' mapperInterface
-15:20:09.071 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'messageMapper'.
-15:20:09.071 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'orderMapper' and 'top.dbon.blackandwhite.mapper.OrderMapper' mapperInterface
-15:20:09.071 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
-15:20:09.071 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'userMapper' and 'top.dbon.blackandwhite.mapper.UserMapper' mapperInterface
-15:20:09.072 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
-15:20:10.320 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-15:20:10.330 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-15:20:10.331 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
-15:20:10.451 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-15:20:10.628 logback [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
-15:20:11.050 logback [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-15:20:11.250 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\CartMapper.xml]'
-15:20:11.282 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\GoodsMapper.xml]'
-15:20:11.300 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\MessageMapper.xml]'
-15:20:11.316 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\OrderMapper.xml]'
-15:20:11.338 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\UserMapper.xml]'
-15:20:11.375 logback [main] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
-15:20:11.376 logback [main] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
-15:20:11.378 logback [main] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
-15:20:11.379 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
-15:20:11.379 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
-15:20:11.401 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
-15:20:11.402 logback [main] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
-15:20:11.402 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via user class loader
-15:20:11.403 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
-15:20:11.403 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
-15:20:11.403 logback [main] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
-15:20:11.408 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
-15:20:11.408 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
-15:20:11.409 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
-15:20:11.409 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
-15:20:11.409 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
-15:20:11.941 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-15:20:11.966 logback [main] INFO  t.d.b.BlackAndWhiteApplication - Started BlackAndWhiteApplication in 5.652 seconds (JVM running for 7.355)
-15:29:55.081 logback [main] INFO  t.d.b.BlackAndWhiteApplication - Starting BlackAndWhiteApplication on DESKTOP-BKN43FU with PID 6920 (G:\black-and-white\black-and-white-end\target\classes started by lenovo in G:\black-and-white\black-and-white-end)
-15:29:55.083 logback [main] DEBUG t.d.b.BlackAndWhiteApplication - Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
-15:29:55.084 logback [main] INFO  t.d.b.BlackAndWhiteApplication - No active profile set, falling back to default profiles: default
-15:29:55.579 logback [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
-15:29:55.582 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\CartMapper.class]
-15:29:55.583 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\GoodsMapper.class]
-15:29:55.583 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\MessageMapper.class]
-15:29:55.588 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\OrderMapper.class]
-15:29:55.589 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\UserMapper.class]
-15:29:55.589 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'cartMapper' and 'top.dbon.blackandwhite.mapper.CartMapper' mapperInterface
-15:29:55.590 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'cartMapper'.
-15:29:55.590 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'goodsMapper' and 'top.dbon.blackandwhite.mapper.GoodsMapper' mapperInterface
-15:29:55.590 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'goodsMapper'.
-15:29:55.590 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'messageMapper' and 'top.dbon.blackandwhite.mapper.MessageMapper' mapperInterface
-15:29:55.590 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'messageMapper'.
-15:29:55.590 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'orderMapper' and 'top.dbon.blackandwhite.mapper.OrderMapper' mapperInterface
-15:29:55.590 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
-15:29:55.590 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'userMapper' and 'top.dbon.blackandwhite.mapper.UserMapper' mapperInterface
-15:29:55.590 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
-15:29:56.223 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-15:29:56.233 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-15:29:56.234 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
-15:29:56.337 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-15:29:56.423 logback [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
-15:29:56.781 logback [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-15:29:56.971 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\CartMapper.xml]'
-15:29:56.989 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\GoodsMapper.xml]'
-15:29:57.001 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\MessageMapper.xml]'
-15:29:57.014 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\OrderMapper.xml]'
-15:29:57.024 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\UserMapper.xml]'
-15:29:57.058 logback [main] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
-15:29:57.059 logback [main] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
-15:29:57.061 logback [main] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
-15:29:57.062 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
-15:29:57.062 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
-15:29:57.062 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
-15:29:57.063 logback [main] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
-15:29:57.063 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via user class loader
-15:29:57.064 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
-15:29:57.064 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
-15:29:57.064 logback [main] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
-15:29:57.068 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
-15:29:57.068 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
-15:29:57.068 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
-15:29:57.069 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
-15:29:57.069 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
-15:29:57.434 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-15:29:57.471 logback [main] INFO  t.d.b.BlackAndWhiteApplication - Started BlackAndWhiteApplication in 3.044 seconds (JVM running for 3.937)
-15:32:26.148 logback [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-15:32:26.369 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
-15:32:26.378 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3c4ea6db] was not registered for synchronization because synchronization is not active
-15:32:26.394 logback [http-nio-8080-exec-1] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@7a5e0fc5] will not be managed by Spring
-15:32:26.399 logback [http-nio-8080-exec-1] DEBUG t.d.b.mapper.UserMapper.selectByUser - ==>  Preparing: SELECT user_id, nickname, username, password, school, gender, create_time, update_time, create_by, update_by, submit_audit, audit_status, avatar, `name`, stu_id, idcard_img, idcard_cover_img, phone, email, auth_code, role_set, is_delete, login_time FROM user where username = ? AND password = ? AND is_delete = "0" 
-15:32:26.452 logback [http-nio-8080-exec-1] DEBUG t.d.b.mapper.UserMapper.selectByUser - ==> Parameters: 350992(String), e10adc3949ba59abbe56e057f20f883e(String)
-15:32:26.483 logback [http-nio-8080-exec-1] DEBUG t.d.b.mapper.UserMapper.selectByUser - <==      Total: 1
-15:32:26.484 logback [http-nio-8080-exec-1] DEBUG c.a.druid.pool.PreparedStatementPool - {conn-10001, pstmt-20000} enter cache
-15:32:26.484 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3c4ea6db]
-15:32:26.484 logback [http-nio-8080-exec-1] INFO  t.d.b.controller.UserController - 昵称为：【李四】的用户登录成功，账号为：350992
-15:32:27.640 logback [http-nio-8080-exec-2] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
-15:32:27.640 logback [http-nio-8080-exec-2] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@47f0c69f] was not registered for synchronization because synchronization is not active
-15:32:27.640 logback [http-nio-8080-exec-2] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@7a5e0fc5] will not be managed by Spring
-15:32:27.641 logback [http-nio-8080-exec-2] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==>  Preparing: SELECT goods_id, code, `name`, `count`, price, description, img_id, goods_status, user_id, create_time, update_time, create_by, update_by, is_delete, author, publisher FROM goods where name like CONCAT('%',?,'%') AND user_id != ? AND is_delete = "0" 
-15:32:27.641 logback [http-nio-8080-exec-2] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==> Parameters: (String), 588765778099044352(String)
-15:32:27.644 logback [http-nio-8080-exec-2] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - <==      Total: 2
-15:32:27.645 logback [http-nio-8080-exec-2] DEBUG c.a.druid.pool.PreparedStatementPool - {conn-10001, pstmt-20001} enter cache
-15:32:27.645 logback [http-nio-8080-exec-2] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@47f0c69f]
-15:32:33.587 logback [http-nio-8080-exec-3] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
-15:32:33.588 logback [http-nio-8080-exec-3] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2675c2fb] was not registered for synchronization because synchronization is not active
-15:32:33.588 logback [http-nio-8080-exec-3] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@7a5e0fc5] will not be managed by Spring
-15:32:33.588 logback [http-nio-8080-exec-3] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==>  Preparing: SELECT goods_id, code, `name`, `count`, price, description, img_id, goods_status, user_id, create_time, update_time, create_by, update_by, is_delete, author, publisher FROM goods where name like CONCAT('%',?,'%') AND user_id != ? AND is_delete = "0" 
-15:32:33.588 logback [http-nio-8080-exec-3] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==> Parameters: (String), 588765778099044352(String)
-15:32:33.591 logback [http-nio-8080-exec-3] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - <==      Total: 2
-15:32:33.591 logback [http-nio-8080-exec-3] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2675c2fb]
-15:34:54.474 logback [http-nio-8080-exec-4] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
-15:34:54.475 logback [http-nio-8080-exec-4] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@46a655f1] was not registered for synchronization because synchronization is not active
-15:34:54.480 logback [http-nio-8080-exec-4] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@7a5e0fc5] will not be managed by Spring
-15:34:54.480 logback [http-nio-8080-exec-4] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==>  Preparing: SELECT goods_id, code, `name`, `count`, price, description, img_id, goods_status, user_id, create_time, update_time, create_by, update_by, is_delete, author, publisher FROM goods where name like CONCAT('%',?,'%') AND user_id != ? AND is_delete = "0" 
-15:34:54.480 logback [http-nio-8080-exec-4] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==> Parameters: (String), 588765778099044352(String)
-15:34:54.482 logback [http-nio-8080-exec-4] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - <==      Total: 2
-15:34:54.483 logback [http-nio-8080-exec-4] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@46a655f1]
-15:36:33.437 logback [http-nio-8080-exec-5] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
-15:36:33.438 logback [http-nio-8080-exec-5] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@13144acb] was not registered for synchronization because synchronization is not active
-15:36:33.446 logback [http-nio-8080-exec-5] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@7a5e0fc5] will not be managed by Spring
-15:36:33.446 logback [http-nio-8080-exec-5] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==>  Preparing: SELECT goods_id, code, `name`, `count`, price, description, img_id, goods_status, user_id, create_time, update_time, create_by, update_by, is_delete, author, publisher FROM goods where name like CONCAT('%',?,'%') AND user_id != ? AND is_delete = "0" 
-15:36:33.446 logback [http-nio-8080-exec-5] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==> Parameters: (String), 588765778099044352(String)
-15:36:33.449 logback [http-nio-8080-exec-5] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - <==      Total: 2
-15:36:33.449 logback [http-nio-8080-exec-5] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@13144acb]
-15:37:51.879 logback [http-nio-8080-exec-6] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
-15:37:51.879 logback [http-nio-8080-exec-6] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@388685bf] was not registered for synchronization because synchronization is not active
-15:37:51.884 logback [http-nio-8080-exec-6] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@7a5e0fc5] will not be managed by Spring
-15:37:51.884 logback [http-nio-8080-exec-6] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==>  Preparing: SELECT goods_id, code, `name`, `count`, price, description, img_id, goods_status, user_id, create_time, update_time, create_by, update_by, is_delete, author, publisher FROM goods where name like CONCAT('%',?,'%') AND user_id != ? AND is_delete = "0" 
-15:37:51.885 logback [http-nio-8080-exec-6] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==> Parameters: (String), 588765778099044352(String)
-15:37:51.888 logback [http-nio-8080-exec-6] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - <==      Total: 2
-15:37:51.888 logback [http-nio-8080-exec-6] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@388685bf]
-15:58:01.615 logback [http-nio-8080-exec-7] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
-15:58:01.616 logback [http-nio-8080-exec-7] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38df1e53] was not registered for synchronization because synchronization is not active
-15:58:01.622 logback [http-nio-8080-exec-7] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@7a5e0fc5] will not be managed by Spring
-15:58:01.622 logback [http-nio-8080-exec-7] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==>  Preparing: SELECT goods_id, code, `name`, `count`, price, description, img_id, goods_status, user_id, create_time, update_time, create_by, update_by, is_delete, author, publisher FROM goods where name like CONCAT('%',?,'%') AND user_id != ? AND is_delete = "0" 
-15:58:01.622 logback [http-nio-8080-exec-7] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==> Parameters: (String), 588765778099044352(String)
-15:58:01.625 logback [http-nio-8080-exec-7] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - <==      Total: 2
-15:58:01.625 logback [http-nio-8080-exec-7] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38df1e53]
-16:20:10.041 logback [main] INFO  t.d.b.BlackAndWhiteApplication - Starting BlackAndWhiteApplication on DESKTOP-BKN43FU with PID 3740 (G:\black-and-white\black-and-white-end\target\classes started by lenovo in G:\black-and-white\black-and-white-end)
-16:20:10.041 logback [main] DEBUG t.d.b.BlackAndWhiteApplication - Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
-16:20:10.041 logback [main] INFO  t.d.b.BlackAndWhiteApplication - No active profile set, falling back to default profiles: default
-16:20:10.631 logback [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
-16:20:10.631 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\CartMapper.class]
-16:20:10.631 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\GoodsMapper.class]
-16:20:10.631 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\MessageMapper.class]
-16:20:10.631 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\OrderMapper.class]
-16:20:10.631 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\UserMapper.class]
-16:20:10.631 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'cartMapper' and 'top.dbon.blackandwhite.mapper.CartMapper' mapperInterface
-16:20:10.631 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'cartMapper'.
-16:20:10.631 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'goodsMapper' and 'top.dbon.blackandwhite.mapper.GoodsMapper' mapperInterface
-16:20:10.631 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'goodsMapper'.
-16:20:10.631 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'messageMapper' and 'top.dbon.blackandwhite.mapper.MessageMapper' mapperInterface
-16:20:10.631 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'messageMapper'.
-16:20:10.631 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'orderMapper' and 'top.dbon.blackandwhite.mapper.OrderMapper' mapperInterface
-16:20:10.631 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
-16:20:10.631 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'userMapper' and 'top.dbon.blackandwhite.mapper.UserMapper' mapperInterface
-16:20:10.631 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
-16:20:11.221 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-16:20:11.231 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-16:20:11.231 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
-16:20:11.311 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-16:20:11.391 logback [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
-16:20:11.711 logback [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-16:20:11.831 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\CartMapper.xml]'
-16:20:11.851 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\GoodsMapper.xml]'
-16:20:11.861 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\MessageMapper.xml]'
-16:20:11.871 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\OrderMapper.xml]'
-16:20:11.881 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\UserMapper.xml]'
-16:20:11.911 logback [main] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
-16:20:11.911 logback [main] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
-16:20:11.921 logback [main] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
-16:20:11.921 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
-16:20:11.921 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
-16:20:11.921 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
-16:20:11.921 logback [main] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
-16:20:11.921 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via user class loader
-16:20:11.921 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
-16:20:11.921 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
-16:20:11.921 logback [main] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
-16:20:11.921 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
-16:20:11.921 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
-16:20:11.921 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
-16:20:11.921 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
-16:20:11.921 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
-16:20:12.301 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-16:20:12.331 logback [main] INFO  t.d.b.BlackAndWhiteApplication - Started BlackAndWhiteApplication in 2.93 seconds (JVM running for 4.027)
-16:20:37.852 logback [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-16:20:37.949 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
-16:20:37.958 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2db2ef6c] was not registered for synchronization because synchronization is not active
-16:20:37.967 logback [http-nio-8080-exec-1] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@25cf9800] will not be managed by Spring
-16:20:37.976 logback [http-nio-8080-exec-1] DEBUG t.d.b.mapper.UserMapper.selectByUser - ==>  Preparing: SELECT user_id, nickname, username, password, school, gender, create_time, update_time, create_by, update_by, submit_audit, audit_status, avatar, `name`, stu_id, idcard_img, idcard_cover_img, phone, email, auth_code, role_set, is_delete, login_time FROM user where username = ? AND password = ? AND is_delete = "0" 
-16:20:38.004 logback [http-nio-8080-exec-1] DEBUG t.d.b.mapper.UserMapper.selectByUser - ==> Parameters: 350992(String), e10adc3949ba59abbe56e057f20f883e(String)
-16:20:38.030 logback [http-nio-8080-exec-1] DEBUG t.d.b.mapper.UserMapper.selectByUser - <==      Total: 1
-16:20:38.031 logback [http-nio-8080-exec-1] DEBUG c.a.druid.pool.PreparedStatementPool - {conn-10001, pstmt-20000} enter cache
-16:20:38.032 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2db2ef6c]
-16:20:38.032 logback [http-nio-8080-exec-1] INFO  t.d.b.controller.UserController - 昵称为：【李四】的用户登录成功，账号为：350992
-16:20:39.150 logback [http-nio-8080-exec-2] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
-16:20:39.151 logback [http-nio-8080-exec-2] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@181d49ca] was not registered for synchronization because synchronization is not active
-16:20:39.151 logback [http-nio-8080-exec-2] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@25cf9800] will not be managed by Spring
-16:20:39.152 logback [http-nio-8080-exec-2] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==>  Preparing: SELECT goods_id, code, `name`, `count`, price, description, img_id, goods_status, user_id, create_time, update_time, create_by, update_by, is_delete, author, publisher FROM goods where name like CONCAT('%',?,'%') AND user_id != ? AND is_delete = "0" 
-16:20:39.153 logback [http-nio-8080-exec-2] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==> Parameters: (String), 588765778099044352(String)
-16:20:39.157 logback [http-nio-8080-exec-2] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - <==      Total: 2
-16:20:39.157 logback [http-nio-8080-exec-2] DEBUG c.a.druid.pool.PreparedStatementPool - {conn-10001, pstmt-20001} enter cache
-16:20:39.157 logback [http-nio-8080-exec-2] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@181d49ca]
+11:07:29.749 logback [background-preinit] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+11:07:29.765 logback [background-preinit] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+11:07:29.765 logback [background-preinit] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+11:07:29.765 logback [background-preinit] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+11:07:29.768 logback [background-preinit] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+11:07:29.768 logback [background-preinit] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+11:07:30.172 logback [main] INFO  t.d.b.BlackAndWhiteApplication - Starting BlackAndWhiteApplication on DESKTOP-BKN43FU with PID 14332 (G:\black-and-white\black-and-white-end\target\classes started by lenovo in G:\black-and-white\black-and-white-end)
+11:07:30.173 logback [main] DEBUG t.d.b.BlackAndWhiteApplication - Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+11:07:30.174 logback [main] INFO  t.d.b.BlackAndWhiteApplication - No active profile set, falling back to default profiles: default
+11:07:31.761 logback [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+11:07:31.764 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\CartMapper.class]
+11:07:31.808 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\GoodsMapper.class]
+11:07:31.813 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\MessageMapper.class]
+11:07:31.813 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\OrderMapper.class]
+11:07:31.814 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\UserMapper.class]
+11:07:31.815 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'cartMapper' and 'top.dbon.blackandwhite.mapper.CartMapper' mapperInterface
+11:07:31.816 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'cartMapper'.
+11:07:31.816 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'goodsMapper' and 'top.dbon.blackandwhite.mapper.GoodsMapper' mapperInterface
+11:07:31.816 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'goodsMapper'.
+11:07:31.817 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'messageMapper' and 'top.dbon.blackandwhite.mapper.MessageMapper' mapperInterface
+11:07:31.817 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'messageMapper'.
+11:07:31.817 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'orderMapper' and 'top.dbon.blackandwhite.mapper.OrderMapper' mapperInterface
+11:07:31.817 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+11:07:31.817 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'userMapper' and 'top.dbon.blackandwhite.mapper.UserMapper' mapperInterface
+11:07:31.817 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+11:07:38.291 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+11:07:38.379 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+11:07:38.379 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
+11:07:39.085 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11:07:39.914 logback [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+11:07:41.842 logback [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+11:07:42.626 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\CartMapper.xml]'
+11:07:42.652 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\GoodsMapper.xml]'
+11:07:42.682 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\MessageMapper.xml]'
+11:07:42.703 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\OrderMapper.xml]'
+11:07:42.721 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\UserMapper.xml]'
+11:07:42.760 logback [main] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+11:07:42.761 logback [main] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+11:07:42.763 logback [main] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+11:07:42.764 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+11:07:42.765 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+11:07:42.789 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+11:07:42.790 logback [main] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+11:07:42.790 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via user class loader
+11:07:42.791 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
+11:07:42.791 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+11:07:42.791 logback [main] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+11:07:42.794 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+11:07:42.794 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+11:07:42.794 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+11:07:42.794 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+11:07:42.794 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+11:07:44.601 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+11:07:44.630 logback [main] INFO  t.d.b.BlackAndWhiteApplication - Started BlackAndWhiteApplication in 15.769 seconds (JVM running for 18.047)
+11:08:27.905 logback [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11:08:28.136 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+11:08:28.146 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@29a56c85] was not registered for synchronization because synchronization is not active
+11:08:28.156 logback [http-nio-8080-exec-1] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2fc22958] will not be managed by Spring
+11:08:28.156 logback [http-nio-8080-exec-1] DEBUG t.d.b.mapper.UserMapper.selectByUser - ==>  Preparing: SELECT user_id, nickname, username, password, school, gender, create_time, update_time, create_by, update_by, submit_audit, audit_status, avatar, `name`, stu_id, idcard_img, idcard_cover_img, phone, email, auth_code, role_set, is_delete, login_time FROM user where username = ? AND password = ? AND is_delete = "0" 
+11:08:28.246 logback [http-nio-8080-exec-1] DEBUG t.d.b.mapper.UserMapper.selectByUser - ==> Parameters: 350992(String), e10adc3949ba59abbe56e057f20f883e(String)
+11:08:28.326 logback [http-nio-8080-exec-1] DEBUG t.d.b.mapper.UserMapper.selectByUser - <==      Total: 1
+11:08:28.326 logback [http-nio-8080-exec-1] DEBUG c.a.druid.pool.PreparedStatementPool - {conn-10001, pstmt-20000} enter cache
+11:08:28.326 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@29a56c85]
+11:08:28.326 logback [http-nio-8080-exec-1] INFO  t.d.b.controller.UserController - 昵称为：【李四】的用户登录成功，账号为：350992
+11:08:29.576 logback [http-nio-8080-exec-2] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+11:08:29.576 logback [http-nio-8080-exec-2] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2c4f9f27] was not registered for synchronization because synchronization is not active
+11:08:29.577 logback [http-nio-8080-exec-2] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2fc22958] will not be managed by Spring
+11:08:29.577 logback [http-nio-8080-exec-2] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==>  Preparing: SELECT goods_id, code, `name`, `count`, price, description, img_id, goods_status, user_id, create_time, update_time, create_by, update_by, is_delete, author, publisher FROM goods where name like CONCAT('%',?,'%') AND user_id != ? AND is_delete = "0" 
+11:08:29.577 logback [http-nio-8080-exec-2] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==> Parameters: (String), 588765778099044352(String)
+11:08:29.580 logback [http-nio-8080-exec-2] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - <==      Total: 2
+11:08:29.581 logback [http-nio-8080-exec-2] DEBUG c.a.druid.pool.PreparedStatementPool - {conn-10001, pstmt-20001} enter cache
+11:08:29.581 logback [http-nio-8080-exec-2] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2c4f9f27]
+12:44:30.018 logback [main] INFO  t.d.b.BlackAndWhiteApplication - Starting BlackAndWhiteApplication on DESKTOP-BKN43FU with PID 1452 (G:\black-and-white\black-and-white-end\target\classes started by lenovo in G:\black-and-white\black-and-white-end)
+12:44:30.020 logback [main] DEBUG t.d.b.BlackAndWhiteApplication - Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+12:44:30.020 logback [main] INFO  t.d.b.BlackAndWhiteApplication - No active profile set, falling back to default profiles: default
+12:44:30.550 logback [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+12:44:30.558 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\CartMapper.class]
+12:44:30.558 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\GoodsMapper.class]
+12:44:30.559 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\MessageMapper.class]
+12:44:30.565 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\OrderMapper.class]
+12:44:30.565 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\UserMapper.class]
+12:44:30.566 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'cartMapper' and 'top.dbon.blackandwhite.mapper.CartMapper' mapperInterface
+12:44:30.567 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'cartMapper'.
+12:44:30.567 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'goodsMapper' and 'top.dbon.blackandwhite.mapper.GoodsMapper' mapperInterface
+12:44:30.567 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'goodsMapper'.
+12:44:30.567 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'messageMapper' and 'top.dbon.blackandwhite.mapper.MessageMapper' mapperInterface
+12:44:30.567 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'messageMapper'.
+12:44:30.567 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'orderMapper' and 'top.dbon.blackandwhite.mapper.OrderMapper' mapperInterface
+12:44:30.567 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+12:44:30.567 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'userMapper' and 'top.dbon.blackandwhite.mapper.UserMapper' mapperInterface
+12:44:30.567 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+12:44:31.292 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+12:44:31.302 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+12:44:31.302 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
+12:44:31.392 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:44:31.492 logback [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+12:44:31.817 logback [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+12:44:31.967 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\CartMapper.xml]'
+12:44:31.985 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\GoodsMapper.xml]'
+12:44:31.995 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\MessageMapper.xml]'
+12:44:32.004 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\OrderMapper.xml]'
+12:44:32.014 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\UserMapper.xml]'
+12:44:32.054 logback [main] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+12:44:32.055 logback [main] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+12:44:32.057 logback [main] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+12:44:32.058 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+12:44:32.058 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+12:44:32.059 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+12:44:32.060 logback [main] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+12:44:32.060 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via user class loader
+12:44:32.060 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
+12:44:32.060 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+12:44:32.060 logback [main] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+12:44:32.063 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+12:44:32.063 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+12:44:32.063 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+12:44:32.064 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+12:44:32.064 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+12:44:32.446 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+12:44:32.480 logback [main] INFO  t.d.b.BlackAndWhiteApplication - Started BlackAndWhiteApplication in 3.145 seconds (JVM running for 3.921)
+13:02:05.520 logback [main] INFO  t.d.b.BlackAndWhiteApplication - Starting BlackAndWhiteApplication on DESKTOP-BKN43FU with PID 12336 (G:\black-and-white\black-and-white-end\target\classes started by lenovo in G:\black-and-white\black-and-white-end)
+13:02:05.535 logback [main] DEBUG t.d.b.BlackAndWhiteApplication - Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+13:02:05.536 logback [main] INFO  t.d.b.BlackAndWhiteApplication - No active profile set, falling back to default profiles: default
+13:02:06.128 logback [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+13:02:06.132 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\CartMapper.class]
+13:02:06.138 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\GoodsMapper.class]
+13:02:06.138 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\MessageMapper.class]
+13:02:06.138 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\OrderMapper.class]
+13:02:06.138 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\UserMapper.class]
+13:02:06.139 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'cartMapper' and 'top.dbon.blackandwhite.mapper.CartMapper' mapperInterface
+13:02:06.140 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'cartMapper'.
+13:02:06.140 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'goodsMapper' and 'top.dbon.blackandwhite.mapper.GoodsMapper' mapperInterface
+13:02:06.140 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'goodsMapper'.
+13:02:06.140 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'messageMapper' and 'top.dbon.blackandwhite.mapper.MessageMapper' mapperInterface
+13:02:06.140 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'messageMapper'.
+13:02:06.140 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'orderMapper' and 'top.dbon.blackandwhite.mapper.OrderMapper' mapperInterface
+13:02:06.140 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+13:02:06.140 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'userMapper' and 'top.dbon.blackandwhite.mapper.UserMapper' mapperInterface
+13:02:06.140 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+13:02:06.743 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+13:02:06.750 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:02:06.750 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
+13:02:06.838 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:02:06.936 logback [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+13:02:07.243 logback [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+13:02:07.375 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\CartMapper.xml]'
+13:02:07.391 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\GoodsMapper.xml]'
+13:02:07.402 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\MessageMapper.xml]'
+13:02:07.412 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\OrderMapper.xml]'
+13:02:07.422 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\UserMapper.xml]'
+13:02:07.458 logback [main] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+13:02:07.460 logback [main] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+13:02:07.462 logback [main] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+13:02:07.463 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+13:02:07.464 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+13:02:07.464 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+13:02:07.465 logback [main] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+13:02:07.465 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via user class loader
+13:02:07.465 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
+13:02:07.466 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+13:02:07.466 logback [main] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+13:02:07.468 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+13:02:07.468 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+13:02:07.468 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+13:02:07.468 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+13:02:07.469 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+13:02:07.832 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+13:02:07.860 logback [main] INFO  t.d.b.BlackAndWhiteApplication - Started BlackAndWhiteApplication in 2.978 seconds (JVM running for 3.741)
+13:02:26.265 logback [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+13:02:26.376 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+13:02:26.383 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@409d50c2] was not registered for synchronization because synchronization is not active
+13:02:26.391 logback [http-nio-8080-exec-1] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@a7d4fee] will not be managed by Spring
+13:02:26.396 logback [http-nio-8080-exec-1] DEBUG t.d.b.mapper.UserMapper.selectByUser - ==>  Preparing: SELECT user_id, nickname, username, password, school, gender, create_time, update_time, create_by, update_by, submit_audit, audit_status, avatar, `name`, stu_id, idcard_img, idcard_cover_img, phone, email, auth_code, role_set, is_delete, login_time FROM user where username = ? AND password = ? AND is_delete = "0" 
+13:02:26.419 logback [http-nio-8080-exec-1] DEBUG t.d.b.mapper.UserMapper.selectByUser - ==> Parameters: 350992(String), e10adc3949ba59abbe56e057f20f883e(String)
+13:02:26.443 logback [http-nio-8080-exec-1] DEBUG t.d.b.mapper.UserMapper.selectByUser - <==      Total: 1
+13:02:26.444 logback [http-nio-8080-exec-1] DEBUG c.a.druid.pool.PreparedStatementPool - {conn-10001, pstmt-20000} enter cache
+13:02:26.444 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@409d50c2]
+13:02:26.445 logback [http-nio-8080-exec-1] INFO  t.d.b.controller.UserController - 昵称为：【李四】的用户登录成功，账号为：350992
+13:02:27.549 logback [http-nio-8080-exec-2] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+13:02:27.550 logback [http-nio-8080-exec-2] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@170ce5] was not registered for synchronization because synchronization is not active
+13:02:27.550 logback [http-nio-8080-exec-2] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@a7d4fee] will not be managed by Spring
+13:02:27.550 logback [http-nio-8080-exec-2] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==>  Preparing: SELECT goods_id, code, `name`, `count`, price, description, img_id, goods_status, user_id, create_time, update_time, create_by, update_by, is_delete, author, publisher FROM goods where name like CONCAT('%',?,'%') AND user_id != ? AND is_delete = "0" 
+13:02:27.551 logback [http-nio-8080-exec-2] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==> Parameters: (String), 588765778099044352(String)
+13:02:27.555 logback [http-nio-8080-exec-2] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - <==      Total: 2
+13:02:27.555 logback [http-nio-8080-exec-2] DEBUG c.a.druid.pool.PreparedStatementPool - {conn-10001, pstmt-20001} enter cache
+13:02:27.555 logback [http-nio-8080-exec-2] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@170ce5]
+13:05:44.838 logback [main] INFO  t.d.b.BlackAndWhiteApplication - Starting BlackAndWhiteApplication on DESKTOP-BKN43FU with PID 1844 (G:\black-and-white\black-and-white-end\target\classes started by lenovo in G:\black-and-white\black-and-white-end)
+13:05:44.840 logback [main] DEBUG t.d.b.BlackAndWhiteApplication - Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+13:05:44.841 logback [main] INFO  t.d.b.BlackAndWhiteApplication - No active profile set, falling back to default profiles: default
+13:05:45.857 logback [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+13:05:45.864 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\CartMapper.class]
+13:05:45.864 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\GoodsMapper.class]
+13:05:45.865 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\MessageMapper.class]
+13:05:45.865 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\OrderMapper.class]
+13:05:45.865 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\UserMapper.class]
+13:05:45.866 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'cartMapper' and 'top.dbon.blackandwhite.mapper.CartMapper' mapperInterface
+13:05:45.866 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'cartMapper'.
+13:05:45.866 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'goodsMapper' and 'top.dbon.blackandwhite.mapper.GoodsMapper' mapperInterface
+13:05:45.866 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'goodsMapper'.
+13:05:45.866 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'messageMapper' and 'top.dbon.blackandwhite.mapper.MessageMapper' mapperInterface
+13:05:45.866 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'messageMapper'.
+13:05:45.866 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'orderMapper' and 'top.dbon.blackandwhite.mapper.OrderMapper' mapperInterface
+13:05:45.867 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+13:05:45.867 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'userMapper' and 'top.dbon.blackandwhite.mapper.UserMapper' mapperInterface
+13:05:45.867 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+13:05:46.521 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+13:05:46.530 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:05:46.530 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
+13:05:46.643 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:05:46.759 logback [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+13:05:47.108 logback [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+13:05:47.261 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\CartMapper.xml]'
+13:05:47.281 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\GoodsMapper.xml]'
+13:05:47.293 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\MessageMapper.xml]'
+13:05:47.304 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\OrderMapper.xml]'
+13:05:47.315 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\UserMapper.xml]'
+13:05:47.346 logback [main] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+13:05:47.347 logback [main] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+13:05:47.349 logback [main] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+13:05:47.350 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+13:05:47.351 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+13:05:47.351 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+13:05:47.352 logback [main] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+13:05:47.352 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via user class loader
+13:05:47.352 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
+13:05:47.352 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+13:05:47.352 logback [main] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+13:05:47.355 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+13:05:47.356 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+13:05:47.356 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+13:05:47.356 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+13:05:47.356 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+13:05:47.728 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+13:05:47.753 logback [main] INFO  t.d.b.BlackAndWhiteApplication - Started BlackAndWhiteApplication in 3.499 seconds (JVM running for 4.522)
+13:05:59.128 logback [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+13:12:02.874 logback [main] INFO  t.d.b.BlackAndWhiteApplication - Starting BlackAndWhiteApplication on DESKTOP-BKN43FU with PID 11452 (G:\black-and-white\black-and-white-end\target\classes started by lenovo in G:\black-and-white\black-and-white-end)
+13:12:02.884 logback [main] DEBUG t.d.b.BlackAndWhiteApplication - Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+13:12:02.884 logback [main] INFO  t.d.b.BlackAndWhiteApplication - No active profile set, falling back to default profiles: default
+13:12:03.433 logback [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+13:12:03.443 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\CartMapper.class]
+13:12:03.443 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\GoodsMapper.class]
+13:12:03.443 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\MessageMapper.class]
+13:12:03.443 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\OrderMapper.class]
+13:12:03.443 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\UserMapper.class]
+13:12:03.443 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'cartMapper' and 'top.dbon.blackandwhite.mapper.CartMapper' mapperInterface
+13:12:03.443 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'cartMapper'.
+13:12:03.443 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'goodsMapper' and 'top.dbon.blackandwhite.mapper.GoodsMapper' mapperInterface
+13:12:03.443 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'goodsMapper'.
+13:12:03.443 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'messageMapper' and 'top.dbon.blackandwhite.mapper.MessageMapper' mapperInterface
+13:12:03.443 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'messageMapper'.
+13:12:03.443 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'orderMapper' and 'top.dbon.blackandwhite.mapper.OrderMapper' mapperInterface
+13:12:03.443 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+13:12:03.443 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'userMapper' and 'top.dbon.blackandwhite.mapper.UserMapper' mapperInterface
+13:12:03.443 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+13:12:04.113 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+13:12:04.122 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:12:04.123 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
+13:12:04.232 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:12:04.320 logback [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+13:12:04.673 logback [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+13:12:04.813 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\CartMapper.xml]'
+13:12:04.833 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\GoodsMapper.xml]'
+13:12:04.843 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\MessageMapper.xml]'
+13:12:04.853 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\OrderMapper.xml]'
+13:12:04.863 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\UserMapper.xml]'
+13:12:04.893 logback [main] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+13:12:04.893 logback [main] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+13:12:04.893 logback [main] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+13:12:04.903 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+13:12:04.903 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+13:12:04.903 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+13:12:04.903 logback [main] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+13:12:04.903 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via user class loader
+13:12:04.903 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
+13:12:04.903 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+13:12:04.903 logback [main] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+13:12:04.903 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+13:12:04.903 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+13:12:04.903 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+13:12:04.903 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+13:12:04.903 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+13:12:05.283 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+13:12:05.313 logback [main] INFO  t.d.b.BlackAndWhiteApplication - Started BlackAndWhiteApplication in 3.095 seconds (JVM running for 4.001)
+13:12:17.027 logback [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+13:21:06.321 logback [main] INFO  t.d.b.BlackAndWhiteApplication - Starting BlackAndWhiteApplication on DESKTOP-BKN43FU with PID 8472 (G:\black-and-white\black-and-white-end\target\classes started by lenovo in G:\black-and-white\black-and-white-end)
+13:21:06.323 logback [main] DEBUG t.d.b.BlackAndWhiteApplication - Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+13:21:06.324 logback [main] INFO  t.d.b.BlackAndWhiteApplication - No active profile set, falling back to default profiles: default
+13:21:06.912 logback [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+13:21:06.916 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\CartMapper.class]
+13:21:06.921 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\GoodsMapper.class]
+13:21:06.921 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\MessageMapper.class]
+13:21:06.921 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\OrderMapper.class]
+13:21:06.922 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\UserMapper.class]
+13:21:06.922 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'cartMapper' and 'top.dbon.blackandwhite.mapper.CartMapper' mapperInterface
+13:21:06.922 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'cartMapper'.
+13:21:06.922 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'goodsMapper' and 'top.dbon.blackandwhite.mapper.GoodsMapper' mapperInterface
+13:21:06.922 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'goodsMapper'.
+13:21:06.923 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'messageMapper' and 'top.dbon.blackandwhite.mapper.MessageMapper' mapperInterface
+13:21:06.923 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'messageMapper'.
+13:21:06.923 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'orderMapper' and 'top.dbon.blackandwhite.mapper.OrderMapper' mapperInterface
+13:21:06.923 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+13:21:06.923 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'userMapper' and 'top.dbon.blackandwhite.mapper.UserMapper' mapperInterface
+13:21:06.923 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+13:21:07.534 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+13:21:07.542 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:21:07.542 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
+13:21:07.634 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:21:07.727 logback [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+13:21:08.088 logback [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+13:21:08.239 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\CartMapper.xml]'
+13:21:08.265 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\GoodsMapper.xml]'
+13:21:08.278 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\MessageMapper.xml]'
+13:21:08.291 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\OrderMapper.xml]'
+13:21:08.301 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\UserMapper.xml]'
+13:21:08.336 logback [main] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+13:21:08.337 logback [main] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+13:21:08.339 logback [main] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+13:21:08.340 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+13:21:08.340 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+13:21:08.341 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+13:21:08.341 logback [main] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+13:21:08.342 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via user class loader
+13:21:08.342 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
+13:21:08.342 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+13:21:08.342 logback [main] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+13:21:08.345 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+13:21:08.345 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+13:21:08.345 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+13:21:08.345 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+13:21:08.345 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+13:21:08.717 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+13:21:08.745 logback [main] INFO  t.d.b.BlackAndWhiteApplication - Started BlackAndWhiteApplication in 3.009 seconds (JVM running for 3.833)
+13:21:19.620 logback [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+13:23:10.869 logback [background-preinit] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+13:23:10.879 logback [background-preinit] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+13:23:10.879 logback [background-preinit] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+13:23:10.879 logback [background-preinit] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+13:23:10.879 logback [background-preinit] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+13:23:10.879 logback [background-preinit] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+13:23:10.989 logback [main] INFO  t.d.b.BlackAndWhiteApplication - Starting BlackAndWhiteApplication on DESKTOP-BKN43FU with PID 15284 (G:\black-and-white\black-and-white-end\target\classes started by lenovo in G:\black-and-white\black-and-white-end)
+13:23:10.989 logback [main] DEBUG t.d.b.BlackAndWhiteApplication - Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+13:23:10.989 logback [main] INFO  t.d.b.BlackAndWhiteApplication - No active profile set, falling back to default profiles: default
+13:23:11.572 logback [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+13:23:11.575 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\CartMapper.class]
+13:23:11.576 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\GoodsMapper.class]
+13:23:11.576 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\MessageMapper.class]
+13:23:11.576 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\OrderMapper.class]
+13:23:11.576 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\UserMapper.class]
+13:23:11.577 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'cartMapper' and 'top.dbon.blackandwhite.mapper.CartMapper' mapperInterface
+13:23:11.577 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'cartMapper'.
+13:23:11.577 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'goodsMapper' and 'top.dbon.blackandwhite.mapper.GoodsMapper' mapperInterface
+13:23:11.577 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'goodsMapper'.
+13:23:11.577 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'messageMapper' and 'top.dbon.blackandwhite.mapper.MessageMapper' mapperInterface
+13:23:11.577 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'messageMapper'.
+13:23:11.577 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'orderMapper' and 'top.dbon.blackandwhite.mapper.OrderMapper' mapperInterface
+13:23:11.578 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+13:23:11.578 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'userMapper' and 'top.dbon.blackandwhite.mapper.UserMapper' mapperInterface
+13:23:11.578 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+13:23:12.148 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+13:23:12.158 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:23:12.158 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
+13:23:12.238 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:23:12.318 logback [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+13:23:12.618 logback [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+13:23:12.748 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\CartMapper.xml]'
+13:23:12.758 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\GoodsMapper.xml]'
+13:23:12.768 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\MessageMapper.xml]'
+13:23:12.778 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\OrderMapper.xml]'
+13:23:12.788 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\UserMapper.xml]'
+13:23:12.818 logback [main] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+13:23:12.818 logback [main] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+13:23:12.818 logback [main] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+13:23:12.818 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+13:23:12.818 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+13:23:12.818 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+13:23:12.828 logback [main] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+13:23:12.828 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via user class loader
+13:23:12.828 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
+13:23:12.828 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+13:23:12.828 logback [main] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+13:23:12.828 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+13:23:12.828 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+13:23:12.828 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+13:23:12.828 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+13:23:12.828 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+13:23:13.178 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+13:23:13.208 logback [main] INFO  t.d.b.BlackAndWhiteApplication - Started BlackAndWhiteApplication in 2.809 seconds (JVM running for 3.59)
+13:24:21.884 logback [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@25:26 - no applicable action for [maxFileSize], current ElementPath  is [[configuration][appender][rollingPolicy][maxFileSize]]
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:169)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:82)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:117)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:292)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:265)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:228)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:201)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:75)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:54)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:347)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at top.dbon.blackandwhite.BlackAndWhiteApplication.main(BlackAndWhiteApplication.java:14)
+13:24:56.053 logback [main] INFO  t.d.b.BlackAndWhiteApplication - Starting BlackAndWhiteApplication on DESKTOP-BKN43FU with PID 13736 (G:\black-and-white\black-and-white-end\target\classes started by lenovo in G:\black-and-white\black-and-white-end)
+13:24:56.053 logback [main] DEBUG t.d.b.BlackAndWhiteApplication - Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+13:24:56.053 logback [main] INFO  t.d.b.BlackAndWhiteApplication - No active profile set, falling back to default profiles: default
+13:24:56.663 logback [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+13:24:56.673 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\CartMapper.class]
+13:24:56.673 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\GoodsMapper.class]
+13:24:56.673 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\MessageMapper.class]
+13:24:56.673 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\OrderMapper.class]
+13:24:56.673 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\UserMapper.class]
+13:24:56.673 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'cartMapper' and 'top.dbon.blackandwhite.mapper.CartMapper' mapperInterface
+13:24:56.673 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'cartMapper'.
+13:24:56.673 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'goodsMapper' and 'top.dbon.blackandwhite.mapper.GoodsMapper' mapperInterface
+13:24:56.673 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'goodsMapper'.
+13:24:56.673 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'messageMapper' and 'top.dbon.blackandwhite.mapper.MessageMapper' mapperInterface
+13:24:56.673 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'messageMapper'.
+13:24:56.673 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'orderMapper' and 'top.dbon.blackandwhite.mapper.OrderMapper' mapperInterface
+13:24:56.673 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+13:24:56.673 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'userMapper' and 'top.dbon.blackandwhite.mapper.UserMapper' mapperInterface
+13:24:56.673 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+13:24:57.243 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+13:24:57.253 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:24:57.253 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
+13:24:57.343 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:24:57.423 logback [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+13:24:57.723 logback [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+13:24:57.863 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\CartMapper.xml]'
+13:24:57.883 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\GoodsMapper.xml]'
+13:24:57.893 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\MessageMapper.xml]'
+13:24:57.903 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\OrderMapper.xml]'
+13:24:57.913 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\UserMapper.xml]'
+13:24:57.953 logback [main] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+13:24:57.953 logback [main] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+13:24:57.953 logback [main] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+13:24:57.953 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+13:24:57.953 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+13:24:57.953 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+13:24:57.953 logback [main] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+13:24:57.953 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via user class loader
+13:24:57.953 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
+13:24:57.953 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+13:24:57.953 logback [main] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+13:24:57.963 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+13:24:57.963 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+13:24:57.963 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+13:24:57.963 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+13:24:57.963 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+13:24:58.313 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+13:24:58.343 logback [main] INFO  t.d.b.BlackAndWhiteApplication - Started BlackAndWhiteApplication in 3.03 seconds (JVM running for 3.839)
