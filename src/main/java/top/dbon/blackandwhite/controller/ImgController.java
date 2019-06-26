@@ -1,13 +1,11 @@
 package top.dbon.blackandwhite.controller;
 
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import top.dbon.blackandwhite.common.AjaxResult;
-import top.dbon.blackandwhite.service.GoodsService;
+import top.dbon.blackandwhite.domain.Goods;
 import top.dbon.blackandwhite.util.UUIDUtils;
 
 import java.io.*;
@@ -17,11 +15,11 @@ import java.io.*;
  */
 @Controller
 @RequestMapping("/img")
-public class UploadImgController {
+public class ImgController {
 
-    @PostMapping("/bookImg")
+    @PostMapping("/add")
     @ResponseBody
-    public AjaxResult uploadBookImg(@RequestParam("file") MultipartFile file) {
+    public AjaxResult add(@RequestParam("file") MultipartFile file) {
         BufferedOutputStream out = null;
         String imgId = UUIDUtils.getInstance().nextId();
         try {
@@ -46,5 +44,27 @@ public class UploadImgController {
             }
         }
         return AjaxResult.success().put("imgId", imgId);
+    }
+
+    @RequestMapping(value = "/get", produces = MediaType.IMAGE_JPEG_VALUE, method = RequestMethod.GET)
+    @ResponseBody
+    public byte[] get(String imgId) {
+        String imgPath = "G:\\black-and-white\\black-and-white-end\\img\\" + imgId + ".jpg";
+        File file = new File(imgPath);
+        if(!file.exists()) {
+            imgPath = "G:\\black-and-white\\black-and-white-end\\img\\" + imgId + ".png";
+        }
+        file = new File(imgPath);
+        try {
+            FileInputStream inputStream = new FileInputStream(file);
+            byte[] bytes = new byte[inputStream.available()];
+            inputStream.read(bytes, 0, inputStream.available());
+            return bytes;
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
