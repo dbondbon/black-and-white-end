@@ -58,4 +58,9 @@ public interface UserService {
     Integer checkNickname(User user);
 
 
+    /**
+     * RESTful风格
+     */
+    User getUser(String id);
+
 }

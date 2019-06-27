@@ -66,4 +66,22 @@ public class UserServiceImpl implements UserService {
       }
       return 0;
     }
+
+    @Override
+    public User getUser(String id) {
+        if (id != null && "1".equals(id)) {
+            //没有账号，新注册用户
+            String username = UsernameUtils.getNextUsername();
+            while (userMapper.selectByUsername(username)!=null) {
+                username = UsernameUtils.getNextUsername();
+            }
+            User user = new User();
+            user.setUsername(username);
+            return user;
+        } else {
+            //登录用户
+            User user = userMapper.selectByUserId(id);
+            return user;
+        }
+    }
 }

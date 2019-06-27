@@ -13,7 +13,6 @@ import top.dbon.blackandwhite.service.UserService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/user")
 public class UserController {
 
   private Logger logger = (Logger) LoggerFactory.getLogger(this.getClass());
@@ -24,7 +23,7 @@ public class UserController {
   @Autowired
   private GoodsService goodsService;
 
-  @PostMapping("/login")
+  @PostMapping("/user/login")
   public AjaxResult login(@RequestBody User userLogin) {
     User user = userService.checkLogin(userLogin);
     if(user == null) {
@@ -35,7 +34,7 @@ public class UserController {
     }
   }
 
-  @PostMapping("/register")
+  @PostMapping("/user/register")
   public AjaxResult register(@RequestBody User userRegister) {
     if (userService.checkNickname(userRegister) > 0) {
       return AjaxResult.error();
@@ -46,18 +45,17 @@ public class UserController {
     }
   }
 
-  @PostMapping("/getUsername")
-  public AjaxResult getUsername() {
-    String username = userService.getUniqueUsername();
-    return AjaxResult.success().put("username", username);
+  @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
+  public AjaxResult getUsername(@PathVariable("id") String id) {
+    return AjaxResult.success().put("user", userService.getUser(id));
   }
 
-  @PostMapping("/getNickname")
+  @PostMapping("/user/getNickname")
   public AjaxResult getNickname(@RequestBody User user) {
     return AjaxResult.success().put("nickname",userService.selectNickname(user));
   }
 
-  @PostMapping("/onSaleList")
+  @PostMapping("/user/onSaleList")
   public AjaxResult onSaleList(@RequestBody User user) {
     List<Goods> list = goodsService.selectOnSaleListByUser(user);
     if (list == null || list.size() == 0) {
