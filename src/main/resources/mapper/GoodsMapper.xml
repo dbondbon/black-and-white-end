@@ -49,15 +49,6 @@
     AND is_delete = "0"
   </select>
 
-  <select id="selectCartListByUser" resultMap="goodsResult" parameterType="User" >
-    <include refid="selectGoodsVo" />
-    where  goods_id IN (
-              SELECT goods_id FROM cart WHERE user_id = #{userId}
-            )
-    AND is_delete = "0"
-    ORDER BY create_time
-  </select>
-
   <select id="selectOnSaleListByUser" resultMap="goodsResult" parameterType="User" >
     <include refid="selectGoodsVo" />
     where  user_id = #{userId}

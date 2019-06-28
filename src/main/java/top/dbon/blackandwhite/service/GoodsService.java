@@ -36,22 +36,17 @@ public interface GoodsService {
 
     /**
      * 根据用户id和商品名查找商品列表
-     * @param goods
-     * @return 结果集
+     * @param userId
+     * @param name
+     * @return
      */
-    List<Goods> selectListByUserIDAndGoodsName(Goods goods);
+    List<Goods> selectListByUserIDAndGoodsName(String userId, String name);
+
 
     /**
-     * 根据用户查找购物车商品列表
-     * @param user
+     * 根据用户ID查找待售商品列表
+     * @param userId
      * @return 结果集
      */
-    List<Goods> selectListByUser(User user);
-
-    /**
-     * 根据用户查找待售商品列表
-     * @param user
-     * @return 结果集
-     */
-    List<Goods> selectOnSaleListByUser(User user);
+    List<Goods> selectOnSaleListByUser(String userId);
 }

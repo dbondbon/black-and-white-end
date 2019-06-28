@@ -42,17 +42,17 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
-    public List<Goods> selectListByUserIDAndGoodsName(Goods goods) {
-      return goodsMapper.selectListByUserIDAndGoodsName(goods);
+    public List<Goods> selectListByUserIDAndGoodsName(String userId, String name) {
+        Goods goods = new Goods();
+        goods.setUserId(userId);
+        goods.setName(name);
+        return goodsMapper.selectListByUserIDAndGoodsName(goods);
     }
 
     @Override
-    public List<Goods> selectListByUser(User user) {
-        return goodsMapper.selectCartListByUser(user);
-    }
-
-    @Override
-    public List<Goods> selectOnSaleListByUser(User user) {
+    public List<Goods> selectOnSaleListByUser(String userId) {
+        User user = new User();
+        user.setUserId(userId);
         return goodsMapper.selectOnSaleListByUser(user);
     }
 }

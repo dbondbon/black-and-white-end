@@ -20,9 +20,6 @@ public class UserController {
   @Autowired
   private UserService userService;
 
-  @Autowired
-  private GoodsService goodsService;
-
   @PostMapping("/user/login")
   public AjaxResult login(@RequestBody User userLogin) {
     User user = userService.checkLogin(userLogin);
@@ -53,16 +50,6 @@ public class UserController {
   @PostMapping("/user/getNickname")
   public AjaxResult getNickname(@RequestBody User user) {
     return AjaxResult.success().put("nickname",userService.selectNickname(user));
-  }
-
-  @PostMapping("/user/onSaleList")
-  public AjaxResult onSaleList(@RequestBody User user) {
-    List<Goods> list = goodsService.selectOnSaleListByUser(user);
-    if (list == null || list.size() == 0) {
-      return AjaxResult.error();
-    } else {
-      return AjaxResult.success().put("goodsList", list);
-    }
   }
 
 }
