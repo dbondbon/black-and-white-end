@@ -31,10 +31,11 @@ public interface CartService {
 
     /**
      * 根据购物车物品信息删除该物品
-     * @param cart
+     * @param userId
+     * @param goodsId
      * @return 结果
      */
-    Integer deleteByCart(Cart cart);
+    Integer deleteByUserIdAndGoodsId(String userId, String goodsId);
 
     /**
      * 根据选中商品Id列表查询总价格

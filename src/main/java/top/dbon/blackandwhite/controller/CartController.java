@@ -6,12 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import top.dbon.blackandwhite.common.AjaxResult;
 import top.dbon.blackandwhite.domain.Cart;
-import top.dbon.blackandwhite.domain.CartVo;
 import top.dbon.blackandwhite.domain.Goods;
 import top.dbon.blackandwhite.service.CartService;
 
 import java.math.BigDecimal;
-import java.util.HashMap;
 import java.util.List;
 
 @RestController
@@ -22,7 +20,7 @@ public class CartController {
     @Autowired
     private CartService cartService;
 
-    @PostMapping("/cart/add")
+    @RequestMapping(value = "/cart", method = RequestMethod.POST)
     public AjaxResult addCart(@RequestBody Cart cart) {
         cartService.insertCart(cart);
         return AjaxResult.success();
@@ -35,16 +33,15 @@ public class CartController {
         return AjaxResult.success().put("cartGoodsList", list);
     }
 
-    @PostMapping("/cart/delete")
-    public AjaxResult delete(@RequestBody Cart cart) {
-        cartService.deleteByCart(cart);
+    @RequestMapping(value = "/cart", method = RequestMethod.DELETE)
+    public AjaxResult delete(@RequestParam("userId") String userId, @RequestParam("goodsId") String goodsId) {
+        cartService.deleteByUserIdAndGoodsId(userId, goodsId);
         return AjaxResult.success();
     }
 
-    @PostMapping("/cart/price")
-    public AjaxResult price(@RequestBody CartVo cartVo) {
-        HashMap<String, Object> map = new HashMap<>();
-        BigDecimal totalPrice = cartService.getTotalPrice(cartVo.getGoodsIdList());
+    @RequestMapping(value = "/cart/price", method = RequestMethod.POST)
+    public AjaxResult price(@RequestBody List<String> goodsIdList) {
+        BigDecimal totalPrice = cartService.getTotalPrice(goodsIdList);
         return AjaxResult.success().put("totalPrice", totalPrice);
     }
 

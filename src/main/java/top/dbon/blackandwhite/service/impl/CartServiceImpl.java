@@ -45,7 +45,10 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public Integer deleteByCart(Cart cart) {
+    public Integer deleteByUserIdAndGoodsId(String userId, String goodsId) {
+        Cart cart = new Cart();
+        cart.setUserId(userId);
+        cart.setGoodsId(goodsId);
         return cartMapper.deleteByCart(cart);
     }
 
