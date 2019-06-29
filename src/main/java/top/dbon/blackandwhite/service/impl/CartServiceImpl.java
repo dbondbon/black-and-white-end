@@ -33,7 +33,9 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public List<Cart> selectByUser(User user) {
+    public List<Goods> selectByUserId(String userId) {
+        User user = new User();
+        user.setUserId(userId);
         return cartMapper.selectByUser(user);
     }
 

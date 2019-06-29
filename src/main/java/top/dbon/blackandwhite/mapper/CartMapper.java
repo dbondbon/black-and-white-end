@@ -1,6 +1,7 @@
 package top.dbon.blackandwhite.mapper;
 
 import top.dbon.blackandwhite.domain.Cart;
+import top.dbon.blackandwhite.domain.Goods;
 import top.dbon.blackandwhite.domain.User;
 
 import java.util.List;
@@ -18,11 +19,11 @@ public interface CartMapper {
     Integer insertCart(Cart cart);
 
     /**
-     * 根据用户ID查找购物车列表
+     * 根据用户ID查找购物车商品列表
      * @param user
      * @return 返回列表
      */
-    List<Cart> selectByUser(User user);
+    List<Goods> selectByUser(User user);
 
     /**
      * 根据物品信息更新购物车信息

@@ -8,13 +8,35 @@
     <result column="count" property="count" />
   </resultMap>
 
+  <resultMap id="goodsResult" type="Goods" >
+    <result column="goods_id" property="goodsId" />
+    <result column="code" property="code"  />
+    <result column="name" property="name" />
+    <result column="count" property="count"  />
+    <result column="price" property="price"  />
+    <result column="description" property="description"  />
+    <result column="img_id" property="imgId"  />
+    <result column="goods_status" property="goodsStatus" />
+    <result column="user_id" property="userId"  />
+    <result column="create_time" property="createTime"  />
+    <result column="update_time" property="updateTime" />
+    <result column="create_by" property="createBy"  />
+    <result column="update_by" property="updateBy"  />
+    <result column="is_delete" property="isDelete" />
+    <result column="author" property="author" />
+    <result column="publisher" property="publisher" />
+  </resultMap>
+
   <sql id="selectCartVo" >
     SELECT user_id, goods_id, update_time, `count` FROM cart
   </sql>
 
-  <select id="selectByUser" resultMap="cartResult" parameterType="String" >
-    <include refid="selectCartVo" />
-    where user_id = #{userId}
+  <select id="selectByUser" resultMap="goodsResult" parameterType="User" >
+    SELECT
+    g.goods_id, g.`code`, g.`name`, g.`count`, g.price, g.description, g.img_id, g.goods_status, g.user_id, g.create_time,
+    g.update_time, g.create_by, g.update_by, g.is_delete, g.author, g.publisher
+    FROM goods g JOIN cart c ON g.goods_id = c.goods_id
+    where c.user_id = #{userId}
   </select>
 
   <select id="selectCart" resultMap="cartResult" parameterType="Cart" >

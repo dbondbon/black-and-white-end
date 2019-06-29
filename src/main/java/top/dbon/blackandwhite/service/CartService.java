@@ -1,6 +1,7 @@
 package top.dbon.blackandwhite.service;
 
 import top.dbon.blackandwhite.domain.Cart;
+import top.dbon.blackandwhite.domain.Goods;
 import top.dbon.blackandwhite.domain.User;
 
 import java.math.BigDecimal;
@@ -15,11 +16,11 @@ public interface CartService {
     Integer insertCart(Cart cart);
 
     /**
-     * 根据用户查找购物车列表
-     * @param user
+     * 根据用户查找购物车商品列表
+     * @param userId
      * @return 返回列表
      */
-    List<Cart> selectByUser(User user);
+    List<Goods> selectByUserId(String userId);
 
     /**
      * 根据物品信息更新购物车信息
