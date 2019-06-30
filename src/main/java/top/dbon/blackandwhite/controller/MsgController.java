@@ -11,21 +11,20 @@ import top.dbon.blackandwhite.service.MsgService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/msg")
 public class MsgController {
 
     @Autowired
     private MsgService msgService;
 
-    @PostMapping("/add")
+    @RequestMapping(value = "/msg", method = RequestMethod.POST)
     public AjaxResult published(@RequestBody Message message) {
         msgService.insertMessage(message);
         return AjaxResult.success();
     }
 
-    @PostMapping("/getAll")
-    public AjaxResult get(@RequestBody User user) {
-        List<Message> list =  msgService.selectListByUser(user);
+    @RequestMapping(value = "/msg/{userId}", method = RequestMethod.GET)
+    public AjaxResult getAll(@PathVariable("userId") String userId) {
+        List<Message> list =  msgService.selectListByUserId(userId);
         if(list == null) {
             return AjaxResult.error();
         } else {
@@ -33,9 +32,10 @@ public class MsgController {
         }
     }
 
-    @PostMapping("/getOne")
-    public AjaxResult get(@RequestBody MsgVo msgVo) {
-        List<Message> list =  msgService.selectMsgVo(msgVo);
-        return AjaxResult.success().put("msgList", list);
+    @RequestMapping(value = "/msg", method = RequestMethod.GET)
+    public AjaxResult get(@RequestParam("userId") String userId, @RequestParam("otherId") String otherId) {
+        //List<Message> list =  msgService.selectMsgVo(msgVo);
+       // return AjaxResult.success().put("msgList", list);
+        return null;
     }
 }

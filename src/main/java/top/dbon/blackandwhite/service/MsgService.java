@@ -30,10 +30,10 @@ public interface MsgService {
 
     /**
      * 查找用户所有消息
-     * @param user
+     * @param userId
      * @return
      */
-    List<Message> selectListByUser(User user);
+    List<Message> selectListByUserId(String userId);
 
     /**
      * 查找用户与用户消息记录

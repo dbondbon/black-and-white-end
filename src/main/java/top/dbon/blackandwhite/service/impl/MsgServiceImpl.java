@@ -42,7 +42,9 @@ public class MsgServiceImpl implements MsgService {
     }
 
     @Override
-    public List<Message> selectListByUser(User user) {
+    public List<Message> selectListByUserId(String userId) {
+        User user = new User();
+        user.setUserId(userId);
         List<Message> list =  messageMapper.selectListByUser(user);
         //去重
         for (int i = 0;i<list.size();i++) {
