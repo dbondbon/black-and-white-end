@@ -40,10 +40,11 @@ public interface UserService {
 
     /**
      * 检查用户登录
-     * @param user
+     * @param username
+     * @param password
      * @return
      */
-    User checkLogin(User user);
+    User checkLogin(String username, String password);
 
     /**
      * 生成唯一用户名

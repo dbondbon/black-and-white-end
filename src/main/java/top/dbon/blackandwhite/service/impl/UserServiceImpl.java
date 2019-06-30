@@ -44,8 +44,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User checkLogin(User userLogin) {
-      User user = userMapper.selectByUser(userLogin);
+    public User checkLogin(String username, String password) {
+      User user = new User();
+      user.setUsername(username);
+      user.setPassword(password);
+      user = userMapper.selectByUser(user);
       return user;
     }
 

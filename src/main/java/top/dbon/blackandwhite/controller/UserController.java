@@ -5,12 +5,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import top.dbon.blackandwhite.common.AjaxResult;
-import top.dbon.blackandwhite.domain.Goods;
 import top.dbon.blackandwhite.domain.User;
-import top.dbon.blackandwhite.service.GoodsService;
 import top.dbon.blackandwhite.service.UserService;
-
-import java.util.List;
 
 @RestController
 public class UserController {
@@ -20,9 +16,9 @@ public class UserController {
   @Autowired
   private UserService userService;
 
-  @PostMapping("/user/login")
-  public AjaxResult login(@RequestBody User userLogin) {
-    User user = userService.checkLogin(userLogin);
+  @RequestMapping(value = "/user", method = RequestMethod.GET)
+  public AjaxResult login(@RequestParam("username") String username, @RequestParam("password") String password) {
+    User user = userService.checkLogin(username, password);
     if(user == null) {
       return AjaxResult.error();
     } else {
@@ -31,7 +27,7 @@ public class UserController {
     }
   }
 
-  @PostMapping("/user/register")
+  @RequestMapping(value = "/user", method = RequestMethod.POST)
   public AjaxResult register(@RequestBody User userRegister) {
     if (userService.checkNickname(userRegister) > 0) {
       return AjaxResult.error();
