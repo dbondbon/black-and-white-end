@@ -1,10 +1,10 @@
 package top.dbon.blackandwhite.mapper;
 
 import top.dbon.blackandwhite.domain.Message;
-import top.dbon.blackandwhite.domain.MsgVo;
 import top.dbon.blackandwhite.domain.User;
 
 import java.util.List;
+import java.util.Map;
 
 public interface MessageMapper {
     /**
@@ -37,10 +37,10 @@ public interface MessageMapper {
 
     /**
      * 查找用户与用户消息记录
-     * @param msgVo
+     * @param map
      * @return
      */
-    List<Message> selectMsgVo(MsgVo msgVo);
+    List<Message> selectRecords(Map<String, Object> map);
 
     /**
      * 更新信息

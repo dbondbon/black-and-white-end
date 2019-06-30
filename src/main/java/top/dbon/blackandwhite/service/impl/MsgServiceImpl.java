@@ -11,7 +11,9 @@ import top.dbon.blackandwhite.service.MsgService;
 import top.dbon.blackandwhite.util.UUIDUtils;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class MsgServiceImpl implements MsgService {
@@ -59,8 +61,11 @@ public class MsgServiceImpl implements MsgService {
     }
 
     @Override
-    public List<Message> selectMsgVo(MsgVo msgVo) {
-        return  messageMapper.selectMsgVo(msgVo);
+    public List<Message> selectRecords(String userId, String otherId) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("userId", userId);
+        map.put("otherId", otherId);
+        return  messageMapper.selectRecords(map);
     }
 
     @Override

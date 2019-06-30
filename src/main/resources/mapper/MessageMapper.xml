@@ -39,7 +39,7 @@
     ORDER BY send_time
   </select>
 
-  <select id="selectMsgVo" resultMap="msgResult" parameterType="MsgVo" >
+  <select id="selectRecords" resultMap="msgResult" parameterType="Map" >
     (<include refid="selectMsgVo" />
     WHERE ((receiver_id = #{userId} OR receiver_id = #{otherId}))
     AND (sender_id = #{userId} OR sender_id = #{otherId}))

@@ -34,8 +34,7 @@ public class MsgController {
 
     @RequestMapping(value = "/msg", method = RequestMethod.GET)
     public AjaxResult get(@RequestParam("userId") String userId, @RequestParam("otherId") String otherId) {
-        //List<Message> list =  msgService.selectMsgVo(msgVo);
-       // return AjaxResult.success().put("msgList", list);
-        return null;
+        List<Message> list =  msgService.selectRecords(userId, otherId);
+        return AjaxResult.success().put("msgList", list);
     }
 }

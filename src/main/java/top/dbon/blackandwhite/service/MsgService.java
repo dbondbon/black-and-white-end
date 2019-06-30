@@ -37,10 +37,11 @@ public interface MsgService {
 
     /**
      * 查找用户与用户消息记录
-     * @param msgVo
-     * @return
+     * @param userId
+     * @param otherId
+     * @return 消息列表
      */
-    List<Message> selectMsgVo(MsgVo msgVo);
+    List<Message> selectRecords(String userId, String otherId);
 
     /**
      * 更新信息
