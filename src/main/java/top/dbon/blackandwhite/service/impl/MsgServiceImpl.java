@@ -3,7 +3,6 @@ package top.dbon.blackandwhite.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import top.dbon.blackandwhite.domain.Message;
-import top.dbon.blackandwhite.domain.MsgVo;
 import top.dbon.blackandwhite.domain.User;
 import top.dbon.blackandwhite.mapper.MessageMapper;
 import top.dbon.blackandwhite.mapper.UserMapper;

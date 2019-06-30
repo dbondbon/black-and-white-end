@@ -4,8 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import top.dbon.blackandwhite.common.AjaxResult;
 import top.dbon.blackandwhite.domain.Message;
-import top.dbon.blackandwhite.domain.MsgVo;
-import top.dbon.blackandwhite.domain.User;
 import top.dbon.blackandwhite.service.MsgService;
 
 import java.util.List;

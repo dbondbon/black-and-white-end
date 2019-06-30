@@ -37,17 +37,17 @@ public interface OrderService {
 
     /**
      * 查找用户所有购买订单
-     * @param user
+     * @param userId
      * @return 结果集
      */
-    List<Order> selectBuyListByUser(User user);
+    List<Order> selectBuyListByUserId(String userId);
 
     /**
      * 查找用户所有出售订单
-     * @param user
+     * @param userId
      * @return 结果集
      */
-    List<Order> selectSellListByUser(User user);
+    List<Order> selectSellListByUserId(String userId);
 
     /**
      * 更新订单

@@ -84,12 +84,16 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<Order> selectBuyListByUser(User user) {
+    public List<Order> selectBuyListByUserId(String userId) {
+        User user = new User();
+        user.setUserId(userId);
         return orderMapper.selectBuyListByUser(user);
     }
 
     @Override
-    public List<Order> selectSellListByUser(User user) {
+    public List<Order> selectSellListByUserId(String userId) {
+        User user = new User();
+        user.setUserId(userId);
         return orderMapper.selectSellListByUser(user);
     }
 

@@ -12,27 +12,26 @@ import top.dbon.blackandwhite.service.OrderService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/order")
 public class OrderController {
 
     @Autowired
     private OrderService orderService;
 
-    @PostMapping("/add")
+    @RequestMapping(value = "/order", method = RequestMethod.POST)
     public AjaxResult add(@RequestBody Order order) {
         orderService.insertOrder(order);
         return AjaxResult.success();
     }
 
-    @PostMapping("/addList")
+    @PostMapping("/order/addList")
     public AjaxResult addList(@RequestBody OrderVo orderVo) {
         orderService.insertOrderList(orderVo);
         return AjaxResult.success();
     }
 
-    @PostMapping("/buyList")
-    public AjaxResult buyList(@RequestBody User user) {
-        List<Order> list = orderService.selectBuyListByUser(user);
+    @RequestMapping("/order/{userId}")
+    public AjaxResult buyList(@PathVariable("userId") String userId) {
+        List<Order> list = orderService.selectBuyListByUserId(userId);
         if(list == null) {
             return AjaxResult.error();
         } else {
@@ -40,9 +39,9 @@ public class OrderController {
         }
     }
 
-    @PostMapping("/sellList")
-    public AjaxResult sellList(@RequestBody User user) {
-        List<Order> list = orderService.selectSellListByUser(user);
+    @PostMapping("/order/{userId}")
+    public AjaxResult sellList(@PathVariable("userId") String userId) {
+        List<Order> list = orderService.selectSellListByUserId(userId);
         if(list == null) {
             return AjaxResult.error();
         } else {

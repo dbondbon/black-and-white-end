@@ -1,8 +1,6 @@
 package top.dbon.blackandwhite.service;
 
 import top.dbon.blackandwhite.domain.Message;
-import top.dbon.blackandwhite.domain.MsgVo;
-import top.dbon.blackandwhite.domain.User;
 
 import java.util.List;
 
