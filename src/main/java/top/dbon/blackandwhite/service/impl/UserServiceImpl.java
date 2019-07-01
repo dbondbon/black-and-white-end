@@ -71,8 +71,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUser(String id) {
-        if (id != null && "1".equals(id)) {
+    public User getUser(String userId) {
+        if (userId != null && "1".equals(userId)) {
             //没有账号，新注册用户
             String username = UsernameUtils.getNextUsername();
             while (userMapper.selectByUsername(username)!=null) {
@@ -82,8 +82,9 @@ public class UserServiceImpl implements UserService {
             user.setUsername(username);
             return user;
         } else {
-            //登录用户
-            User user = userMapper.selectByUserId(id);
+            //返回用户信息
+            User user = userMapper.selectByUserId(userId);
+            user.setPassword("*");
             return user;
         }
     }

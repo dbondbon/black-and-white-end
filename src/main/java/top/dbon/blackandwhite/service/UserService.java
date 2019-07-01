@@ -60,8 +60,10 @@ public interface UserService {
 
 
     /**
-     * RESTful风格
+     * 根据用户id获取用户信息
+     * @param userId
+     * @return
      */
-    User getUser(String id);
+    User getUser(String userId);
 
 }

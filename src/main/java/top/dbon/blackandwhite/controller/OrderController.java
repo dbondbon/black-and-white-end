@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 import top.dbon.blackandwhite.common.AjaxResult;
 import top.dbon.blackandwhite.domain.Order;
 import top.dbon.blackandwhite.domain.OrderVo;
-import top.dbon.blackandwhite.domain.User;
 import top.dbon.blackandwhite.service.OrderService;
 
 import java.util.List;
