@@ -9,6 +9,7 @@ import top.dbon.blackandwhite.domain.User;
 import top.dbon.blackandwhite.service.UserService;
 
 @RestController
+@RequestMapping("/user")
 public class UserController {
 
   private Logger logger = (Logger) LoggerFactory.getLogger(this.getClass());
@@ -16,7 +17,7 @@ public class UserController {
   @Autowired
   private UserService userService;
 
-  @RequestMapping(value = "/user", method = RequestMethod.GET)
+  @RequestMapping(value = "/", method = RequestMethod.GET)
   public AjaxResult login(@RequestParam("username") String username, @RequestParam("password") String password) {
     User user = userService.checkLogin(username, password);
     if(user == null) {
@@ -28,7 +29,7 @@ public class UserController {
     }
   }
 
-  @RequestMapping(value = "/user", method = RequestMethod.POST)
+  @RequestMapping(value = "/", method = RequestMethod.POST)
   public AjaxResult register(@RequestBody User userRegister) {
     if (userService.checkNickname(userRegister) > 0) {
       return AjaxResult.error();
@@ -39,7 +40,7 @@ public class UserController {
     }
   }
 
-  @RequestMapping(value = "/user/{userId}", method = RequestMethod.GET)
+  @RequestMapping(value = "/{userId}", method = RequestMethod.GET)
   public AjaxResult getUserInfo(@PathVariable("userId") String userId) {
     logger.debug("查找用户id为：{}的用户信息", userId);
     return AjaxResult.success().put("user", userService.getUser(userId));

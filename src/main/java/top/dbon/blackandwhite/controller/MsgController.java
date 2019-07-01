@@ -9,18 +9,19 @@ import top.dbon.blackandwhite.service.MsgService;
 import java.util.List;
 
 @RestController
+@RequestMapping("/msg")
 public class MsgController {
 
     @Autowired
     private MsgService msgService;
 
-    @RequestMapping(value = "/msg", method = RequestMethod.POST)
+    @RequestMapping(value = "/", method = RequestMethod.POST)
     public AjaxResult published(@RequestBody Message message) {
         msgService.insertMessage(message);
         return AjaxResult.success();
     }
 
-    @RequestMapping(value = "/msg/{userId}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{userId}", method = RequestMethod.GET)
     public AjaxResult getAll(@PathVariable("userId") String userId) {
         List<Message> list =  msgService.selectListByUserId(userId);
         if(list == null) {
@@ -30,7 +31,7 @@ public class MsgController {
         }
     }
 
-    @RequestMapping(value = "/msg", method = RequestMethod.GET)
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public AjaxResult get(@RequestParam("userId") String userId, @RequestParam("otherId") String otherId) {
         List<Message> list =  msgService.selectRecords(userId, otherId);
         return AjaxResult.success().put("msgList", list);

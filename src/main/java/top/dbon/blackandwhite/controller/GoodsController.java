@@ -9,24 +9,25 @@ import top.dbon.blackandwhite.service.GoodsService;
 import java.util.List;
 
 @RestController
+@RequestMapping("/goods")
 public class GoodsController {
 
   @Autowired
   private GoodsService goodsService;
 
-  @RequestMapping(value = "/goods", method = RequestMethod.POST)
+  @RequestMapping(value = "/", method = RequestMethod.POST)
   public AjaxResult insertGoods(@RequestBody Goods goods) {
     goodsService.insertGoods(goods);
     return AjaxResult.success();
   }
 
-  @RequestMapping(value = "/goods", method = RequestMethod.GET)
+  @RequestMapping(value = "/", method = RequestMethod.GET)
   public AjaxResult findAllGoods(@RequestParam("userId") String userId, @RequestParam("name") String name) {
     List<Goods> list = goodsService.selectListByUserIDAndGoodsName(userId, name);
     return AjaxResult.success().put("list", list);
   }
 
-  @RequestMapping(value = "/goods/{userId}", method = RequestMethod.GET)
+  @RequestMapping(value = "/{userId}", method = RequestMethod.GET)
   public AjaxResult onSaleList(@PathVariable("userId") String userId) {
     List<Goods> list = goodsService.selectOnSaleListByUser(userId);
     if (list == null || list.size() == 0) {
@@ -36,7 +37,7 @@ public class GoodsController {
     }
   }
 
-  @RequestMapping(value = "/goods/{goodsId}", method = RequestMethod.DELETE)
+  @RequestMapping(value = "/{goodsId}", method = RequestMethod.DELETE)
   public AjaxResult deleteGoods(@PathVariable("goodsId") String goodsId) {
     goodsService.deleteByGoodsId(goodsId);
     return AjaxResult.success();

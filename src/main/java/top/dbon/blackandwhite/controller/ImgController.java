@@ -12,9 +12,10 @@ import java.io.*;
  * 接收图片控制器
  */
 @RestController
+@RequestMapping("/img")
 public class ImgController {
 
-    @RequestMapping(value = "/img", method = RequestMethod.POST)
+    @RequestMapping(value = "/", method = RequestMethod.POST)
     public AjaxResult add(@RequestParam("file") MultipartFile file) {
         BufferedOutputStream out = null;
         String imgId = UUIDUtils.getInstance().nextId();
@@ -42,7 +43,7 @@ public class ImgController {
         return AjaxResult.success().put("imgId", imgId);
     }
 
-    @RequestMapping(value = "/img/{imgId}", produces = MediaType.IMAGE_JPEG_VALUE, method = RequestMethod.GET)
+    @RequestMapping(value = "/{imgId}", produces = MediaType.IMAGE_JPEG_VALUE, method = RequestMethod.GET)
     public byte[] get(@PathVariable("imgId") String imgId) {
         String imgPath = "G:\\black-and-white\\black-and-white-end\\img\\" + imgId + ".jpg";
         File file = new File(imgPath);
