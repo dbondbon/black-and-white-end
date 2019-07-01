@@ -1,5 +1,6 @@
 package top.dbon.blackandwhite.service;
 
+import com.github.pagehelper.Page;
 import top.dbon.blackandwhite.domain.Goods;
 import top.dbon.blackandwhite.domain.User;
 
@@ -40,7 +41,7 @@ public interface GoodsService {
      * @param name
      * @return
      */
-    List<Goods> selectListByUserIDAndGoodsName(String userId, String name);
+    Page<Goods> selectListByUserIDAndGoodsName(String userId, String name);
 
 
     /**

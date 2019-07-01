@@ -21,7 +21,7 @@ public class CartController {
     @Autowired
     private CartService cartService;
 
-    @RequestMapping(value = "/", method = RequestMethod.POST)
+    @RequestMapping(value = "", method = RequestMethod.POST)
     public AjaxResult addCart(@RequestBody Cart cart) {
         cartService.insertCart(cart);
         return AjaxResult.success();
@@ -34,7 +34,7 @@ public class CartController {
         return AjaxResult.success().put("cartGoodsList", list);
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.DELETE)
+    @RequestMapping(value = "", method = RequestMethod.DELETE)
     public AjaxResult delete(@RequestParam("userId") String userId, @RequestParam("goodsId") String goodsId) {
         cartService.deleteByUserIdAndGoodsId(userId, goodsId);
         return AjaxResult.success();

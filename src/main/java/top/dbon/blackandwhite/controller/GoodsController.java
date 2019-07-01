@@ -1,5 +1,7 @@
 package top.dbon.blackandwhite.controller;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import top.dbon.blackandwhite.common.AjaxResult;
@@ -15,16 +17,18 @@ public class GoodsController {
   @Autowired
   private GoodsService goodsService;
 
-  @RequestMapping(value = "/", method = RequestMethod.POST)
+  @RequestMapping(value = "", method = RequestMethod.POST)
   public AjaxResult insertGoods(@RequestBody Goods goods) {
     goodsService.insertGoods(goods);
     return AjaxResult.success();
   }
 
-  @RequestMapping(value = "/", method = RequestMethod.GET)
-  public AjaxResult findAllGoods(@RequestParam("userId") String userId, @RequestParam("name") String name) {
-    List<Goods> list = goodsService.selectListByUserIDAndGoodsName(userId, name);
-    return AjaxResult.success().put("list", list);
+  @RequestMapping(value = "", method = RequestMethod.GET)
+  public AjaxResult findAllGoods(@RequestParam("userId") String userId, @RequestParam("name") String name,
+                                @RequestParam(name = "pageSize", defaultValue = "10") Integer pageSize, @RequestParam(name = "pageNum", defaultValue = "1") Integer pageNum) {
+    PageHelper.startPage(pageNum,pageSize);
+    PageInfo<Goods> pageInfo = new PageInfo<>(goodsService.selectListByUserIDAndGoodsName(userId, name));
+    return AjaxResult.success().put("pageInfo", pageInfo);
   }
 
   @RequestMapping(value = "/{userId}", method = RequestMethod.GET)

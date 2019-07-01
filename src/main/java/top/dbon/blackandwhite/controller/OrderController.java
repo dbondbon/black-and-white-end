@@ -17,7 +17,7 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
-    @RequestMapping(value = "/", method = RequestMethod.POST)
+    @RequestMapping(value = "", method = RequestMethod.POST)
     public AjaxResult add(@RequestBody Order order) {
         orderService.insertOrder(order);
         return AjaxResult.success();

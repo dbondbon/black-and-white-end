@@ -17,7 +17,7 @@ public class UserController {
   @Autowired
   private UserService userService;
 
-  @RequestMapping(value = "/", method = RequestMethod.GET)
+  @RequestMapping(value = "", method = RequestMethod.GET)
   public AjaxResult login(@RequestParam("username") String username, @RequestParam("password") String password) {
     User user = userService.checkLogin(username, password);
     if(user == null) {
@@ -29,7 +29,7 @@ public class UserController {
     }
   }
 
-  @RequestMapping(value = "/", method = RequestMethod.POST)
+  @RequestMapping(value = "", method = RequestMethod.POST)
   public AjaxResult register(@RequestBody User userRegister) {
     if (userService.checkNickname(userRegister) > 0) {
       return AjaxResult.error();

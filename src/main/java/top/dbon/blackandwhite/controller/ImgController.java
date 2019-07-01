@@ -15,7 +15,7 @@ import java.io.*;
 @RequestMapping("/img")
 public class ImgController {
 
-    @RequestMapping(value = "/", method = RequestMethod.POST)
+    @RequestMapping(value = "", method = RequestMethod.POST)
     public AjaxResult add(@RequestParam("file") MultipartFile file) {
         BufferedOutputStream out = null;
         String imgId = UUIDUtils.getInstance().nextId();

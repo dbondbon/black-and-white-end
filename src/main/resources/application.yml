@@ -37,13 +37,12 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml  #mapper映射xml文件的所在路径
   type-aliases-package: top.dbon.blackandwhite.domain  # 实体类的路径
 
-#pagehelper
+#pagehelper分页插件
 pagehelper:
     helperDialect: mysql
     reasonable: true
     supportMethodsArguments: true
     params: count=countSql
-    returnPageInfo: check
 
 
 

@@ -1,5 +1,6 @@
 package top.dbon.blackandwhite.mapper;
 
+import com.github.pagehelper.Page;
 import top.dbon.blackandwhite.domain.Goods;
 import top.dbon.blackandwhite.domain.User;
 
@@ -47,7 +48,7 @@ public interface GoodsMapper {
      * @param goods
      * @return 结果集
      */
-    List<Goods> selectListByUserIDAndGoodsName(Goods goods);
+    Page<Goods> selectListByUserIDAndGoodsName(Goods goods);
 
     /**
      * 根据用户查找购物车商品列表

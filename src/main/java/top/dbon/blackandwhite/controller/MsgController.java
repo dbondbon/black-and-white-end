@@ -15,7 +15,7 @@ public class MsgController {
     @Autowired
     private MsgService msgService;
 
-    @RequestMapping(value = "/", method = RequestMethod.POST)
+    @RequestMapping(value = "", method = RequestMethod.POST)
     public AjaxResult published(@RequestBody Message message) {
         msgService.insertMessage(message);
         return AjaxResult.success();
@@ -31,7 +31,7 @@ public class MsgController {
         }
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "", method = RequestMethod.GET)
     public AjaxResult get(@RequestParam("userId") String userId, @RequestParam("otherId") String otherId) {
         List<Message> list =  msgService.selectRecords(userId, otherId);
         return AjaxResult.success().put("msgList", list);

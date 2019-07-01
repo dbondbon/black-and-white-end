@@ -47,6 +47,7 @@
     where name like CONCAT('%',#{name},'%')
     AND user_id != #{userId}
     AND is_delete = "0"
+    ORDER BY goods_id
   </select>
 
   <select id="selectOnSaleListByUser" resultMap="goodsResult" parameterType="User" >

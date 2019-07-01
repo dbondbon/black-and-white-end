@@ -1,5 +1,6 @@
 package top.dbon.blackandwhite.service.impl;
 
+import com.github.pagehelper.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import top.dbon.blackandwhite.domain.Goods;
@@ -42,7 +43,7 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
-    public List<Goods> selectListByUserIDAndGoodsName(String userId, String name) {
+    public Page<Goods> selectListByUserIDAndGoodsName(String userId, String name) {
         Goods goods = new Goods();
         goods.setUserId(userId);
         goods.setName(name);
