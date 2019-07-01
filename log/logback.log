@@ -5575,3 +5575,480 @@
 15:24:14.152 logback [http-nio-8080-exec-2] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - <==      Total: 5
 15:24:14.152 logback [http-nio-8080-exec-2] DEBUG c.a.druid.pool.PreparedStatementPool - {conn-10001, pstmt-20002} enter cache
 15:24:14.153 logback [http-nio-8080-exec-2] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28a29c4f]
+17:11:43.772 logback [main] INFO  t.d.b.BlackAndWhiteApplication - Starting BlackAndWhiteApplication on DESKTOP-BKN43FU with PID 13876 (G:\black-and-white\black-and-white-end\target\classes started by lenovo in G:\black-and-white\black-and-white-end)
+17:11:43.776 logback [main] DEBUG t.d.b.BlackAndWhiteApplication - Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+17:11:43.777 logback [main] INFO  t.d.b.BlackAndWhiteApplication - No active profile set, falling back to default profiles: default
+17:11:44.398 logback [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+17:11:44.402 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\CartMapper.class]
+17:11:44.402 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\GoodsMapper.class]
+17:11:44.402 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\MessageMapper.class]
+17:11:44.408 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\OrderMapper.class]
+17:11:44.408 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\UserMapper.class]
+17:11:44.409 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'cartMapper' and 'top.dbon.blackandwhite.mapper.CartMapper' mapperInterface
+17:11:44.409 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'cartMapper'.
+17:11:44.409 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'goodsMapper' and 'top.dbon.blackandwhite.mapper.GoodsMapper' mapperInterface
+17:11:44.409 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'goodsMapper'.
+17:11:44.409 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'messageMapper' and 'top.dbon.blackandwhite.mapper.MessageMapper' mapperInterface
+17:11:44.410 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'messageMapper'.
+17:11:44.410 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'orderMapper' and 'top.dbon.blackandwhite.mapper.OrderMapper' mapperInterface
+17:11:44.410 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+17:11:44.410 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'userMapper' and 'top.dbon.blackandwhite.mapper.UserMapper' mapperInterface
+17:11:44.410 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+17:11:45.001 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+17:11:45.010 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:11:45.011 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
+17:11:45.108 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:11:45.188 logback [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+17:11:45.528 logback [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+17:11:45.673 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\CartMapper.xml]'
+17:11:45.689 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\GoodsMapper.xml]'
+17:11:45.699 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\MessageMapper.xml]'
+17:11:45.712 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\OrderMapper.xml]'
+17:11:45.722 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\UserMapper.xml]'
+17:11:45.763 logback [main] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+17:11:45.764 logback [main] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+17:11:45.766 logback [main] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+17:11:45.767 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+17:11:45.768 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+17:11:45.768 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+17:11:45.769 logback [main] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+17:11:45.769 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via user class loader
+17:11:45.770 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
+17:11:45.770 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+17:11:45.770 logback [main] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+17:11:45.773 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+17:11:45.773 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+17:11:45.773 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+17:11:45.773 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+17:11:45.774 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+17:11:46.212 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+17:11:46.244 logback [main] INFO  t.d.b.BlackAndWhiteApplication - Started BlackAndWhiteApplication in 3.124 seconds (JVM running for 3.943)
+17:11:54.253 logback [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:11:54.298 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:11:54.305 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@210859e0] was not registered for synchronization because synchronization is not active
+17:11:54.312 logback [http-nio-8080-exec-1] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2da911cd] will not be managed by Spring
+17:11:54.313 logback [http-nio-8080-exec-1] DEBUG t.d.b.mapper.UserMapper.selectByUser - ==>  Preparing: SELECT user_id, nickname, username, password, school, gender, create_time, update_time, create_by, update_by, submit_audit, audit_status, avatar, `name`, stu_id, idcard_img, idcard_cover_img, phone, email, auth_code, role_set, is_delete, login_time FROM user where username = ? AND password = ? AND is_delete = "0" 
+17:11:54.333 logback [http-nio-8080-exec-1] DEBUG t.d.b.mapper.UserMapper.selectByUser - ==> Parameters: 916279(String), e10adc3949ba59abbe56e057f20f883e(String)
+17:11:54.364 logback [http-nio-8080-exec-1] DEBUG t.d.b.mapper.UserMapper.selectByUser - <==      Total: 1
+17:11:54.365 logback [http-nio-8080-exec-1] DEBUG c.a.druid.pool.PreparedStatementPool - {conn-10001, pstmt-20000} enter cache
+17:11:54.365 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@210859e0]
+17:11:54.366 logback [http-nio-8080-exec-1] INFO  t.d.b.controller.UserController - 昵称为：郑六 的用户登录成功，账号为：916279
+17:11:55.491 logback [http-nio-8080-exec-2] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:11:55.491 logback [http-nio-8080-exec-2] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ebb488e] was not registered for synchronization because synchronization is not active
+17:11:55.492 logback [http-nio-8080-exec-2] DEBUG SQL_CACHE - Cache Hit Ratio [SQL_CACHE]: 0.0
+17:11:55.526 logback [http-nio-8080-exec-2] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2da911cd] will not be managed by Spring
+17:11:55.527 logback [http-nio-8080-exec-2] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==>  Preparing: SELECT count(0) FROM goods WHERE name LIKE CONCAT('%', ?, '%') AND user_id != ? AND is_delete = "0" 
+17:11:55.527 logback [http-nio-8080-exec-2] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==> Parameters: (String), 588789463002382336(String)
+17:11:55.530 logback [http-nio-8080-exec-2] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - <==      Total: 1
+17:11:55.530 logback [http-nio-8080-exec-2] DEBUG c.a.druid.pool.PreparedStatementPool - {conn-10001, pstmt-20001} enter cache
+17:11:55.532 logback [http-nio-8080-exec-2] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==>  Preparing: SELECT goods_id, code, `name`, `count`, price, description, img_id, goods_status, user_id, create_time, update_time, create_by, update_by, is_delete, author, publisher FROM goods where name like CONCAT('%',?,'%') AND user_id != ? AND is_delete = "0" ORDER BY goods_id LIMIT ? 
+17:11:55.533 logback [http-nio-8080-exec-2] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==> Parameters: (String), 588789463002382336(String), 10(Integer)
+17:11:55.538 logback [http-nio-8080-exec-2] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - <==      Total: 10
+17:11:55.539 logback [http-nio-8080-exec-2] DEBUG c.a.druid.pool.PreparedStatementPool - {conn-10001, pstmt-20002} enter cache
+17:11:55.539 logback [http-nio-8080-exec-2] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ebb488e]
+17:12:01.501 logback [http-nio-8080-exec-4] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:12:01.501 logback [http-nio-8080-exec-4] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@225af73f] was not registered for synchronization because synchronization is not active
+17:12:01.502 logback [http-nio-8080-exec-4] DEBUG SQL_CACHE - Cache Hit Ratio [SQL_CACHE]: 0.5
+17:12:01.503 logback [http-nio-8080-exec-4] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2da911cd] will not be managed by Spring
+17:12:01.504 logback [http-nio-8080-exec-4] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==>  Preparing: SELECT count(0) FROM goods WHERE name LIKE CONCAT('%', ?, '%') AND user_id != ? AND is_delete = "0" 
+17:12:01.504 logback [http-nio-8080-exec-4] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==> Parameters: (String), 588789463002382336(String)
+17:12:01.506 logback [http-nio-8080-exec-4] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - <==      Total: 1
+17:12:01.507 logback [http-nio-8080-exec-4] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==>  Preparing: SELECT goods_id, code, `name`, `count`, price, description, img_id, goods_status, user_id, create_time, update_time, create_by, update_by, is_delete, author, publisher FROM goods where name like CONCAT('%',?,'%') AND user_id != ? AND is_delete = "0" ORDER BY goods_id LIMIT ?, ? 
+17:12:01.508 logback [http-nio-8080-exec-4] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==> Parameters: (String), 588789463002382336(String), 10(Integer), 10(Integer)
+17:12:01.510 logback [http-nio-8080-exec-4] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - <==      Total: 1
+17:12:01.511 logback [http-nio-8080-exec-4] DEBUG c.a.druid.pool.PreparedStatementPool - {conn-10001, pstmt-20003} enter cache
+17:12:01.511 logback [http-nio-8080-exec-4] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@225af73f]
+17:12:13.621 logback [http-nio-8080-exec-5] DEBUG t.d.b.controller.CartController - 接收到查询购物车请求，查询的用户ID为：588789463002382336
+17:12:13.621 logback [http-nio-8080-exec-5] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:12:13.621 logback [http-nio-8080-exec-5] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@18a0b44a] was not registered for synchronization because synchronization is not active
+17:12:13.622 logback [http-nio-8080-exec-5] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2da911cd] will not be managed by Spring
+17:12:13.622 logback [http-nio-8080-exec-5] DEBUG t.d.b.mapper.CartMapper.selectByUser - ==>  Preparing: SELECT g.goods_id, g.`code`, g.`name`, g.`count`, g.price, g.description, g.img_id, g.goods_status, g.user_id, g.create_time, g.update_time, g.create_by, g.update_by, g.is_delete, g.author, g.publisher FROM goods g JOIN cart c ON g.goods_id = c.goods_id where c.user_id = ? 
+17:12:13.623 logback [http-nio-8080-exec-5] DEBUG t.d.b.mapper.CartMapper.selectByUser - ==> Parameters: 588789463002382336(String)
+17:12:13.624 logback [http-nio-8080-exec-5] DEBUG t.d.b.mapper.CartMapper.selectByUser - <==      Total: 0
+17:12:13.624 logback [http-nio-8080-exec-5] DEBUG c.a.druid.pool.PreparedStatementPool - {conn-10001, pstmt-20004} enter cache
+17:12:13.625 logback [http-nio-8080-exec-5] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@18a0b44a]
+17:12:18.343 logback [http-nio-8080-exec-6] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:12:18.343 logback [http-nio-8080-exec-6] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5e5f11fc] was not registered for synchronization because synchronization is not active
+17:12:18.343 logback [http-nio-8080-exec-6] DEBUG SQL_CACHE - Cache Hit Ratio [SQL_CACHE]: 0.6666666666666666
+17:12:18.345 logback [http-nio-8080-exec-6] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2da911cd] will not be managed by Spring
+17:12:18.345 logback [http-nio-8080-exec-6] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==>  Preparing: SELECT count(0) FROM goods WHERE name LIKE CONCAT('%', ?, '%') AND user_id != ? AND is_delete = "0" 
+17:12:18.345 logback [http-nio-8080-exec-6] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==> Parameters: (String), 588789463002382336(String)
+17:12:18.346 logback [http-nio-8080-exec-6] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - <==      Total: 1
+17:12:18.347 logback [http-nio-8080-exec-6] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==>  Preparing: SELECT goods_id, code, `name`, `count`, price, description, img_id, goods_status, user_id, create_time, update_time, create_by, update_by, is_delete, author, publisher FROM goods where name like CONCAT('%',?,'%') AND user_id != ? AND is_delete = "0" ORDER BY goods_id LIMIT ? 
+17:12:18.348 logback [http-nio-8080-exec-6] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==> Parameters: (String), 588789463002382336(String), 10(Integer)
+17:12:18.355 logback [http-nio-8080-exec-6] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - <==      Total: 10
+17:12:18.355 logback [http-nio-8080-exec-6] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5e5f11fc]
+17:12:20.767 logback [http-nio-8080-exec-7] DEBUG t.d.b.controller.CartController - 接收到查询购物车请求，查询的用户ID为：588789463002382336
+17:12:20.767 logback [http-nio-8080-exec-7] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:12:20.768 logback [http-nio-8080-exec-7] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4713e363] was not registered for synchronization because synchronization is not active
+17:12:20.768 logback [http-nio-8080-exec-7] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2da911cd] will not be managed by Spring
+17:12:20.768 logback [http-nio-8080-exec-7] DEBUG t.d.b.mapper.CartMapper.selectByUser - ==>  Preparing: SELECT g.goods_id, g.`code`, g.`name`, g.`count`, g.price, g.description, g.img_id, g.goods_status, g.user_id, g.create_time, g.update_time, g.create_by, g.update_by, g.is_delete, g.author, g.publisher FROM goods g JOIN cart c ON g.goods_id = c.goods_id where c.user_id = ? 
+17:12:20.769 logback [http-nio-8080-exec-7] DEBUG t.d.b.mapper.CartMapper.selectByUser - ==> Parameters: 588789463002382336(String)
+17:12:20.770 logback [http-nio-8080-exec-7] DEBUG t.d.b.mapper.CartMapper.selectByUser - <==      Total: 0
+17:12:20.771 logback [http-nio-8080-exec-7] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4713e363]
+17:12:24.246 logback [http-nio-8080-exec-8] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:12:24.246 logback [http-nio-8080-exec-8] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ffdc0fb] was not registered for synchronization because synchronization is not active
+17:12:24.246 logback [http-nio-8080-exec-8] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2da911cd] will not be managed by Spring
+17:12:24.247 logback [http-nio-8080-exec-8] DEBUG t.d.b.m.G.selectOnSaleListByUser - ==>  Preparing: SELECT goods_id, code, `name`, `count`, price, description, img_id, goods_status, user_id, create_time, update_time, create_by, update_by, is_delete, author, publisher FROM goods where user_id = ? AND is_delete = "0" ORDER BY create_time 
+17:12:24.247 logback [http-nio-8080-exec-8] DEBUG t.d.b.m.G.selectOnSaleListByUser - ==> Parameters: 588789463002382336(String)
+17:12:24.250 logback [http-nio-8080-exec-8] DEBUG t.d.b.m.G.selectOnSaleListByUser - <==      Total: 5
+17:12:24.250 logback [http-nio-8080-exec-8] DEBUG c.a.druid.pool.PreparedStatementPool - {conn-10001, pstmt-20005} enter cache
+17:12:24.250 logback [http-nio-8080-exec-8] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ffdc0fb]
+17:12:28.629 logback [http-nio-8080-exec-10] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:12:28.629 logback [http-nio-8080-exec-10] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7f9dc32c] was not registered for synchronization because synchronization is not active
+17:12:28.630 logback [http-nio-8080-exec-10] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2da911cd] will not be managed by Spring
+17:12:28.630 logback [http-nio-8080-exec-10] DEBUG t.d.b.m.O.selectBuyListByUser - ==>  Preparing: SELECT order_id, code, goods_id, seller_id, buyer_id, create_time, update_time, create_by, update_by, trading_status, seller_is_show, buyer_is_show, seller_failure_reasons, buyer_failure_reasons FROM `order` where buyer_id = ? 
+17:12:28.631 logback [http-nio-8080-exec-10] DEBUG t.d.b.m.O.selectBuyListByUser - ==> Parameters: 588789463002382336(String)
+17:12:28.632 logback [http-nio-8080-exec-10] DEBUG t.d.b.m.O.selectBuyListByUser - <==      Total: 0
+17:12:28.632 logback [http-nio-8080-exec-10] DEBUG c.a.druid.pool.PreparedStatementPool - {conn-10001, pstmt-20006} enter cache
+17:12:28.632 logback [http-nio-8080-exec-10] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7f9dc32c]
+17:12:30.335 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:12:30.335 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4dbc9f38] was not registered for synchronization because synchronization is not active
+17:12:30.336 logback [http-nio-8080-exec-1] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2da911cd] will not be managed by Spring
+17:12:30.336 logback [http-nio-8080-exec-1] DEBUG t.d.b.m.O.selectBuyListByUser - ==>  Preparing: SELECT order_id, code, goods_id, seller_id, buyer_id, create_time, update_time, create_by, update_by, trading_status, seller_is_show, buyer_is_show, seller_failure_reasons, buyer_failure_reasons FROM `order` where buyer_id = ? 
+17:12:30.337 logback [http-nio-8080-exec-1] DEBUG t.d.b.m.O.selectBuyListByUser - ==> Parameters: 588789463002382336(String)
+17:12:30.338 logback [http-nio-8080-exec-1] DEBUG t.d.b.m.O.selectBuyListByUser - <==      Total: 0
+17:12:30.339 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4dbc9f38]
+17:12:33.154 logback [http-nio-8080-exec-2] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:12:33.155 logback [http-nio-8080-exec-2] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@64369aec] was not registered for synchronization because synchronization is not active
+17:12:33.155 logback [http-nio-8080-exec-2] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2da911cd] will not be managed by Spring
+17:12:33.155 logback [http-nio-8080-exec-2] DEBUG t.d.b.m.M.selectListByUser - ==>  Preparing: ( SELECT msg_id, sender_id, receiver_id, sender_nickname, receiver_nickname, msg_content, send_time, receive_time, send_status, receive_status, sender_is_show, receiver_is_show FROM message where receiver_id = ? GROUP BY sender_nickname) UNION ( SELECT msg_id, sender_id, receiver_id, sender_nickname, receiver_nickname, msg_content, send_time, receive_time, send_status, receive_status, sender_is_show, receiver_is_show FROM message where sender_id = ? GROUP BY receiver_nickname) ORDER BY send_time 
+17:12:33.155 logback [http-nio-8080-exec-2] DEBUG t.d.b.m.M.selectListByUser - ==> Parameters: 588789463002382336(String), 588789463002382336(String)
+17:12:33.159 logback [http-nio-8080-exec-2] DEBUG t.d.b.m.M.selectListByUser - <==      Total: 3
+17:12:33.159 logback [http-nio-8080-exec-2] DEBUG c.a.druid.pool.PreparedStatementPool - {conn-10001, pstmt-20007} enter cache
+17:12:33.159 logback [http-nio-8080-exec-2] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@64369aec]
+17:12:36.168 logback [http-nio-8080-exec-3] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:12:36.168 logback [http-nio-8080-exec-3] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3830ae98] was not registered for synchronization because synchronization is not active
+17:12:36.168 logback [http-nio-8080-exec-3] DEBUG SQL_CACHE - Cache Hit Ratio [SQL_CACHE]: 0.75
+17:12:36.170 logback [http-nio-8080-exec-3] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2da911cd] will not be managed by Spring
+17:12:36.170 logback [http-nio-8080-exec-3] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==>  Preparing: SELECT count(0) FROM goods WHERE name LIKE CONCAT('%', ?, '%') AND user_id != ? AND is_delete = "0" 
+17:12:36.171 logback [http-nio-8080-exec-3] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==> Parameters: (String), 588789463002382336(String)
+17:12:36.172 logback [http-nio-8080-exec-3] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - <==      Total: 1
+17:12:36.173 logback [http-nio-8080-exec-3] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==>  Preparing: SELECT goods_id, code, `name`, `count`, price, description, img_id, goods_status, user_id, create_time, update_time, create_by, update_by, is_delete, author, publisher FROM goods where name like CONCAT('%',?,'%') AND user_id != ? AND is_delete = "0" ORDER BY goods_id LIMIT ? 
+17:12:36.173 logback [http-nio-8080-exec-3] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==> Parameters: (String), 588789463002382336(String), 10(Integer)
+17:12:36.176 logback [http-nio-8080-exec-3] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - <==      Total: 10
+17:12:36.177 logback [http-nio-8080-exec-3] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3830ae98]
+17:12:37.797 logback [http-nio-8080-exec-4] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:12:37.797 logback [http-nio-8080-exec-4] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1636779] was not registered for synchronization because synchronization is not active
+17:12:37.797 logback [http-nio-8080-exec-4] DEBUG SQL_CACHE - Cache Hit Ratio [SQL_CACHE]: 0.8
+17:12:37.799 logback [http-nio-8080-exec-4] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2da911cd] will not be managed by Spring
+17:12:37.799 logback [http-nio-8080-exec-4] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==>  Preparing: SELECT count(0) FROM goods WHERE name LIKE CONCAT('%', ?, '%') AND user_id != ? AND is_delete = "0" 
+17:12:37.800 logback [http-nio-8080-exec-4] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==> Parameters: (String), 588789463002382336(String)
+17:12:37.802 logback [http-nio-8080-exec-4] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - <==      Total: 1
+17:12:37.804 logback [http-nio-8080-exec-4] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==>  Preparing: SELECT goods_id, code, `name`, `count`, price, description, img_id, goods_status, user_id, create_time, update_time, create_by, update_by, is_delete, author, publisher FROM goods where name like CONCAT('%',?,'%') AND user_id != ? AND is_delete = "0" ORDER BY goods_id LIMIT ?, ? 
+17:12:37.804 logback [http-nio-8080-exec-4] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==> Parameters: (String), 588789463002382336(String), 10(Integer), 10(Integer)
+17:12:37.805 logback [http-nio-8080-exec-4] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - <==      Total: 1
+17:12:37.805 logback [http-nio-8080-exec-4] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1636779]
+17:23:46.640 logback [http-nio-8080-exec-6] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:23:46.641 logback [http-nio-8080-exec-6] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7c3a7a5b] was not registered for synchronization because synchronization is not active
+17:23:46.641 logback [http-nio-8080-exec-6] DEBUG SQL_CACHE - Cache Hit Ratio [SQL_CACHE]: 0.8333333333333334
+17:23:46.655 logback [http-nio-8080-exec-6] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2da911cd] will not be managed by Spring
+17:23:46.655 logback [http-nio-8080-exec-6] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==>  Preparing: SELECT count(0) FROM goods WHERE name LIKE CONCAT('%', ?, '%') AND user_id != ? AND is_delete = "0" 
+17:23:46.655 logback [http-nio-8080-exec-6] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==> Parameters: (String), 588789463002382336(String)
+17:23:46.660 logback [http-nio-8080-exec-6] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - <==      Total: 1
+17:23:46.660 logback [http-nio-8080-exec-6] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==>  Preparing: SELECT goods_id, code, `name`, `count`, price, description, img_id, goods_status, user_id, create_time, update_time, create_by, update_by, is_delete, author, publisher FROM goods where name like CONCAT('%',?,'%') AND user_id != ? AND is_delete = "0" ORDER BY goods_id LIMIT ? 
+17:23:46.662 logback [http-nio-8080-exec-6] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==> Parameters: (String), 588789463002382336(String), 10(Integer)
+17:23:46.665 logback [http-nio-8080-exec-6] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - <==      Total: 10
+17:23:46.666 logback [http-nio-8080-exec-6] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7c3a7a5b]
+17:29:43.346 logback [http-nio-8080-exec-10] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:29:43.346 logback [http-nio-8080-exec-10] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6d3c69e1] was not registered for synchronization because synchronization is not active
+17:29:43.398 logback [http-nio-8080-exec-10] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2da911cd] will not be managed by Spring
+17:29:43.398 logback [http-nio-8080-exec-10] DEBUG t.d.b.mapper.GoodsMapper.insertGoods - ==>  Preparing: insert into goods ( goods_id, code, `name`, price, description, img_id, user_id, create_time, author, publisher ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+17:29:43.404 logback [http-nio-8080-exec-10] DEBUG t.d.b.mapper.GoodsMapper.insertGoods - ==> Parameters: 595305046598483968(String), 595305046615261184(String), 白夜行(String), 15(BigDecimal), 爱情(String), 595304877182156800(String), 588789463002382336(String), 2019-07-01 17:29:43.346(Timestamp), 东野圭吾(String), 长江文艺出版社(String)
+17:29:43.408 logback [http-nio-8080-exec-10] DEBUG t.d.b.mapper.GoodsMapper.insertGoods - <==    Updates: 1
+17:29:43.408 logback [http-nio-8080-exec-10] DEBUG c.a.druid.pool.PreparedStatementPool - {conn-10001, pstmt-20008} enter cache
+17:29:43.408 logback [http-nio-8080-exec-10] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6d3c69e1]
+17:29:45.455 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:29:45.456 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@666472e3] was not registered for synchronization because synchronization is not active
+17:29:45.456 logback [http-nio-8080-exec-1] DEBUG SQL_CACHE - Cache Hit Ratio [SQL_CACHE]: 0.8571428571428571
+17:29:45.457 logback [http-nio-8080-exec-1] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2da911cd] will not be managed by Spring
+17:29:45.457 logback [http-nio-8080-exec-1] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==>  Preparing: SELECT count(0) FROM goods WHERE name LIKE CONCAT('%', ?, '%') AND user_id != ? AND is_delete = "0" 
+17:29:45.457 logback [http-nio-8080-exec-1] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==> Parameters: (String), 588789463002382336(String)
+17:29:45.459 logback [http-nio-8080-exec-1] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - <==      Total: 1
+17:29:45.460 logback [http-nio-8080-exec-1] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==>  Preparing: SELECT goods_id, code, `name`, `count`, price, description, img_id, goods_status, user_id, create_time, update_time, create_by, update_by, is_delete, author, publisher FROM goods where name like CONCAT('%',?,'%') AND user_id != ? AND is_delete = "0" ORDER BY goods_id LIMIT ? 
+17:29:45.460 logback [http-nio-8080-exec-1] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==> Parameters: (String), 588789463002382336(String), 10(Integer)
+17:29:45.462 logback [http-nio-8080-exec-1] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - <==      Total: 10
+17:29:45.463 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@666472e3]
+17:29:48.488 logback [http-nio-8080-exec-3] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:29:48.489 logback [http-nio-8080-exec-3] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@65ff119] was not registered for synchronization because synchronization is not active
+17:29:48.489 logback [http-nio-8080-exec-3] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2da911cd] will not be managed by Spring
+17:29:48.489 logback [http-nio-8080-exec-3] DEBUG t.d.b.m.G.selectOnSaleListByUser - ==>  Preparing: SELECT goods_id, code, `name`, `count`, price, description, img_id, goods_status, user_id, create_time, update_time, create_by, update_by, is_delete, author, publisher FROM goods where user_id = ? AND is_delete = "0" ORDER BY create_time 
+17:29:48.491 logback [http-nio-8080-exec-3] DEBUG t.d.b.m.G.selectOnSaleListByUser - ==> Parameters: 588789463002382336(String)
+17:29:48.493 logback [http-nio-8080-exec-3] DEBUG t.d.b.m.G.selectOnSaleListByUser - <==      Total: 6
+17:29:48.494 logback [http-nio-8080-exec-3] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@65ff119]
+17:30:08.112 logback [http-nio-8080-exec-6] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:30:08.112 logback [http-nio-8080-exec-6] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@486f3990] was not registered for synchronization because synchronization is not active
+17:30:08.112 logback [http-nio-8080-exec-6] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2da911cd] will not be managed by Spring
+17:30:08.112 logback [http-nio-8080-exec-6] DEBUG t.d.b.mapper.UserMapper.selectByUser - ==>  Preparing: SELECT user_id, nickname, username, password, school, gender, create_time, update_time, create_by, update_by, submit_audit, audit_status, avatar, `name`, stu_id, idcard_img, idcard_cover_img, phone, email, auth_code, role_set, is_delete, login_time FROM user where username = ? AND password = ? AND is_delete = "0" 
+17:30:08.112 logback [http-nio-8080-exec-6] DEBUG t.d.b.mapper.UserMapper.selectByUser - ==> Parameters: 893598(String), e10adc3949ba59abbe56e057f20f883e(String)
+17:30:08.112 logback [http-nio-8080-exec-6] DEBUG t.d.b.mapper.UserMapper.selectByUser - <==      Total: 1
+17:30:08.112 logback [http-nio-8080-exec-6] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@486f3990]
+17:30:08.112 logback [http-nio-8080-exec-6] INFO  t.d.b.controller.UserController - 昵称为：南邮 的用户登录成功，账号为：893598
+17:30:09.185 logback [http-nio-8080-exec-7] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:30:09.186 logback [http-nio-8080-exec-7] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50b9fd4f] was not registered for synchronization because synchronization is not active
+17:30:09.186 logback [http-nio-8080-exec-7] DEBUG SQL_CACHE - Cache Hit Ratio [SQL_CACHE]: 0.875
+17:30:09.192 logback [http-nio-8080-exec-7] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2da911cd] will not be managed by Spring
+17:30:09.192 logback [http-nio-8080-exec-7] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==>  Preparing: SELECT count(0) FROM goods WHERE name LIKE CONCAT('%', ?, '%') AND user_id != ? AND is_delete = "0" 
+17:30:09.193 logback [http-nio-8080-exec-7] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==> Parameters: (String), 591656145865670656(String)
+17:30:09.195 logback [http-nio-8080-exec-7] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - <==      Total: 1
+17:30:09.196 logback [http-nio-8080-exec-7] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==>  Preparing: SELECT goods_id, code, `name`, `count`, price, description, img_id, goods_status, user_id, create_time, update_time, create_by, update_by, is_delete, author, publisher FROM goods where name like CONCAT('%',?,'%') AND user_id != ? AND is_delete = "0" ORDER BY goods_id LIMIT ? 
+17:30:09.196 logback [http-nio-8080-exec-7] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==> Parameters: (String), 591656145865670656(String), 10(Integer)
+17:30:09.204 logback [http-nio-8080-exec-7] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - <==      Total: 10
+17:30:09.204 logback [http-nio-8080-exec-7] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50b9fd4f]
+17:30:12.061 logback [http-nio-8080-exec-8] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:30:12.061 logback [http-nio-8080-exec-8] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2505ab8b] was not registered for synchronization because synchronization is not active
+17:30:12.062 logback [http-nio-8080-exec-8] DEBUG SQL_CACHE - Cache Hit Ratio [SQL_CACHE]: 0.8888888888888888
+17:30:12.063 logback [http-nio-8080-exec-8] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2da911cd] will not be managed by Spring
+17:30:12.063 logback [http-nio-8080-exec-8] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==>  Preparing: SELECT count(0) FROM goods WHERE name LIKE CONCAT('%', ?, '%') AND user_id != ? AND is_delete = "0" 
+17:30:12.064 logback [http-nio-8080-exec-8] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==> Parameters: (String), 591656145865670656(String)
+17:30:12.065 logback [http-nio-8080-exec-8] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - <==      Total: 1
+17:30:12.067 logback [http-nio-8080-exec-8] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==>  Preparing: SELECT goods_id, code, `name`, `count`, price, description, img_id, goods_status, user_id, create_time, update_time, create_by, update_by, is_delete, author, publisher FROM goods where name like CONCAT('%',?,'%') AND user_id != ? AND is_delete = "0" ORDER BY goods_id LIMIT ?, ? 
+17:30:12.067 logback [http-nio-8080-exec-8] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==> Parameters: (String), 591656145865670656(String), 10(Integer), 10(Integer)
+17:30:12.070 logback [http-nio-8080-exec-8] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - <==      Total: 6
+17:30:12.071 logback [http-nio-8080-exec-8] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2505ab8b]
+17:30:15.399 logback [http-nio-8080-exec-9] DEBUG t.d.b.controller.UserController - 查找用户id为：588789463002382336的用户信息
+17:30:15.399 logback [http-nio-8080-exec-9] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:30:15.400 logback [http-nio-8080-exec-10] DEBUG t.d.b.controller.CartController - 接收到查询购物车请求，查询的用户ID为：591656145865670656
+17:30:15.400 logback [http-nio-8080-exec-9] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49154420] was not registered for synchronization because synchronization is not active
+17:30:15.402 logback [http-nio-8080-exec-10] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:30:15.402 logback [http-nio-8080-exec-10] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7eb7e0f7] was not registered for synchronization because synchronization is not active
+17:30:15.403 logback [http-nio-8080-exec-9] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2da911cd] will not be managed by Spring
+17:30:15.403 logback [http-nio-8080-exec-9] DEBUG t.d.b.m.UserMapper.selectByUserId - ==>  Preparing: SELECT user_id, nickname, username, password, school, gender, create_time, update_time, create_by, update_by, submit_audit, audit_status, avatar, `name`, stu_id, idcard_img, idcard_cover_img, phone, email, auth_code, role_set, is_delete, login_time FROM user where user_id = ? AND is_delete = "0" 
+17:30:15.403 logback [http-nio-8080-exec-9] DEBUG t.d.b.m.UserMapper.selectByUserId - ==> Parameters: 588789463002382336(String)
+17:30:15.406 logback [http-nio-8080-exec-9] DEBUG t.d.b.m.UserMapper.selectByUserId - <==      Total: 1
+17:30:15.406 logback [http-nio-8080-exec-9] DEBUG c.a.druid.pool.PreparedStatementPool - {conn-10001, pstmt-20009} enter cache
+17:30:15.407 logback [http-nio-8080-exec-9] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49154420]
+17:30:15.408 logback [http-nio-8080-exec-10] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2da911cd] will not be managed by Spring
+17:30:15.408 logback [http-nio-8080-exec-10] DEBUG t.d.b.mapper.CartMapper.selectByUser - ==>  Preparing: SELECT g.goods_id, g.`code`, g.`name`, g.`count`, g.price, g.description, g.img_id, g.goods_status, g.user_id, g.create_time, g.update_time, g.create_by, g.update_by, g.is_delete, g.author, g.publisher FROM goods g JOIN cart c ON g.goods_id = c.goods_id where c.user_id = ? 
+17:30:15.408 logback [http-nio-8080-exec-10] DEBUG t.d.b.mapper.CartMapper.selectByUser - ==> Parameters: 591656145865670656(String)
+17:30:15.411 logback [http-nio-8080-exec-10] DEBUG t.d.b.mapper.CartMapper.selectByUser - <==      Total: 2
+17:30:15.411 logback [http-nio-8080-exec-10] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7eb7e0f7]
+17:30:18.741 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:30:18.741 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3f844ce6] was not registered for synchronization because synchronization is not active
+17:30:18.741 logback [http-nio-8080-exec-1] DEBUG SQL_CACHE - Cache Hit Ratio [SQL_CACHE]: 0.9
+17:30:18.743 logback [http-nio-8080-exec-1] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@7a32c29f] will not be managed by Spring
+17:30:18.743 logback [http-nio-8080-exec-1] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==>  Preparing: SELECT count(0) FROM goods WHERE name LIKE CONCAT('%', ?, '%') AND user_id != ? AND is_delete = "0" 
+17:30:18.743 logback [http-nio-8080-exec-1] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==> Parameters: (String), 591656145865670656(String)
+17:30:18.744 logback [http-nio-8080-exec-1] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - <==      Total: 1
+17:30:18.745 logback [http-nio-8080-exec-1] DEBUG c.a.druid.pool.PreparedStatementPool - {conn-10002, pstmt-20010} enter cache
+17:30:18.745 logback [http-nio-8080-exec-1] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==>  Preparing: SELECT goods_id, code, `name`, `count`, price, description, img_id, goods_status, user_id, create_time, update_time, create_by, update_by, is_delete, author, publisher FROM goods where name like CONCAT('%',?,'%') AND user_id != ? AND is_delete = "0" ORDER BY goods_id LIMIT ? 
+17:30:18.746 logback [http-nio-8080-exec-1] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==> Parameters: (String), 591656145865670656(String), 10(Integer)
+17:30:18.748 logback [http-nio-8080-exec-1] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - <==      Total: 10
+17:30:18.748 logback [http-nio-8080-exec-1] DEBUG c.a.druid.pool.PreparedStatementPool - {conn-10002, pstmt-20011} enter cache
+17:30:18.748 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3f844ce6]
+17:30:24.472 logback [http-nio-8080-exec-2] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:30:24.473 logback [http-nio-8080-exec-2] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@12c94f5d] was not registered for synchronization because synchronization is not active
+17:30:24.473 logback [http-nio-8080-exec-2] DEBUG SQL_CACHE - Cache Hit Ratio [SQL_CACHE]: 0.9090909090909091
+17:30:24.474 logback [http-nio-8080-exec-2] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@7a32c29f] will not be managed by Spring
+17:30:24.474 logback [http-nio-8080-exec-2] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==>  Preparing: SELECT count(0) FROM goods WHERE name LIKE CONCAT('%', ?, '%') AND user_id != ? AND is_delete = "0" 
+17:30:24.474 logback [http-nio-8080-exec-2] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==> Parameters: (String), 591656145865670656(String)
+17:30:24.477 logback [http-nio-8080-exec-2] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - <==      Total: 1
+17:30:24.478 logback [http-nio-8080-exec-2] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==>  Preparing: SELECT goods_id, code, `name`, `count`, price, description, img_id, goods_status, user_id, create_time, update_time, create_by, update_by, is_delete, author, publisher FROM goods where name like CONCAT('%',?,'%') AND user_id != ? AND is_delete = "0" ORDER BY goods_id LIMIT ?, ? 
+17:30:24.479 logback [http-nio-8080-exec-2] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==> Parameters: (String), 591656145865670656(String), 10(Integer), 10(Integer)
+17:30:24.481 logback [http-nio-8080-exec-2] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - <==      Total: 6
+17:30:24.482 logback [http-nio-8080-exec-2] DEBUG c.a.druid.pool.PreparedStatementPool - {conn-10002, pstmt-20012} enter cache
+17:30:24.482 logback [http-nio-8080-exec-2] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@12c94f5d]
+17:30:52.455 logback [http-nio-8080-exec-5] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:30:52.455 logback [http-nio-8080-exec-5] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@75917d4c] was not registered for synchronization because synchronization is not active
+17:30:52.455 logback [http-nio-8080-exec-5] DEBUG SQL_CACHE - Cache Hit Ratio [SQL_CACHE]: 0.9166666666666666
+17:30:52.455 logback [http-nio-8080-exec-5] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@7a32c29f] will not be managed by Spring
+17:30:52.455 logback [http-nio-8080-exec-5] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==>  Preparing: SELECT count(0) FROM goods WHERE name LIKE CONCAT('%', ?, '%') AND user_id != ? AND is_delete = "0" 
+17:30:52.455 logback [http-nio-8080-exec-5] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==> Parameters: 百(String), 591656145865670656(String)
+17:30:52.460 logback [http-nio-8080-exec-5] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - <==      Total: 1
+17:30:52.461 logback [http-nio-8080-exec-5] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==>  Preparing: SELECT goods_id, code, `name`, `count`, price, description, img_id, goods_status, user_id, create_time, update_time, create_by, update_by, is_delete, author, publisher FROM goods where name like CONCAT('%',?,'%') AND user_id != ? AND is_delete = "0" ORDER BY goods_id LIMIT ? 
+17:30:52.461 logback [http-nio-8080-exec-5] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==> Parameters: 百(String), 591656145865670656(String), 10(Integer)
+17:30:52.465 logback [http-nio-8080-exec-5] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - <==      Total: 1
+17:30:52.465 logback [http-nio-8080-exec-5] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@75917d4c]
+17:31:01.380 logback [http-nio-8080-exec-6] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:31:01.380 logback [http-nio-8080-exec-6] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5d397aaa] was not registered for synchronization because synchronization is not active
+17:31:01.380 logback [http-nio-8080-exec-6] DEBUG SQL_CACHE - Cache Hit Ratio [SQL_CACHE]: 0.9230769230769231
+17:31:01.381 logback [http-nio-8080-exec-6] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@7a32c29f] will not be managed by Spring
+17:31:01.381 logback [http-nio-8080-exec-6] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==>  Preparing: SELECT count(0) FROM goods WHERE name LIKE CONCAT('%', ?, '%') AND user_id != ? AND is_delete = "0" 
+17:31:01.382 logback [http-nio-8080-exec-6] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==> Parameters: 白(String), 591656145865670656(String)
+17:31:01.382 logback [http-nio-8080-exec-6] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - <==      Total: 1
+17:31:01.382 logback [http-nio-8080-exec-6] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==>  Preparing: SELECT goods_id, code, `name`, `count`, price, description, img_id, goods_status, user_id, create_time, update_time, create_by, update_by, is_delete, author, publisher FROM goods where name like CONCAT('%',?,'%') AND user_id != ? AND is_delete = "0" ORDER BY goods_id LIMIT ? 
+17:31:01.384 logback [http-nio-8080-exec-6] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==> Parameters: 白(String), 591656145865670656(String), 10(Integer)
+17:31:01.385 logback [http-nio-8080-exec-6] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - <==      Total: 1
+17:31:01.385 logback [http-nio-8080-exec-6] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5d397aaa]
+17:31:10.140 logback [http-nio-8080-exec-7] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:31:10.140 logback [http-nio-8080-exec-7] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@68c6f085] was not registered for synchronization because synchronization is not active
+17:31:10.141 logback [http-nio-8080-exec-7] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@7a32c29f] will not be managed by Spring
+17:31:10.141 logback [http-nio-8080-exec-7] DEBUG t.d.b.m.M.selectListByUser - ==>  Preparing: ( SELECT msg_id, sender_id, receiver_id, sender_nickname, receiver_nickname, msg_content, send_time, receive_time, send_status, receive_status, sender_is_show, receiver_is_show FROM message where receiver_id = ? GROUP BY sender_nickname) UNION ( SELECT msg_id, sender_id, receiver_id, sender_nickname, receiver_nickname, msg_content, send_time, receive_time, send_status, receive_status, sender_is_show, receiver_is_show FROM message where sender_id = ? GROUP BY receiver_nickname) ORDER BY send_time 
+17:31:10.142 logback [http-nio-8080-exec-7] DEBUG t.d.b.m.M.selectListByUser - ==> Parameters: 591656145865670656(String), 591656145865670656(String)
+17:31:10.146 logback [http-nio-8080-exec-7] DEBUG t.d.b.m.M.selectListByUser - <==      Total: 1
+17:31:10.146 logback [http-nio-8080-exec-7] DEBUG c.a.druid.pool.PreparedStatementPool - {conn-10002, pstmt-20013} enter cache
+17:31:10.146 logback [http-nio-8080-exec-7] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@68c6f085]
+17:31:12.690 logback [http-nio-8080-exec-8] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:31:12.691 logback [http-nio-8080-exec-8] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@597c9139] was not registered for synchronization because synchronization is not active
+17:31:12.692 logback [http-nio-8080-exec-8] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@7a32c29f] will not be managed by Spring
+17:31:12.693 logback [http-nio-8080-exec-8] DEBUG t.d.b.m.MessageMapper.selectRecords - ==>  Preparing: ( SELECT msg_id, sender_id, receiver_id, sender_nickname, receiver_nickname, msg_content, send_time, receive_time, send_status, receive_status, sender_is_show, receiver_is_show FROM message WHERE ((receiver_id = ? OR receiver_id = ?)) AND (sender_id = ? OR sender_id = ?)) ORDER BY send_time; 
+17:31:12.693 logback [http-nio-8080-exec-8] DEBUG t.d.b.m.MessageMapper.selectRecords - ==> Parameters: 591656145865670656(String), 588765778099044352(String), 591656145865670656(String), 588765778099044352(String)
+17:31:12.696 logback [http-nio-8080-exec-8] DEBUG t.d.b.m.MessageMapper.selectRecords - <==      Total: 2
+17:31:12.696 logback [http-nio-8080-exec-8] DEBUG c.a.druid.pool.PreparedStatementPool - {conn-10002, pstmt-20014} enter cache
+17:31:12.696 logback [http-nio-8080-exec-8] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@597c9139]
+17:31:45.544 logback [http-nio-8080-exec-9] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:31:45.544 logback [http-nio-8080-exec-9] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@46f80d19] was not registered for synchronization because synchronization is not active
+17:31:45.545 logback [http-nio-8080-exec-9] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@7a32c29f] will not be managed by Spring
+17:31:45.545 logback [http-nio-8080-exec-9] DEBUG t.d.b.m.M.selectListByUser - ==>  Preparing: ( SELECT msg_id, sender_id, receiver_id, sender_nickname, receiver_nickname, msg_content, send_time, receive_time, send_status, receive_status, sender_is_show, receiver_is_show FROM message where receiver_id = ? GROUP BY sender_nickname) UNION ( SELECT msg_id, sender_id, receiver_id, sender_nickname, receiver_nickname, msg_content, send_time, receive_time, send_status, receive_status, sender_is_show, receiver_is_show FROM message where sender_id = ? GROUP BY receiver_nickname) ORDER BY send_time 
+17:31:45.547 logback [http-nio-8080-exec-9] DEBUG t.d.b.m.M.selectListByUser - ==> Parameters: 591656145865670656(String), 591656145865670656(String)
+17:31:45.551 logback [http-nio-8080-exec-9] DEBUG t.d.b.m.M.selectListByUser - <==      Total: 1
+17:31:45.551 logback [http-nio-8080-exec-9] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@46f80d19]
+17:32:59.605 logback [http-nio-8080-exec-10] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:32:59.605 logback [http-nio-8080-exec-10] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1b92f427] was not registered for synchronization because synchronization is not active
+17:32:59.606 logback [http-nio-8080-exec-10] DEBUG SQL_CACHE - Cache Hit Ratio [SQL_CACHE]: 0.9285714285714286
+17:32:59.618 logback [http-nio-8080-exec-10] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@7a32c29f] will not be managed by Spring
+17:32:59.618 logback [http-nio-8080-exec-10] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==>  Preparing: SELECT count(0) FROM goods WHERE name LIKE CONCAT('%', ?, '%') AND user_id != ? AND is_delete = "0" 
+17:32:59.619 logback [http-nio-8080-exec-10] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==> Parameters: (String), 591656145865670656(String)
+17:32:59.621 logback [http-nio-8080-exec-10] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - <==      Total: 1
+17:32:59.623 logback [http-nio-8080-exec-10] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==>  Preparing: SELECT goods_id, code, `name`, `count`, price, description, img_id, goods_status, user_id, create_time, update_time, create_by, update_by, is_delete, author, publisher FROM goods where name like CONCAT('%',?,'%') AND user_id != ? AND is_delete = "0" ORDER BY goods_id LIMIT ? 
+17:32:59.624 logback [http-nio-8080-exec-10] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==> Parameters: (String), 591656145865670656(String), 10(Integer)
+17:32:59.628 logback [http-nio-8080-exec-10] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - <==      Total: 10
+17:32:59.629 logback [http-nio-8080-exec-10] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1b92f427]
+17:33:02.612 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+17:33:02.612 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ea728d7] was not registered for synchronization because synchronization is not active
+17:33:02.613 logback [http-nio-8080-exec-1] DEBUG SQL_CACHE - Cache Hit Ratio [SQL_CACHE]: 0.9333333333333333
+17:33:02.614 logback [http-nio-8080-exec-1] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@7a32c29f] will not be managed by Spring
+17:33:02.615 logback [http-nio-8080-exec-1] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==>  Preparing: SELECT count(0) FROM goods WHERE name LIKE CONCAT('%', ?, '%') AND user_id != ? AND is_delete = "0" 
+17:33:02.615 logback [http-nio-8080-exec-1] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==> Parameters: (String), 591656145865670656(String)
+17:33:02.616 logback [http-nio-8080-exec-1] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - <==      Total: 1
+17:33:02.617 logback [http-nio-8080-exec-1] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==>  Preparing: SELECT goods_id, code, `name`, `count`, price, description, img_id, goods_status, user_id, create_time, update_time, create_by, update_by, is_delete, author, publisher FROM goods where name like CONCAT('%',?,'%') AND user_id != ? AND is_delete = "0" ORDER BY goods_id LIMIT ?, ? 
+17:33:02.617 logback [http-nio-8080-exec-1] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==> Parameters: (String), 591656145865670656(String), 10(Integer), 10(Integer)
+17:33:02.620 logback [http-nio-8080-exec-1] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - <==      Total: 6
+17:33:02.620 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ea728d7]
+17:46:38.089 logback [main] INFO  t.d.b.BlackAndWhiteApplication - Starting BlackAndWhiteApplication on DESKTOP-BKN43FU with PID 15112 (G:\black-and-white\black-and-white-end\target\classes started by lenovo in G:\black-and-white\black-and-white-end)
+17:46:38.094 logback [main] DEBUG t.d.b.BlackAndWhiteApplication - Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+17:46:38.094 logback [main] INFO  t.d.b.BlackAndWhiteApplication - No active profile set, falling back to default profiles: default
+17:46:38.627 logback [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+17:46:38.631 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\CartMapper.class]
+17:46:38.631 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\GoodsMapper.class]
+17:46:38.631 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\MessageMapper.class]
+17:46:38.631 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\OrderMapper.class]
+17:46:38.631 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\UserMapper.class]
+17:46:38.631 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'cartMapper' and 'top.dbon.blackandwhite.mapper.CartMapper' mapperInterface
+17:46:38.631 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'cartMapper'.
+17:46:38.631 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'goodsMapper' and 'top.dbon.blackandwhite.mapper.GoodsMapper' mapperInterface
+17:46:38.631 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'goodsMapper'.
+17:46:38.631 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'messageMapper' and 'top.dbon.blackandwhite.mapper.MessageMapper' mapperInterface
+17:46:38.631 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'messageMapper'.
+17:46:38.631 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'orderMapper' and 'top.dbon.blackandwhite.mapper.OrderMapper' mapperInterface
+17:46:38.631 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+17:46:38.631 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'userMapper' and 'top.dbon.blackandwhite.mapper.UserMapper' mapperInterface
+17:46:38.633 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+17:46:39.304 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+17:46:39.317 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:46:39.317 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
+17:46:39.475 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:46:39.563 logback [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+17:46:39.902 logback [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+17:46:40.041 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\CartMapper.xml]'
+17:46:40.060 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\GoodsMapper.xml]'
+17:46:40.069 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\MessageMapper.xml]'
+17:46:40.079 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\OrderMapper.xml]'
+17:46:40.090 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\UserMapper.xml]'
+17:46:40.124 logback [main] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+17:46:40.127 logback [main] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+17:46:40.127 logback [main] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+17:46:40.129 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+17:46:40.129 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+17:46:40.131 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+17:46:40.131 logback [main] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+17:46:40.131 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via user class loader
+17:46:40.131 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
+17:46:40.131 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+17:46:40.131 logback [main] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+17:46:40.134 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+17:46:40.134 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+17:46:40.134 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+17:46:40.134 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+17:46:40.134 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+17:46:40.482 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+17:46:40.507 logback [main] INFO  t.d.b.BlackAndWhiteApplication - Started BlackAndWhiteApplication in 3.032 seconds (JVM running for 3.905)
+18:05:48.225 logback [main] INFO  t.d.b.BlackAndWhiteApplication - Starting BlackAndWhiteApplication on DESKTOP-BKN43FU with PID 4108 (G:\black-and-white\black-and-white-end\target\classes started by lenovo in G:\black-and-white\black-and-white-end)
+18:05:48.229 logback [main] DEBUG t.d.b.BlackAndWhiteApplication - Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+18:05:48.230 logback [main] INFO  t.d.b.BlackAndWhiteApplication - No active profile set, falling back to default profiles: default
+18:05:48.909 logback [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+18:05:48.914 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\CartMapper.class]
+18:05:48.914 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\GoodsMapper.class]
+18:05:48.914 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\MessageMapper.class]
+18:05:48.914 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\OrderMapper.class]
+18:05:48.914 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [G:\black-and-white\black-and-white-end\target\classes\top\dbon\blackandwhite\mapper\UserMapper.class]
+18:05:48.915 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'cartMapper' and 'top.dbon.blackandwhite.mapper.CartMapper' mapperInterface
+18:05:48.915 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'cartMapper'.
+18:05:48.915 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'goodsMapper' and 'top.dbon.blackandwhite.mapper.GoodsMapper' mapperInterface
+18:05:48.915 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'goodsMapper'.
+18:05:48.915 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'messageMapper' and 'top.dbon.blackandwhite.mapper.MessageMapper' mapperInterface
+18:05:48.915 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'messageMapper'.
+18:05:48.915 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'orderMapper' and 'top.dbon.blackandwhite.mapper.OrderMapper' mapperInterface
+18:05:48.915 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+18:05:48.915 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'userMapper' and 'top.dbon.blackandwhite.mapper.UserMapper' mapperInterface
+18:05:48.915 logback [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+18:05:49.836 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+18:05:49.843 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+18:05:49.843 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
+18:05:49.980 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+18:05:50.424 logback [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+18:05:51.050 logback [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+18:05:51.250 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\CartMapper.xml]'
+18:05:51.270 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\GoodsMapper.xml]'
+18:05:51.284 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\MessageMapper.xml]'
+18:05:51.296 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\OrderMapper.xml]'
+18:05:51.309 logback [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [G:\black-and-white\black-and-white-end\target\classes\mapper\UserMapper.xml]'
+18:05:51.524 logback [main] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+18:05:51.525 logback [main] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+18:05:51.529 logback [main] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+18:05:51.529 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+18:05:51.530 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+18:05:51.530 logback [main] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+18:05:51.530 logback [main] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+18:05:51.530 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via user class loader
+18:05:51.530 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
+18:05:51.531 logback [main] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+18:05:51.532 logback [main] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+18:05:51.534 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+18:05:51.534 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+18:05:51.534 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+18:05:51.534 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+18:05:51.534 logback [main] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+18:05:52.057 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+18:05:52.080 logback [main] INFO  t.d.b.BlackAndWhiteApplication - Started BlackAndWhiteApplication in 4.524 seconds (JVM running for 5.309)
+18:06:19.010 logback [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+18:06:19.083 logback [http-nio-8080-exec-1] INFO  t.d.b.common.WebLogAspect - URL : http://127.0.0.1:8080/user
+18:06:19.084 logback [http-nio-8080-exec-1] INFO  t.d.b.common.WebLogAspect - HTTP_METHOD : GET
+18:06:19.084 logback [http-nio-8080-exec-1] INFO  t.d.b.common.WebLogAspect - IP : 127.0.0.1
+18:06:19.087 logback [http-nio-8080-exec-1] INFO  t.d.b.common.WebLogAspect - CLASS_METHOD : top.dbon.blackandwhite.controller.UserController.login
+18:06:19.087 logback [http-nio-8080-exec-1] INFO  t.d.b.common.WebLogAspect - ARGS : [916279, e10adc3949ba59abbe56e057f20f883e]
+18:06:19.104 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+18:06:19.115 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2f93d80b] was not registered for synchronization because synchronization is not active
+18:06:19.129 logback [http-nio-8080-exec-1] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6d8ddf45] will not be managed by Spring
+18:06:19.136 logback [http-nio-8080-exec-1] DEBUG t.d.b.mapper.UserMapper.selectByUser - ==>  Preparing: SELECT user_id, nickname, username, password, school, gender, create_time, update_time, create_by, update_by, submit_audit, audit_status, avatar, `name`, stu_id, idcard_img, idcard_cover_img, phone, email, auth_code, role_set, is_delete, login_time FROM user where username = ? AND password = ? AND is_delete = "0" 
+18:06:19.201 logback [http-nio-8080-exec-1] DEBUG t.d.b.mapper.UserMapper.selectByUser - ==> Parameters: 916279(String), e10adc3949ba59abbe56e057f20f883e(String)
+18:06:19.235 logback [http-nio-8080-exec-1] DEBUG t.d.b.mapper.UserMapper.selectByUser - <==      Total: 1
+18:06:19.237 logback [http-nio-8080-exec-1] DEBUG c.a.druid.pool.PreparedStatementPool - {conn-10001, pstmt-20000} enter cache
+18:06:19.238 logback [http-nio-8080-exec-1] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2f93d80b]
+18:06:19.238 logback [http-nio-8080-exec-1] INFO  t.d.b.controller.UserController - 昵称为：郑六 的用户登录成功，账号为：916279
+18:06:19.239 logback [http-nio-8080-exec-1] INFO  t.d.b.common.WebLogAspect - RESPONSE : {msg=操作成功, code=0, user=User(userId=588789463002382336, nickname=郑六, username=916279, password=*, school=null, gender=0, createTime=Thu Jun 13 08:00:00 CST 2019, updateTime=null, createBy=null, updateBy=null, submitAudit=0, auditStatus=0, avatar=null, name=null, stuId=null, idcardImg=null, idcardCoverImg=null, phone=null, email=null, authCode=null, roleSet=null, isDelete=0, loginTime=null)}
+18:06:20.458 logback [http-nio-8080-exec-4] INFO  t.d.b.common.WebLogAspect - URL : http://127.0.0.1:8080/goods
+18:06:20.458 logback [http-nio-8080-exec-4] INFO  t.d.b.common.WebLogAspect - HTTP_METHOD : GET
+18:06:20.458 logback [http-nio-8080-exec-4] INFO  t.d.b.common.WebLogAspect - IP : 127.0.0.1
+18:06:20.458 logback [http-nio-8080-exec-4] INFO  t.d.b.common.WebLogAspect - CLASS_METHOD : top.dbon.blackandwhite.controller.GoodsController.findAllGoods
+18:06:20.458 logback [http-nio-8080-exec-4] INFO  t.d.b.common.WebLogAspect - ARGS : [588789463002382336, , 10, 1]
+18:06:20.461 logback [http-nio-8080-exec-4] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+18:06:20.462 logback [http-nio-8080-exec-4] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7617cb18] was not registered for synchronization because synchronization is not active
+18:06:20.462 logback [http-nio-8080-exec-4] DEBUG SQL_CACHE - Cache Hit Ratio [SQL_CACHE]: 0.0
+18:06:20.500 logback [http-nio-8080-exec-4] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6d8ddf45] will not be managed by Spring
+18:06:20.500 logback [http-nio-8080-exec-4] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==>  Preparing: SELECT count(0) FROM goods WHERE name LIKE CONCAT('%', ?, '%') AND user_id != ? AND is_delete = "0" 
+18:06:20.500 logback [http-nio-8080-exec-4] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - ==> Parameters: (String), 588789463002382336(String)
+18:06:20.505 logback [http-nio-8080-exec-4] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName_COUNT - <==      Total: 1
+18:06:20.505 logback [http-nio-8080-exec-4] DEBUG c.a.druid.pool.PreparedStatementPool - {conn-10001, pstmt-20001} enter cache
+18:06:20.505 logback [http-nio-8080-exec-4] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==>  Preparing: SELECT goods_id, code, `name`, `count`, price, description, img_id, goods_status, user_id, create_time, update_time, create_by, update_by, is_delete, author, publisher FROM goods where name like CONCAT('%',?,'%') AND user_id != ? AND is_delete = "0" ORDER BY goods_id LIMIT ? 
+18:06:20.505 logback [http-nio-8080-exec-4] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - ==> Parameters: (String), 588789463002382336(String), 10(Integer)
+18:06:20.513 logback [http-nio-8080-exec-4] DEBUG t.d.b.m.G.selectListByUserIDAndGoodsName - <==      Total: 10
+18:06:20.514 logback [http-nio-8080-exec-4] DEBUG c.a.druid.pool.PreparedStatementPool - {conn-10001, pstmt-20002} enter cache
+18:06:20.514 logback [http-nio-8080-exec-4] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7617cb18]
+18:06:20.514 logback [http-nio-8080-exec-4] INFO  t.d.b.common.WebLogAspect - RESPONSE : {msg=操作成功, code=0, pageInfo=PageInfo{pageNum=1, pageSize=10, size=10, startRow=1, endRow=10, total=11, pages=2, list=Page{count=true, pageNum=1, pageSize=10, startRow=0, endRow=10, total=11, pages=2, reasonable=true, pageSizeZero=false}[Goods(goodsId=588817171837091840, code=588817171837091840, name=围城, count=1, price=15.00, description=很好看，很便宜, imgId=null, goodsStatus=0, userId=588765778099044352, createTime=Thu Jun 13 08:00:00 CST 2019, updateTime=null, createBy=null, updateBy=null, isDelete=0, publisher=凤凰出版社, author=钱钟书), Goods(goodsId=588817786650755072, code=588817786650755072, name=假如给我三天光明, count=1, price=20.00, description=很好看, imgId=null, goodsStatus=0, userId=588765778099044352, createTime=Thu Jun 13 08:00:00 CST 2019, updateTime=null, createBy=null, updateBy=null, isDelete=0, publisher=中华出版社, author=海伦凯勒), Goods(goodsId=588818105996673024, code=588818105996673024, name=教父, count=1, price=10.00, description=好看, imgId=593073569190117376, goodsStatus=0, userId=588765778099044352, createTime=Thu Jun 13 08:00:00 CST 2019, updateTime=null, createBy=null, updateBy=null, isDelete=0, publisher=熊猫出版社, author=马里奥普佐), Goods(goodsId=588818862468759552, code=588818862468759552, name=三体, count=1, price=10.00, description=好看, imgId=null, goodsStatus=0, userId=588765778099044352, createTime=Thu Jun 13 08:00:00 CST 2019, updateTime=null, createBy=null, updateBy=null, isDelete=0, publisher=中华出版社, author=刘慈欣), Goods(goodsId=589766093980041216, code=589766102507061248, name=追风筝的人, count=1, price=20.00, description=情感类小说, imgId=null, goodsStatus=0, userId=589765510518800384, createTime=Sun Jun 16 08:00:00 CST 2019, updateTime=null, createBy=null, updateBy=null, isDelete=0, publisher=文学出版社, author=胡塞尼), Goods(goodsId=589812676285169664, code=589812676394221568, name=生命不能承受之轻, count=1, price=10.00, description=九成新, imgId=null, goodsStatus=0, userId=589765510518800384, createTime=Sun Jun 16 08:00:00 CST 2019, updateTime=null, createBy=null, updateBy=null, isDelete=0, publisher=长江文艺出版社, author=米兰.昆德拉), Goods(goodsId=590235384575688704, code=590235384575688704, name=百年孤独, count=1, price=20.00, description=很无聊的一本书, imgId=null, goodsStatus=0, userId=590234427716534272, createTime=Mon Jun 17 08:00:00 CST 2019, updateTime=null, createBy=null, updateBy=null, isDelete=0, publisher=长江文艺出版社, author=加夫列尔.加西亚.马尔克斯), Goods(goodsId=590261903847063552, code=590261903851257856, name=偷影子的人, count=1, price=16.00, description=价格实惠, imgId=null, goodsStatus=0, userId=589765510518800384, createTime=Mon Jun 17 08:00:00 CST 2019, updateTime=null, createBy=null, updateBy=null, isDelete=0, publisher=北京文学出版社, author=马克.李维), Goods(goodsId=590983868819963904, code=590983868819963904, name=三国, count=1, price=10.00, description=无, imgId=null, goodsStatus=0, userId=589765510518800384, createTime=Wed Jun 19 08:00:00 CST 2019, updateTime=null, createBy=null, updateBy=null, isDelete=0, publisher=一, author=施耐庵), Goods(goodsId=591657637506973696, code=591657645169967104, name=南邮的书, count=1, price=30.00, description=划算, imgId=null, goodsStatus=0, userId=591656145865670656, createTime=Fri Jun 21 08:00:00 CST 2019, updateTime=null, createBy=null, updateBy=null, isDelete=0, publisher=物联网学院, author=南京邮电大学)], prePage=0, nextPage=2, isFirstPage=true, isLastPage=false, hasPreviousPage=false, hasNextPage=true, navigatePages=8, navigateFirstPage=1, navigateLastPage=2, navigatepageNums=[1, 2]}}
+18:06:20.574 logback [http-nio-8080-exec-3] INFO  t.d.b.common.WebLogAspect - URL : http://localhost:8080/img/593073569190117376
+18:06:20.574 logback [http-nio-8080-exec-3] INFO  t.d.b.common.WebLogAspect - HTTP_METHOD : GET
+18:06:20.574 logback [http-nio-8080-exec-3] INFO  t.d.b.common.WebLogAspect - IP : 0:0:0:0:0:0:0:1
+18:06:20.578 logback [http-nio-8080-exec-3] INFO  t.d.b.common.WebLogAspect - CLASS_METHOD : top.dbon.blackandwhite.controller.ImgController.get
+18:06:20.578 logback [http-nio-8080-exec-3] INFO  t.d.b.common.WebLogAspect - ARGS : [593073569190117376]
+18:06:20.582 logback [http-nio-8080-exec-3] INFO  t.d.b.common.WebLogAspect - RESPONSE : [B@7bb92df5

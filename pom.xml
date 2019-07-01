@@ -57,6 +57,12 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- Spring Boot AOP 依赖 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
