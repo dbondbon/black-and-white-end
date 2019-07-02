@@ -47,8 +47,12 @@ public class ImgController {
     public byte[] get(@PathVariable("imgId") String imgId) {
         String imgPath = "G:\\black-and-white\\black-and-white-end\\img\\" + imgId + ".jpg";
         File file = new File(imgPath);
-        if(!file.exists()) {
+        if (!file.exists()) {
             imgPath = "G:\\black-and-white\\black-and-white-end\\img\\" + imgId + ".png";
+        }
+        file = new File(imgPath);
+        if (!file.exists()) {
+            imgPath = "G:\\black-and-white\\black-and-white-end\\img\\book.jpg";
         }
         file = new File(imgPath);
         try {
