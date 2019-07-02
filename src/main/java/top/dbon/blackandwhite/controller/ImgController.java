@@ -1,5 +1,7 @@
 package top.dbon.blackandwhite.controller;
 
+import ch.qos.logback.classic.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -15,8 +17,15 @@ import java.io.*;
 @RequestMapping("/img")
 public class ImgController {
 
+    private Logger logger = (Logger) LoggerFactory.getLogger(this.getClass());
+
     @RequestMapping(value = "", method = RequestMethod.POST)
     public AjaxResult add(@RequestParam("file") MultipartFile file) {
+        logger.debug("接收到上传的图片：{}", file.getOriginalFilename());
+        String fileName = file.getOriginalFilename();
+        if (!(fileName.endsWith(".jpg") || fileName.endsWith(".png"))) {
+            return AjaxResult.error(1, "图片格式不正确");
+        }
         BufferedOutputStream out = null;
         String imgId = UUIDUtils.getInstance().nextId();
         try {
