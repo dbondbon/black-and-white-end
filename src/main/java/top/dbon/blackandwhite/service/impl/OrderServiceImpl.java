@@ -11,6 +11,7 @@ import top.dbon.blackandwhite.util.CodeUtils;
 import top.dbon.blackandwhite.util.UUIDUtils;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -42,12 +43,11 @@ public class OrderServiceImpl implements OrderService {
       cart.setUserId(order.getBuyerId());
       cart.setGoodsId(order.getGoodsId());
       cartMapper.deleteByCart(cart);
-      //3、删除在售商品信息
+      //3、修改商品状态
       Goods goods = new Goods();
       goods.setGoodsId(order.getGoodsId());
-      goods.setIsDelete("1");
+      goods.setGoodsStatus("2");
       goodsMapper.updateGoods(goods);
-
 
       return 0;
     }
@@ -59,7 +59,7 @@ public class OrderServiceImpl implements OrderService {
         Cart cart = new Cart();
         cart.setUserId(orderVo.getBuyerId());
         Goods goods = new Goods();
-        goods.setIsDelete("1");
+        goods.setGoodsStatus("2");
         for (String goodsId : orderVo.getGoodsIdList()) {
             //1、添加订单信息
             order.setOrderId(UUIDUtils.getInstance().nextId());
@@ -84,17 +84,27 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<Order> selectBuyListByUserId(String userId) {
+    public HashMap<String, Goods> selectBuyListByUserId(String userId) {
         User user = new User();
         user.setUserId(userId);
-        return orderMapper.selectBuyListByUser(user);
+        List<Order> orderList =  orderMapper.selectBuyListByUser(user);
+        HashMap<String, Goods> orderMap = new HashMap<>();
+        for (Order order : orderList) {
+            orderMap.put(order.getCode(), goodsMapper.selectByGoodsId(order.getGoodsId()));
+        }
+        return orderMap;
     }
 
     @Override
-    public List<Order> selectSellListByUserId(String userId) {
+    public HashMap<String, Goods> selectSellListByUserId(String userId) {
         User user = new User();
         user.setUserId(userId);
-        return orderMapper.selectSellListByUser(user);
+        List<Order> orderList = orderMapper.selectSellListByUser(user);
+        HashMap<String, Goods> orderMap = new HashMap<>();
+        for (Order order : orderList) {
+            orderMap.put(order.getCode(), goodsMapper.selectByGoodsId(order.getGoodsId()));
+        }
+        return orderMap;
     }
 
     @Override

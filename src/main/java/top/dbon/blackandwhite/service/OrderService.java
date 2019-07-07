@@ -1,9 +1,11 @@
 package top.dbon.blackandwhite.service;
 
+import top.dbon.blackandwhite.domain.Goods;
 import top.dbon.blackandwhite.domain.Order;
 import top.dbon.blackandwhite.domain.OrderVo;
 import top.dbon.blackandwhite.domain.User;
 
+import java.util.HashMap;
 import java.util.List;
 
 public interface OrderService {
@@ -40,14 +42,14 @@ public interface OrderService {
      * @param userId
      * @return 结果集
      */
-    List<Order> selectBuyListByUserId(String userId);
+    HashMap<String, Goods> selectBuyListByUserId(String userId);
 
     /**
      * 查找用户所有出售订单
      * @param userId
      * @return 结果集
      */
-    List<Order> selectSellListByUserId(String userId);
+    HashMap<String, Goods> selectSellListByUserId(String userId);
 
     /**
      * 更新订单
