@@ -4,6 +4,7 @@ package top.dbon.blackandwhite.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import top.dbon.blackandwhite.common.AjaxResult;
+import top.dbon.blackandwhite.common.Constant;
 import top.dbon.blackandwhite.domain.Order;
 import top.dbon.blackandwhite.domain.OrderVo;
 import top.dbon.blackandwhite.service.OrderService;
@@ -29,24 +30,16 @@ public class OrderController {
         return AjaxResult.success();
     }
 
-    @RequestMapping("/{userId}")
-    public AjaxResult buyList(@PathVariable("userId") String userId) {
-        List<Order> list = orderService.selectBuyListByUserId(userId);
-        if(list == null) {
-            return AjaxResult.error();
-        } else {
+    @RequestMapping("/{type}/{userId}")
+    public AjaxResult buyList(@PathVariable("type") String type, @PathVariable("userId") String userId) {
+        if (Constant.BUY_LIST.equals(type)) {
+            List<Order> list = orderService.selectBuyListByUserId(userId);
             return AjaxResult.success().put("orderList", list);
         }
-    }
-
-    @PostMapping("/{userId}")
-    public AjaxResult sellList(@PathVariable("userId") String userId) {
-        List<Order> list = orderService.selectSellListByUserId(userId);
-        if(list == null) {
-            return AjaxResult.error();
-        } else {
+        if (Constant.SELL_LIST.equals(type)) {
+            List<Order> list = orderService.selectSellListByUserId(userId);
             return AjaxResult.success().put("orderList", list);
         }
+        return AjaxResult.error();
     }
-
 }
