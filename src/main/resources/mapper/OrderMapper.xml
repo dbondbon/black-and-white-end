@@ -31,6 +31,11 @@
     where order_id = #{orderId}
   </select>
 
+  <select id="selectByOrderCode" resultMap="orderResult" parameterType="String" >
+    <include refid="selectOrderVo" />
+    where code = #{orderCode}
+  </select>
+
   <select id="selectBuyListByUser" resultMap="orderResult" parameterType="User" >
     <include refid="selectOrderVo" />
     where buyer_id = #{userId}

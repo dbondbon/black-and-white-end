@@ -38,6 +38,13 @@ public interface OrderService {
     Order selectByOrderId(String orderId);
 
     /**
+     * 查找订单
+     * @param orderCode
+     * @return
+     */
+    Order selectByOrderCode(String orderCode);
+
+    /**
      * 查找用户所有购买订单
      * @param userId
      * @return 结果集

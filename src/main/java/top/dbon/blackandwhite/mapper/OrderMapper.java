@@ -28,6 +28,13 @@ public interface OrderMapper {
     Order selectByOrderId(String orderId);
 
     /**
+     * 查找订单
+     * @param orderId
+     * @return
+     */
+    Order selectByOrderCode(String orderCode);
+
+    /**
      * 查找用户所有购买订单
      * @param user
      * @return 结果集

@@ -26,13 +26,18 @@ public class OrderController {
         return AjaxResult.success();
     }
 
-    @PostMapping("/addList")
+    @RequestMapping(value = "/addList", method = RequestMethod.POST)
     public AjaxResult addList(@RequestBody OrderVo orderVo) {
         orderService.insertOrderList(orderVo);
         return AjaxResult.success();
     }
 
-    @RequestMapping("/{type}/{userId}")
+    @RequestMapping(value = "/{orderCode}", method = RequestMethod.GET)
+    public AjaxResult getOne(@PathVariable("orderCode") String orderCode) {
+        return AjaxResult.success().put("order", orderService.selectByOrderCode(orderCode));
+    }
+
+    @RequestMapping(value = "/{type}/{userId}", method = RequestMethod.GET)
     public AjaxResult buyList(@PathVariable("type") String type, @PathVariable("userId") String userId) {
         if (Constant.BUY_LIST.equals(type)) {
             HashMap<String, Goods> orderMap = orderService.selectBuyListByUserId(userId);

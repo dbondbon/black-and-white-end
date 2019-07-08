@@ -84,6 +84,11 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public Order selectByOrderCode(String orderCode) {
+        return orderMapper.selectByOrderCode(orderCode);
+    }
+
+    @Override
     public HashMap<String, Goods> selectBuyListByUserId(String userId) {
         User user = new User();
         user.setUserId(userId);
