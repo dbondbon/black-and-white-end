@@ -25,7 +25,7 @@ public class UserController {
     } else {
       logger.info("昵称为：{} 的用户登录成功，账号为：{}",user.getNickname(),user.getUsername());
       user.setPassword("*");
-      return AjaxResult.success().put("user", user);
+      return AjaxResult.success().put("user", user).put("token","123");
     }
   }
 
