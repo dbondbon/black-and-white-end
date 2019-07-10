@@ -13,5 +13,7 @@ public class Constant {
     public static final String BUY_LIST = "0";
     //收到的订单
     public static final String SELL_LIST = "1";
+    //JWT密钥
+    public static final String JWT_SECRET = "zzc";
 
 }
