@@ -23,9 +23,9 @@ public class JwtUtils {
     /**
      * 生成令牌
      * @param id
-     * @param issuer
-     * @param subject
-     * @param ttlMillis
+     * @param issuer 签发人
+     * @param subject 主题
+     * @param ttlMillis 过期时间
      * @return
      */
     public static String createJWT(String id, String issuer, String subject, long ttlMillis) {

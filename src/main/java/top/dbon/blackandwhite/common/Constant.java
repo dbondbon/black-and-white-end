@@ -14,6 +14,6 @@ public class Constant {
     //收到的订单
     public static final String SELL_LIST = "1";
     //JWT密钥
-    public static final String JWT_SECRET = "zzc";
+    public static final String JWT_SECRET = "qwejhj123jkh1231230089ffsdfjh";
 
 }
