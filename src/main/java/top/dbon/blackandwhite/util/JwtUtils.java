@@ -62,7 +62,7 @@ public class JwtUtils {
      * @param jwt
      */
     public static void parseJWT(String jwt) {
-        //如果不是签名的JWS，这一行将抛出异常(如预期的那样)
+        //如果不是签名的JWS，这一行将抛出异常
         Claims claims = Jwts.parser()
                 .setSigningKey(DatatypeConverter.parseBase64Binary(Constant.JWT_SECRET))
                 .parseClaimsJws(jwt).getBody();
