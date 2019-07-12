@@ -10,6 +10,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
+import top.dbon.blackandwhite.util.JwtUtils;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -23,7 +24,6 @@ import javax.servlet.http.HttpServletRequest;
 
 @Aspect
 @Component
-@Order(1)
 public class WebAuthenticationAspect {
 
     private Logger logger = (Logger) LoggerFactory.getLogger(this.getClass());
@@ -31,12 +31,17 @@ public class WebAuthenticationAspect {
     @Pointcut("execution(public * top.dbon.blackandwhite.controller..*.*(..))")
     public void webAuthentication(){}
 
+    @Order(1)
     @Before("webAuthentication()")
     public void doBefore(JoinPoint joinPoin) {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
         String token = request.getHeader("Authorization");
-        logger.debug("接收到Web请求,用户携带的令牌为：{}", token);
+        if ("login".equals(joinPoin.getSignature().getName()) || "register".equals(joinPoin.getSignature().getName())) {
+            logger.debug("注册和登录操作不需要验证token令牌");
+        } else {
+            logger.debug("接收到Web请求,用户携带的令牌为：{}", token);
+            JwtUtils.parseJWT(token);
+        }
     }
-
 }

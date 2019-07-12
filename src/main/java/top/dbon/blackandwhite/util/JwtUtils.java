@@ -25,7 +25,7 @@ public class JwtUtils {
      * @param id
      * @param issuer 签发人
      * @param subject 主题
-     * @param ttlMillis 过期时间
+     * @param ttlMillis 过期时间 （单位：毫秒）
      * @return
      */
     public static String createJWT(String id, String issuer, String subject, long ttlMillis) {

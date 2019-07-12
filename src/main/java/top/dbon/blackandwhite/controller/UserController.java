@@ -26,7 +26,7 @@ public class UserController {
     } else {
       logger.info("昵称为：{} 的用户登录成功，账号为：{}",user.getNickname(),user.getUsername());
       user.setPassword("*");
-      String token = JwtUtils.createJWT(user.getUserId(),"admin" , "Service", 60*60);
+      String token = JwtUtils.createJWT(user.getUserId(),"admin" , "Service", 1000*60*60);
       return AjaxResult.success().put("user", user).put("token",token);
     }
   }
